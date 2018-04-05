@@ -17,24 +17,12 @@ This is not an official Apple website. [Please consider donating](https://paypal
 </div>
 
 ---
-
-<table id="xcodes">
-  <tr>
-    <th>Version</th>
-    <th>Release</th>
-    <th>Build</th>
-    <th>Released</th>
-    <th>Requires</th>
-    <th>macOS SDKs</th>
-    <th>iOS SDKs</th>
-    <th>watchOS SDKs</th>
-    <th>tvOS SDKs</th>
-    <th><a name="ret-fn1"></a>Download<a href="#fn1">¹</a></th>
-  </tr>
+  
+{% assign counter=0 %}
 {% for release in site.data.releases %}
-  {% include xcode_row.html release=release %}
+  {% increment counter %}
+  {% include xcode_row_beta.html release=release counter=counter%}
 {% endfor %}
-</table>
 
 ---
 
