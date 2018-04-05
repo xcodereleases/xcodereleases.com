@@ -60,3 +60,17 @@ function filter() {
     xcodeRows[i].style.display = show ? "table-row" : "none";
   }
 }
+
+function toggleRow(row) {
+  var checkboxID = "toggle" + row;
+  var detailsID = "details" + row;
+  
+  var checkbox = document.getElementByID(checkboxID);
+  if (checkbox === null) { return; }
+  
+  var details = document.getElementByID(detailsID);
+  if (details === null) { return; }
+  
+  var show = checkbox.value;
+  details.style.visibility = show ? "visible" : "hidden";
+}
