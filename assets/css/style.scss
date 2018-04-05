@@ -1,0 +1,30 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.inner {
+  width: 75%;
+  text-align: center;
+}
+
+#downloads {
+  display: none; 
+}
+
+header, footer {
+  text-align: center;
+  background: none;
+}
+
+#donate {
+  text-align: center;
+}
+
+.inner li, .inner ul {
+  list-style: none;
+}
+
+.gm .name {
+  font-weight: bold;
+}
