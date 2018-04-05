@@ -62,7 +62,7 @@
   {% if release.links.download.url %}
     <a href="{{ release.links.download.url }}" alt="Download {{ release.name }} {{ release.version.number }} {{ betaLabel }}">Download</a>
   {% endif %}
-  {% if release.links.download.url and release.links.notes.url %}
+  {% if release.links.download.url && release.links.notes.url %}
     <br />
   {% endif %}
   {% if release.links.notes.url %}
