@@ -65,10 +65,10 @@ function toggleRow(row) {
   var checkboxID = "toggle" + row;
   var detailsID = "details" + row;
   
-  var checkbox = document.getElementByID(checkboxID);
+  var checkbox = document.getElementById(checkboxID);
   if (checkbox === null) { return; }
   
-  var details = document.getElementByID(detailsID);
+  var details = document.getElementById(detailsID);
   if (details === null) { return; }
   
   var show = checkbox.value;
