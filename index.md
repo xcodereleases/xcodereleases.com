@@ -30,7 +30,7 @@ This is not an official Apple website. [Please consider donating](https://paypal
     <th>watchOS SDKs</th>
     <th>tvOS SDKs</th>
     <th><a name="ret-fn1"></a>Download<a href="#fn1">¹</a></th>
-    <th><a name="ret-fn1"></a>Release Notes<a href="#fn1">¹</a></th>
+    <th>Release Notes<a href="#fn1">¹</a></th>
   </tr>
 {% for release in site.data.releases %}
   {% include xcode_row.html release=release %}
