@@ -59,8 +59,8 @@
     </ul>
   </td>
   <td class="download">
-  {% if release.download %}
-    <a href="{{ release.download }}" alt="Download Xcode {{ release.version.number }} {{ betaLabel }}">Download</a>
+  {% if release.links.download.url %}
+    <a href="{{ release.links.download.url }}" alt="Download Xcode {{ release.version.number }} {{ betaLabel }}">Download</a>
   {% endif %}
   </td>
 </tr>
