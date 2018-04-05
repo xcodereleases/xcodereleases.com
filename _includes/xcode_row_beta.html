@@ -1,0 +1,83 @@
+{% assign release = include.release %}
+{% assign counter = include.counter %}
+
+{% assign months = ",Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec" | split: ',' %}
+{% assign class = "gm" %}
+{% if release.version.release.gm == nil %}
+  {% assign class = "beta" %}
+{% endif %}
+  
+{% assign betaLabel = "" %}
+{% if release.version.release.gmSeed %}
+  {% assign betaLabel = "GM Seed " | append: release.version.release.gmSeed %}
+{% elsif release.version.release.beta %}
+  {% assign betaLabel = "Beta " | append: release.version.release.beta %}
+{% elsif release.version.release.dp %}
+  {% assign betaLabel = "Developer Preview " | append: release.version.release.dp %}
+{% else %}
+  {% assign betaLabel = "GM" %}
+{% endif %}
+
+<div class="xcode {{ class }}" id="xcode{{ counter }}">
+  <label for="toggle{{ counter }}">{{ release.name }} {{ release.version.number }} {{ betaLabel }}</label>
+  <input type="checkbox" id="toggle{{ counter }}" class="row-toggle" onchange=toggleRow("details{{ counter }}")>
+  <div class="details" id="details{{ counter }}">
+    Information about this version.
+  </div>
+</div>
+
+<!--
+  <td class="name">{{ release.name }} {{ release.version.number }}</td>
+  <td class="release">{{ betaLabel }}</td>
+  <td class="build">{{ release.version.build }}</td>
+  <td class="date">{{ release.date.day }} {{ months[release.date.month] }} {{ release.date.year }}</td>
+  <td class="requires">macOS {{ release.requires }}+</td>
+  <td class="sdk macOS">
+    <ul>
+    {% if release.sdks.macOS %}
+      {% for sdk in release.sdks.macOS %}
+      <li>{{ sdk.build }}</li>
+      {% endfor %}
+    {% endif %}
+    </ul>
+  </td>
+  <td class="sdk iOS">
+    <ul>
+    {% if release.sdks.iOS %}
+      {% for sdk in release.sdks.iOS %}
+      <li>{{ sdk.build }}</li>
+      {% endfor %}
+    {% endif %}
+    </ul>
+  </td>
+  <td class="sdk watchOS">
+    <ul>
+    {% if release.sdks.watchOS %}
+      {% for sdk in release.sdks.watchOS %}
+      <li>{{ sdk.build }}</li>
+      {% endfor %}
+    {% endif %}
+    </ul>
+  </td>
+  <td class="sdk tvOS">
+    <ul>
+    {% if release.sdks.tvOS %}
+      {% for sdk in release.sdks.tvOS %}
+      <li>{{ sdk.build }}</li>
+      {% endfor %}
+    {% endif %}
+    </ul>
+  </td>
+  <td class="download">
+  {% if release.links.download.url %}
+    <a href="{{ release.links.download.url }}" alt="Download {{ release.name }} {{ release.version.number }} {{ betaLabel }}">Download</a>
+  {% endif %}
+  </td>
+  <td class="release-notes">
+  {% if release.links.notes.url %}
+    <a href="{{ release.links.notes.url }}" alt="{{ release.name }} {{ release.version.number }} {{ betaLabel }} Release Notes">Release Notes</a>
+  {% endif %}
+  </td>
+</tr>
+
+-->
