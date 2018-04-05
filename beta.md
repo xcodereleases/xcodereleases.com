@@ -20,7 +20,7 @@ This is not an official Apple website. [Please consider donating](https://paypal
   
 {% assign counter=0 %}
 {% for release in site.data.releases %}
-  {% increment counter %}
+  {%- increment counter -%}
   {% include xcode_row_beta.html release=release counter=counter%}
 {% endfor %}
 
