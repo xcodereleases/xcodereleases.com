@@ -71,7 +71,7 @@ function toggleRow(rowID) {
   var details = document.getElementById(detailsID);
   if (details === null) { return; }
   
-  var show = checkbox.value;
+  var show = checkbox.checked;
   console.log("Showing " + rowID + ": " + show);
   details.style.display = show ? "block" : "none";
 }
