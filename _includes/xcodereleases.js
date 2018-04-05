@@ -67,9 +67,9 @@ function toggleDetails(rowID) {
   var details = document.getElementById(detailsID);
   if (details === null) { return; }
   
-  if (details.style.display === "none") {
-    details.style.display = "block";
-  } else {
+  if (details.style.display === "block") {
     details.style.display = "none";
+  } else {
+    details.style.display = "block";
   }
 }
