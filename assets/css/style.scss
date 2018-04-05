@@ -29,8 +29,10 @@ header, footer {
   font-weight: bold;
 }
 
-.xcode .details, .xcode .row-toggle {
+.xcode .details, {
   display: none;
+  border-top: 1px solid #eee;
+  width: 100%;
 }
 
 div.xcode {
@@ -39,3 +41,5 @@ div.xcode {
   border: 1px solid #eee;
   padding: 10px;
 }
+
+
