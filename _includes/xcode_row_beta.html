@@ -18,7 +18,7 @@
   {% assign betaLabel = "GM" %}
 {% endif %}
 
-{% assign xcodeid = "xcode-" | append: release.version.build | append: release.requires %}
+{% assign xcodeid = "xcode-" | append: release.version.build | append: "-" | append: release.requires %}
 
 <div class="xcode {{ class }}" id="{{ xcodeid }}">
 <label for="toggle-{{ xcodeid }}">{{ release.name }} {{ release.version.number }} {{ betaLabel }}</label>
