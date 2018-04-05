@@ -72,5 +72,5 @@ function toggleRow(row) {
   if (details === null) { return; }
   
   var show = checkbox.value;
-  details.style.visibility = show ? "visible" : "hidden";
+  details.style.display = show ? "block" : "none";
 }
