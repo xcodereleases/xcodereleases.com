@@ -61,9 +61,9 @@ function filter() {
   }
 }
 
-function toggleRow(row) {
-  var checkboxID = "toggle" + row;
-  var detailsID = "details" + row;
+function toggleRow(rowID) {
+  var checkboxID = "toggle-" + rowID;
+  var detailsID = "details-" + rowID;
   
   var checkbox = document.getElementById(checkboxID);
   if (checkbox === null) { return; }
