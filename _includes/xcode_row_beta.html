@@ -20,7 +20,7 @@
 
 <div class="xcode {{ class }}" id="xcode{{ counter }}">
   <label for="toggle{{ counter }}">{{ release.name }} {{ release.version.number }} {{ betaLabel }}</label>
-  <input type="checkbox" id="toggle{{ counter }}" class="row-toggle" onchange=toggleRow("details{{ counter }}")>
+  <input type="checkbox" id="toggle{{ counter }}" class="row-toggle" onchange=toggleRow("{{ counter }}")>
   <div class="details" id="details{{ counter }}">
     Information about this version.
   </div>
