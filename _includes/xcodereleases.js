@@ -61,17 +61,15 @@ function filter() {
   }
 }
 
-function toggleRow(rowID) {
-  var checkboxID = "toggle-" + rowID;
+function toggleDetails(rowID) {
   var detailsID = "details-" + rowID;
-  
-  var checkbox = document.getElementById(checkboxID);
-  if (checkbox === null) { return; }
   
   var details = document.getElementById(detailsID);
   if (details === null) { return; }
   
-  var show = checkbox.checked;
-  console.log("Showing " + rowID + ": " + show);
-  details.style.display = show ? "block" : "none";
+  if (details.style.display === "none") {
+    details.style.display = "block";
+  } else {
+    details.style.display = "none";
+  }
 }
