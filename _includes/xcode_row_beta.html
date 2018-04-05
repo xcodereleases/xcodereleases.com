@@ -20,8 +20,8 @@
 
 {% assign xcodeid = "xcode-" | append: release.version.build | append: "-" | append: release.requires %}
 
-<div class="xcode {{ class }}" id="{{ xcodeid }}" onclick="toggleRow('{{ xcodeid }}')">
-  <input type="checkbox" id="toggle-{{ xcodeid }}" class="row-toggle" onchange="toggleRow('{{ xcodeid }}')" />
+<div class="xcode {{ class }}" id="{{ xcodeid }}" onclick="toggleDetails('{{ xcodeid }}')">
+  <input type="checkbox" id="toggle-{{ xcodeid }}" class="row-toggle" onchange="toggleDetails('{{ xcodeid }}')" />
   <label class="name" for="toggle-{{ xcodeid }}">{{ release.name }} {{ release.version.number }} {{ betaLabel }}</label>
   <div class="details" id="details-{{ xcodeid }}">
     Information about this version.
