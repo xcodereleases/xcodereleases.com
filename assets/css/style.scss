@@ -42,6 +42,15 @@ div.xcode {
   border: 1px solid #eee;
 }
 
+div.column-wrapper {
+  display: table;
+  table-layout: fixed;
+}
+
+div.column {
+  display: table-cell;
+}
+
 div.xcode .summary {
   padding: 10px;
 }
