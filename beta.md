@@ -18,6 +18,14 @@ This is not an official Apple website. [Please consider donating](https://paypal
 
 ---
   
+<div class="column-wrapper">
+  <div class="column header">Name</div>
+  <div class="column header">Requires</div>
+  <div class="column header">Released</div>
+  <div class="column header">Download</div>
+  <div class="column header">Release Notes</div>
+</div>
+  
 {% for release in site.data.releases %}
   {% include xcode_row_beta.html release=release %}
 {% endfor %}
