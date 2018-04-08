@@ -25,6 +25,16 @@
     <div class="name column">{{ release.name }} {{ release.version.number }} {{ betaLabel }}</div>
     <div class="requires column">Requires: macOS {{ release.requires }}</div>
     <div class="date column">Released: {{ release.date.day }} {{ months[release.date.month] }} {{ release.date.year }}</div>
+    <div class="download column">
+      {% if release.links.download.url %}
+        <a href="{{ release.links.download.url }}" alt="Download {{ release.name }} {{ release.version.number }} {{ betaLabel }}">Download</a>
+      {% endif %}
+    </div>
+    <div class="release-notes column">
+      {% if release.links.notes.url %}
+        <a href="{{ release.links.notes.url }}" alt="{{ release.name }} {{ release.version.number }} {{ betaLabel }} Release Notes">Release Notes</a>
+      {% endif %}
+    </div>
   </div>
   <div class="details column-wrapper" id="details-{{ xcodeid }}">
     <div class="build column">Build: {{ release.version.build }}</div>
