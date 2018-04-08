@@ -21,13 +21,15 @@
 {% assign xcodeid = "xcode-" | append: release.version.build | append: "-" | append: release.requires %}
 
 <div class="xcode {{ class }}" id="{{ xcodeid }}" onclick="toggleDetails('{{ xcodeid }}')">
-  <div class="summary">
-    <div class="name">{{ release.name }} {{ release.version.number }} {{ betaLabel }}</div>
+  <div class="summary column-wrapper">
+    <div class="name column">{{ release.name }} {{ release.version.number }} {{ betaLabel }}</div>
+    <div class="requires column">Requires: macOS {{ release.requires }}</div>
+    <div class="date column">Released: {{ release.date.day }} {{ months[release.date.month] }} {{ release.date.year }}</div>
   </div>
-  <div class="details" id="details-{{ xcodeid }}">
-    <div class="build">Build: {{ release.version.build }}</div>
-    <div class="date">Released: {{ release.date.day }} {{ months[release.date.month] }} {{ release.date.year }}</div>
-    <div class="requires">Requires: macOS {{ release.requires }}</div>
+  <div class="details column-wrapper" id="details-{{ xcodeid }}">
+    <div class="build column">Build: {{ release.version.build }}</div>
+    <div class="sdks column">SDKs: </div>
+    <div class="compilers column">Compilers: </div>
   </div>
 </div>
 
