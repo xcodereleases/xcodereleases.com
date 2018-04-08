@@ -29,16 +29,20 @@ header, footer {
   font-weight: bold;
 }
 
-.xcode .details, {
+div.xcode .details, {
   display: none;
   border-top: 1px solid #eee;
   width: 100%;
+  padding: 10px;
 }
 
 div.xcode {
   width: 100%;
   text-align: left;
   border: 1px solid #eee;
+}
+
+div.xcode .summary {
   padding: 10px;
 }
 
