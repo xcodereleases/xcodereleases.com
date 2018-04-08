@@ -27,7 +27,7 @@
     <div class="date column">{{ release.date.day }} {{ months[release.date.month] }} {{ release.date.year }}</div>
     <div class="download column">
       {% if release.links.download.url %}
-        {% assign components = release.links.download.url | split "/" %}
+        {% assign components = release.links.download.url | split: "/" %}
         <a href="{{ release.links.download.url }}" alt="Download {{ release.name }} {{ release.version.number }} {{ betaLabel }}">{{ components.last }}</a>
       {% endif %}
     </div>
