@@ -23,8 +23,8 @@
 <div class="xcode {{ class }}" id="{{ xcodeid }}" onclick="toggleDetails('{{ xcodeid }}')">
   <div class="summary column-wrapper">
     <div class="name column">{{ release.name }} {{ release.version.number }} {{ betaLabel }}</div>
-    <div class="requires column">Requires: macOS {{ release.requires }}</div>
-    <div class="date column">Released: {{ release.date.day }} {{ months[release.date.month] }} {{ release.date.year }}</div>
+    <div class="requires column">macOS {{ release.requires }}</div>
+    <div class="date column">{{ release.date.day }} {{ months[release.date.month] }} {{ release.date.year }}</div>
     <div class="download column">
       {% if release.links.download.url %}
         <a href="{{ release.links.download.url }}" alt="Download {{ release.name }} {{ release.version.number }} {{ betaLabel }}">Download</a>
