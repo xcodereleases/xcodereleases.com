@@ -45,10 +45,12 @@ div.xcode {
 div.column-wrapper {
   display: table;
   table-layout: fixed;
+  width: 100%;
 }
 
 div.column {
   display: table-cell;
+  padding: 10px;
 }
 
 div.xcode .summary {
