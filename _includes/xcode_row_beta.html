@@ -21,7 +21,9 @@
 {% assign xcodeid = "xcode-" | append: release.version.build | append: "-" | append: release.requires %}
 
 <div class="xcode {{ class }}" id="{{ xcodeid }}" onclick="toggleDetails('{{ xcodeid }}')">
-  <div class="name">{{ release.name }} {{ release.version.number }} {{ betaLabel }}</div>
+  <div class="summary">
+    <div class="name">{{ release.name }} {{ release.version.number }} {{ betaLabel }}</div>
+  </div>
   <div class="details" id="details-{{ xcodeid }}">
     <div class="build">Build: {{ release.version.build }}</div>
     <div class="date">Released: {{ release.date.day }} {{ months[release.date.month] }} {{ release.date.year }}</div>
