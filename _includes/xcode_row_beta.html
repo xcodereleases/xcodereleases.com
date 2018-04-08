@@ -38,8 +38,23 @@
     </div>
   </div>
   <div class="details column-wrapper" id="details-{{ xcodeid }}">
-    <div class="build column">Build: {{ release.version.build }}</div>
-    <div class="sdks column">SDKs: </div>
+    <div class="build column">Build<br />{{ release.version.build }}</div>
+    <div class="sdks column">SDKs: 
+      <ul>
+        {% for sdk in release.sdks.macOS %}
+          <li>macOS {{ sdk.build }}</li>
+        {% endfor %}
+        {% for sdk in release.sdks.iOS %}
+          <li>iOS {{ sdk.build }}</li>
+        {% endfor %}
+        {% for sdk in release.sdks.watchOS %}
+          <li>watchOS {{ sdk.build }}</li>
+        {% endfor %}
+        {% for sdk in release.sdks.tvOS %}
+          <li>tvOS {{ sdk.build }}</li>
+        {% endfor %}
+      </ul>
+    </div>
     <div class="compilers column">Compilers: </div>
   </div>
 </div>
@@ -51,13 +66,6 @@
   <td class="date">{{ release.date.day }} {{ months[release.date.month] }} {{ release.date.year }}</td>
   <td class="requires">macOS {{ release.requires }}+</td>
   <td class="sdk macOS">
-    <ul>
-    {% if release.sdks.macOS %}
-      {% for sdk in release.sdks.macOS %}
-      <li>{{ sdk.build }}</li>
-      {% endfor %}
-    {% endif %}
-    </ul>
   </td>
   <td class="sdk iOS">
     <ul>
