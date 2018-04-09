@@ -12,14 +12,16 @@ This is not an official Apple website. [Please consider donating](https://paypal
 <div id="search-beta">
   <input type="search" id="filter-text" oninput="filter()" placeholder="Search"/>
   <br />
+  <div id="release-filter" class="column-wrapper">
   <input type="radio" name="filter-release" id="filter-all" value="" checked  onchange="filter()" />
-  <label for="filter-all">All</label>
+  <label class="column" for="filter-all">All</label>
   
   <input type="radio" name="filter-release" id="filter-gm" value="gm" onchange="filter()" />
-  <label for="filter-gm">GMs</label>
+  <label class="column" for="filter-gm">GMs</label>
   
   <input type="radio" name="filter-release" id="filter-beta" value="beta" onchange="filter()" />
-  <label for="filter-beta">Betas</label>
+  <label class="column" for="filter-beta">Betas</label>
+  </div>
 </div>
 
 ---
