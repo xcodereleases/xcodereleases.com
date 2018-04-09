@@ -56,7 +56,22 @@
           {% endfor %}
         </ul>
       </div>
-      <div class="compilers column">Compilers: </div>
+      <div class="compilers column">Compilers: 
+        <ul>
+          {% for info in release.compilers.swift %}
+            <li>Swift {{ info.version.number }} ({{ info.version.build }})</li>
+          {% endfor %}
+          {% for info in release.compilers.clang %}
+            <li>Clang {{ info.version.number }} ({{ info.version.build }})</li>
+          {% endfor %}
+          {% for info in release.compilers.llvm_gcc %}
+            <li>LLVM-GCC {{ info.version.number }} ({{ info.version.build }})</li>
+          {% endfor %}
+          {% for info in release.compilers.gcc %}
+            <li>GCC {{ info.version.number }} ({{ info.version.build }})</li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
 </div>
