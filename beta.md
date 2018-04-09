@@ -13,7 +13,7 @@ This is not an official Apple website. [Please consider donating](https://paypal
 <div id="search-beta" style="width: 50%">
   <input type="search" id="filter-text" oninput="filter()" placeholder="Search"/>
   <br />
-  <div id="release-filter" class="column-wrapper">
+  <div id="release-filter" class="segmented">
   <input type="radio" name="filter-release" id="filter-all" value="" checked  onchange="filter()" />
   <label class="column" for="filter-all">All</label>
   
