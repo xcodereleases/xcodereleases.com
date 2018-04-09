@@ -9,7 +9,7 @@ description: More than you ever wanted to know™
 
 This is not an official Apple website. [Please consider donating](https://paypal.me/XcodeReleases) to help maintain it.
 
-<div id="search-beta">
+<div id="search-beta" style="width: 50%">
   <input type="search" id="filter-text" oninput="filter()" placeholder="Search"/>
   <br />
   <div id="release-filter" class="column-wrapper">
