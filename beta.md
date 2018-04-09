@@ -14,11 +14,11 @@ This is not an official Apple website. [Please consider donating](https://paypal
   <input type="search" id="filter-text" oninput="filter()" placeholder="Search"/>
   
   <div id="release-filter" class="segmented">
-    <input type="radio" name="filter-release" id="filter-all" checked onchange="filter()" />
+    <input type="radio" name="filter-release" id="filter-all" value="" checked onchange="filter()" />
     <label for="filter-all">All</label>
-    <input type="radio" name="filter-release" id="filter-gm" onchange="filter()" />
+    <input type="radio" name="filter-release" id="filter-gm" value="gm" onchange="filter()" />
     <label for="filter-gm">GMs</label>
-    <input type="radio" name="filter-release" id="filter-beta" onchange="filter()" />
+    <input type="radio" name="filter-release" id="filter-beta" value="beta" onchange="filter()" />
     <label for="filter-beta">Betas</label>
   </div>
 </div>
