@@ -24,7 +24,7 @@
 <div class="xcode {{ class }}" id="{{ xcodeid }}" onclick="toggleDetails('{{ xcodeid }}')">
   <div class="summary column-wrapper">
     <div class="name column">{{ displayName }}</div>
-    <div class="requires column centered">macOS {{ release.requires }}</div>
+    <div class="requires column centered">{{ release.requires }}</div>
     <div class="date column centered">{{ release.date.day }} {{ months[release.date.month] }} {{ release.date.year }}</div>
     <div class="download column centered">
       {% if release.links.download.url %}
