@@ -9,7 +9,8 @@ description: More than you ever wanted to know™
 
 This is not an official Apple website. [Please consider donating](https://paypal.me/XcodeReleases) to help maintain it.
 
-<div id="search-beta" class="centered" style="width: 50%">
+<div class="centered" style="width: 50%">
+<div id="search-beta">
   <input type="search" id="filter-text" oninput="filter()" placeholder="Search"/>
   <br />
   <div id="release-filter" class="column-wrapper">
@@ -22,6 +23,7 @@ This is not an official Apple website. [Please consider donating](https://paypal
   <input type="radio" name="filter-release" id="filter-beta" value="beta" onchange="filter()" />
   <label class="column" for="filter-beta">Betas</label>
   </div>
+</div>
 </div>
 
 ---
