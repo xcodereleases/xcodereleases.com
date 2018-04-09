@@ -23,10 +23,10 @@
 
 <div class="xcode {{ class }}" id="{{ xcodeid }}" onclick="toggleDetails('{{ xcodeid }}')">
   <div class="summary column-wrapper">
-    <div class="name column">{{ displayName }}</div>
-    <div class="requires column centered">{{ release.requires }}</div>
-    <div class="date column centered">{{ release.date.day }} {{ months[release.date.month] }} {{ release.date.year }}</div>
-    <div class="download column centered">
+    <div class="name column align-left">{{ displayName }}</div>
+    <div class="requires column align-left monospace">{{ release.requires }}</div>
+    <div class="date column align-center">{{ release.date.day }} {{ months[release.date.month] }} {{ release.date.year }}</div>
+    <div class="download column align-center">
       {% if release.links.download.url %}
         {% assign components = release.links.download.url | split: "/" %}
         <a href="{{ release.links.download.url }}" alt="Download {{ displayName }}">{{ components.last }}</a>
@@ -34,7 +34,7 @@
         (none)
       {% endif %}
     </div>
-    <div class="notes column centered">
+    <div class="notes column align-center">
       {% if release.links.notes.url %}
         <a href="{{ release.links.notes.url }}" alt="{{ displayName }} Release Notes">View</a>
       {% else %}
