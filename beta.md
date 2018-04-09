@@ -36,8 +36,8 @@ This is not an official Apple website. [Please consider donating](https://paypal
   <div class="column header align-left">Name</div>
   <div class="column header align-left">Required macOS</div>
   <div class="column header">Released</div>
-  <div class="column header">Download<a name="ret-fn1"></a><a href="fn1">¹</a></div>
-  <div class="column header">Release Notes<a href="fn1">¹</a></div>
+  <div class="column header">Download<a name="ret-fn1"></a><a href="#fn1">¹</a></div>
+  <div class="column header">Release Notes<a href="#fn1">¹</a></div>
 </div>
   
 {% for release in site.data.releases %}
