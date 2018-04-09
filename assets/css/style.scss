@@ -69,7 +69,8 @@ div.xcode .summary {
 
 
 #search-beta input[name="filter-release"] {
-  visibility:hidden;
+  visibility: hidden;
+  display: none;
 }
 
 #search-beta label {
