@@ -96,6 +96,8 @@ div.xcode .summary {
 }
 .segmented input[type="radio"] {
   appearance:none;
+  display: none;
+  visibility: hidden;
   -webkit-appearance:none;
   margin:0;
   position: absolute;
