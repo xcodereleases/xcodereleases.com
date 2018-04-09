@@ -82,7 +82,7 @@ div.xcode .summary {
   user-select:none;
   -webkit-user-select:none;
 }
-.segmented label.checked {
+.segmented input.checked + label {
   background:#167efb;
   color:#fff;
 }
