@@ -19,21 +19,22 @@
 {% endif %}
 
 {% assign xcodeid = "xcode-" | append: release.version.build | append: "-" | append: release.requires %}
+{% capture displayName %}{{ release.name }} {{ release.version.number }} {{ betaLabel }}{% endcapture %}
 
 <div class="xcode {{ class }}" id="{{ xcodeid }}" onclick="toggleDetails('{{ xcodeid }}')">
   <div class="summary column-wrapper">
-    <div class="name column">{{ release.name }} {{ release.version.number }} {{ betaLabel }}</div>
+    <div class="name column">{{ displayName }}</div>
     <div class="requires column centered">macOS {{ release.requires }}</div>
     <div class="date column centered">{{ release.date.day }} {{ months[release.date.month] }} {{ release.date.year }}</div>
     <div class="download column centered">
       {% if release.links.download.url %}
         {% assign components = release.links.download.url | split: "/" %}
-        <a href="{{ release.links.download.url }}" alt="Download {{ release.name }} {{ release.version.number }} {{ betaLabel }}">{{ components.last }}</a>
+        <a href="{{ release.links.download.url }}" alt="Download {{ displayName }}">{{ components.last }}</a>
       {% endif %}
     </div>
     <div class="notes column centered">
       {% if release.links.notes.url %}
-        <a href="{{ release.links.notes.url }}" alt="{{ release.name }} {{ release.version.number }} {{ betaLabel }} Release Notes">View</a>
+        <a href="{{ release.links.notes.url }}" alt="{{ displayName }} Release Notes">View</a>
       {% endif %}
     </div>
   </div>
@@ -75,52 +76,3 @@
     </div>
   </div>
 </div>
-
-<!--
-  <td class="name">{{ release.name }} {{ release.version.number }}</td>
-  <td class="release">{{ betaLabel }}</td>
-  <td class="build">{{ release.version.build }}</td>
-  <td class="date">{{ release.date.day }} {{ months[release.date.month] }} {{ release.date.year }}</td>
-  <td class="requires">macOS {{ release.requires }}+</td>
-  <td class="sdk macOS">
-  </td>
-  <td class="sdk iOS">
-    <ul>
-    {% if release.sdks.iOS %}
-      {% for sdk in release.sdks.iOS %}
-      <li>{{ sdk.build }}</li>
-      {% endfor %}
-    {% endif %}
-    </ul>
-  </td>
-  <td class="sdk watchOS">
-    <ul>
-    {% if release.sdks.watchOS %}
-      {% for sdk in release.sdks.watchOS %}
-      <li>{{ sdk.build }}</li>
-      {% endfor %}
-    {% endif %}
-    </ul>
-  </td>
-  <td class="sdk tvOS">
-    <ul>
-    {% if release.sdks.tvOS %}
-      {% for sdk in release.sdks.tvOS %}
-      <li>{{ sdk.build }}</li>
-      {% endfor %}
-    {% endif %}
-    </ul>
-  </td>
-  <td class="download">
-  {% if release.links.download.url %}
-    <a href="{{ release.links.download.url }}" alt="Download {{ release.name }} {{ release.version.number }} {{ betaLabel }}">Download</a>
-  {% endif %}
-  </td>
-  <td class="release-notes">
-  {% if release.links.notes.url %}
-    <a href="{{ release.links.notes.url }}" alt="{{ release.name }} {{ release.version.number }} {{ betaLabel }} Release Notes">Release Notes</a>
-  {% endif %}
-  </td>
-</tr>
-
--->
