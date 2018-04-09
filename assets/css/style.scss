@@ -67,3 +67,17 @@ div.xcode .summary {
   
 }
 
+
+#search input[name="filter-release"] {
+  visibility:hidden;
+}
+
+#search label {
+  padding: 20px;
+  cursor: pointer;
+}
+
+#search input[name="filter-release"]:checked + label {
+  background: #2196F3;
+}
+
