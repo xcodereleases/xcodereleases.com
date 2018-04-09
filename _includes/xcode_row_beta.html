@@ -30,11 +30,15 @@
       {% if release.links.download.url %}
         {% assign components = release.links.download.url | split: "/" %}
         <a href="{{ release.links.download.url }}" alt="Download {{ displayName }}">{{ components.last }}</a>
+      {% else %}
+        (none)
       {% endif %}
     </div>
     <div class="notes column centered">
       {% if release.links.notes.url %}
         <a href="{{ release.links.notes.url }}" alt="{{ displayName }} Release Notes">View</a>
+      {% else %}
+        (none)
       {% endif %}
     </div>
   </div>
