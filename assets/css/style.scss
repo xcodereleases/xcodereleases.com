@@ -68,40 +68,44 @@ div.xcode .summary {
 }
 
 .segmented {
-  display: flex;
-  flex-flow: row wrap;
-  box-sizing: border-box;
-  text-align: center;
-  margin: .2em;
-  width: 33%;
-  border: 1px solid #167efb;
-  border-radius: .4em .4em .4em .4em;
+	display: flex;
+	flex-flow: row wrap;
+	box-sizing: border-box;
+	text-align: center;
+	margin: .2em;
+	width: 33%;
 }
 
 .segmented input {
-  display: none;
+	display: none;
 }
 
 .segmented label {
-  display: block;
-  flex: 1;
-  box-sizing: border-box;
-  border-right: 1px solid #167efb;
-  color: #167efb;
-  padding: .2em;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  text-shadow: 0 0 0;
+	display: block;
+	flex: 1;
+	box-sizing: border-box;
+	border-right: 1px solid #167efb;
+	color: #167efb;
+	padding: .4em;
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+	border: 1px solid #167efb;
+	border-right: 0px;
+}
+
+.segmented label:nth-child(2) {
+	border-radius: .4em 0 0 .4em;
 }
 
 .segmented label:last-child {
-  border-right: 0;
+	border-radius: 0 .4em .4em 0;
+	border-right: 1px solid #167efb;
 }
 
 .segmented input:checked + label {
-  background: #167efb;
-  color: #fff;
+	background: #167efb;
+	color: #fff;
 }
 
 /*
