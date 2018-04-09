@@ -72,6 +72,7 @@ div.xcode .summary {
   flex-flow:row wrap;
   box-sizing:border-box;
   text-align:center;
+  margin:.1em;
 }
 .segmented label {
   display:block;
@@ -80,7 +81,6 @@ div.xcode .summary {
   border:1px solid #167efb;
   border-right:none;
   color:#167efb;
-  margin:.1em;
   padding:.1em;
   cursor: pointer;
   user-select:none;
