@@ -34,7 +34,7 @@ This is not an official Apple website. [Please consider donating](https://paypal
   
 <div class="column-wrapper">
   <div class="column header">Name</div>
-  <div class="column header">Requires</div>
+  <div class="column header">Required macOS</div>
   <div class="column header">Released</div>
   <div class="column header">Download</div>
   <div class="column header">Release Notes</div>
