@@ -12,16 +12,20 @@ This is not an official Apple website. [Please consider donating](https://paypal
 <div class="centered" style="width: 100%">
 <div id="search-beta" style="width: 50%">
   <input type="search" id="filter-text" oninput="filter()" placeholder="Search"/>
-  <br />
+  
   <div id="release-filter" class="segmented">
-  <input type="radio" name="filter-release" id="filter-all" value="" checked  onchange="filter()" />
-  <label class="column" for="filter-all">All</label>
   
-  <input type="radio" name="filter-release" id="filter-gm" value="gm" onchange="filter()" />
-  <label class="column" for="filter-gm">GMs</label>
+  <label class="column">
+    <input type="radio" name="filter-release" id="filter-all" value="" checked  onchange="filter()" />All
+  </label>
   
-  <input type="radio" name="filter-release" id="filter-beta" value="beta" onchange="filter()" />
-  <label class="column" for="filter-beta">Betas</label>
+  <label class="column" for="filter-gm">
+    <input type="radio" name="filter-release" id="filter-gm" value="gm" onchange="filter()" />GMs
+  </label>
+  
+  <label class="column" for="filter-beta">
+    <input type="radio" name="filter-release" id="filter-beta" value="beta" onchange="filter()" />Betas
+  </label>
   </div>
 </div>
 </div>
