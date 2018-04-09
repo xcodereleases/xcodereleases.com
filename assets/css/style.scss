@@ -45,13 +45,13 @@ div.xcode {
   border: 1px solid #eee;
 }
 
-div.column-wrapper {
+.column-wrapper {
   display: table;
   table-layout: fixed;
   width: 100%;
 }
 
-div.column {
+.column {
   display: table-cell;
   padding: 10px;
 }
@@ -73,8 +73,6 @@ div.xcode .summary {
 }
 
 #search-beta label {
-  margin: 10px;
-  padding: 10px;
   cursor: pointer;
 }
 
