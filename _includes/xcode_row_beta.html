@@ -37,25 +37,27 @@
       {% endif %}
     </div>
   </div>
-  <div class="details column-wrapper" id="details-{{ xcodeid }}">
-    <div class="build column">Build<br />{{ release.version.build }}</div>
-    <div class="sdks column">SDKs: 
-      <ul>
-        {% for sdk in release.sdks.macOS %}
-          <li>macOS {{ sdk.build }}</li>
-        {% endfor %}
-        {% for sdk in release.sdks.iOS %}
-          <li>iOS {{ sdk.build }}</li>
-        {% endfor %}
-        {% for sdk in release.sdks.watchOS %}
-          <li>watchOS {{ sdk.build }}</li>
-        {% endfor %}
-        {% for sdk in release.sdks.tvOS %}
-          <li>tvOS {{ sdk.build }}</li>
-        {% endfor %}
-      </ul>
+  <div class="details" id="details-{{ xcodeid }}">
+    <div class="column-wrapper">
+      <div class="build column">Build<br />{{ release.version.build }}</div>
+      <div class="sdks column">SDKs: 
+        <ul>
+          {% for sdk in release.sdks.macOS %}
+            <li>macOS {{ sdk.build }}</li>
+          {% endfor %}
+          {% for sdk in release.sdks.iOS %}
+            <li>iOS {{ sdk.build }}</li>
+          {% endfor %}
+          {% for sdk in release.sdks.watchOS %}
+            <li>watchOS {{ sdk.build }}</li>
+          {% endfor %}
+          {% for sdk in release.sdks.tvOS %}
+            <li>tvOS {{ sdk.build }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="compilers column">Compilers: </div>
     </div>
-    <div class="compilers column">Compilers: </div>
   </div>
 </div>
 
