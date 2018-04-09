@@ -10,10 +10,11 @@ description: More than you ever wanted to know™
 This is not an official Apple website. [Please consider donating](https://paypal.me/XcodeReleases) to help maintain it.
 
 <div id="search">
+  <input type="search" id="filter-text" oninput="filter()" placeholder="Search"/>
+  <br />
   <input type="radio" name="filter-release" value="" checked  onchange="filter()" /> All
   <input type="radio" name="filter-release" value="gm" onchange="filter()" /> GMs
   <input type="radio" name="filter-release" value="beta" onchange="filter()" /> Betas
-  <input type="search" id="filter-text" oninput="filter()" placeholder="Search"/>
 </div>
 
 ---
