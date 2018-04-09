@@ -59,16 +59,16 @@
       <div class="compilers column">Compilers: 
         <ul>
           {% for info in release.compilers.swift %}
-            <li>Swift {{ info.version.number }} ({{ info.version.build }})</li>
+            <li>Swift {{ info.number }} ({{ info.build }})</li>
           {% endfor %}
           {% for info in release.compilers.clang %}
-            <li>Clang {{ info.version.number }} ({{ info.version.build }})</li>
+            <li>Clang {{ info.number }} ({{ info.build }})</li>
           {% endfor %}
           {% for info in release.compilers.llvm_gcc %}
-            <li>LLVM-GCC {{ info.version.number }} ({{ info.version.build }})</li>
+            <li>LLVM-GCC {{ info.number }} ({{ info.build }})</li>
           {% endfor %}
           {% for info in release.compilers.gcc %}
-            <li>GCC {{ info.version.number }} ({{ info.version.build }})</li>
+            <li>GCC {{ info.number }} ({{ info.build }})</li>
           {% endfor %}
         </ul>
       </div>
