@@ -9,9 +9,11 @@ description: More than you ever wanted to know™
 
 This is not an official Apple website. [Please consider donating](https://paypal.me/XcodeReleases) to help maintain it.
 
-<div class="centered" style="width: 100%">
-<div id="search-beta" style="width: 50%">
-  <input type="search" id="filter-text" oninput="filter()" placeholder="Search"/>
+<div class="align-center">
+<div id="search-beta" style="width: 33%">
+  <div id="search-box" class="search">
+    <input type="search" id="filter-text" oninput="filter()" placeholder="Search"/>
+  </div>
   
   <div id="release-filter" class="segmented">
     <input type="radio" name="filter-release" id="filter-all" value="" checked onchange="filter()" />
