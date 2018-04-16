@@ -11,7 +11,7 @@ This is not an official Apple website. [Please consider donating](https://paypal
 
 <div id="search-beta" style="width: 33%">
   <div id="search-box" class="search">
-    <input type="search" id="filter-text" oninput="filter()" placeholder="Search"/>
+    <input type="text" id="filter-text" oninput="filter()" placeholder="Search"/>
   </div>
   
   <div id="release-filter" class="segmented">
