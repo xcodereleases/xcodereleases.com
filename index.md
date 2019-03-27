@@ -9,6 +9,8 @@ description: More than you ever wanted to know™
 
 This is not an official Apple website. [Please consider donating](https://paypal.me/XcodeReleases) to help maintain it.
 
+Looking for an API? The data for this site is available at <a href="{{ site.url }}/data.json">{{ site.url }}/data.json</a>.
+
 <div id="search">
   <input type="search" id="filter-text" oninput="filter()" placeholder="Search"/>
   <br />
