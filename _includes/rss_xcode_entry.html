@@ -1,0 +1,34 @@
+{% assign xcode = include.xcode %}
+
+  
+{% assign betaLabel = "" %}
+{% assign idQualifier = "" %}
+
+{% if xcode.version.release.gmSeed %}
+  {% assign betaLabel = "GM Seed " | append: xcode.version.release.gmSeed %}
+  {% assign idQualifier = "gm-seed-" | append: xcode.version.release.gmSeed %}
+{% elsif xcode.version.release.beta %}
+  {% assign betaLabel = "Beta " | append: xcode.version.release.beta %}
+  {% assign idQualifier = "beta-" | append: xcode.version.release.beta %}
+{% elsif xcode.version.release.dp %}
+  {% assign betaLabel = "Developer Preview " | append: xcode.version.release.dp %}
+  {% assign idQualifier = "dp-" | append: xcode.version.release.dp %}
+{% else %}
+  {% assign betaLabel = "GM" %}
+  {% assign idQualifier = "gm" | append: xcode.version.release.gmSeed %}
+{% endif %}
+
+{% capture displayName %}{{ xcode.name }} {{ xcode.version.number }} {{ betaLabel }}{% endcapture %}
+{% assign xcodeid = "xcode-" | append: xcode.version.build | append: "-" | append: idQualifier | append: "-" | append: xcode.requires %}
+
+
+{% assign months = ",Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec" | split: ',' %}
+
+ <item>
+  <title>{{ displayName }}</title>
+  <description>Here is some text containing an interesting description.</description>
+  <!-- <link>http://www.example.com/blog/post/1</link> -->
+  <guid isPermaLink="false">{{ xcodeid }}</guid>
+  <pubDate>{{ xcode.date.day }} {{ months[xcode.date.month] }} {{ xcode.date.year }}</pubDate>
+ </item>
+ 

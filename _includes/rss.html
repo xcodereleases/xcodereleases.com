@@ -1,0 +1,19 @@
+{% assign xcodes = include.xcodes %}
+{% assign title = include.title %}
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+ <title>Xcode Releases - {{ title }}</title>
+ <description>An updating RSS feed of the most recent releases of Xcode</description>
+ <link>https://xcodereleases.com</link>
+ <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+ <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+ <ttl>60</ttl>
+
+{% for xcode in xcodes %}
+  {% include rss_xcode_entry.html xcode=xcode %}
+{% endfor %}
+
+</channel>
+</rss>
