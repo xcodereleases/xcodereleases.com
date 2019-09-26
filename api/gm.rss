@@ -1,5 +1,5 @@
 ---
 layout: null
 ---
-{% assign xcodes = site.data.releases | where: "version.release.dp", "true" %}
+{% assign xcodes = site.data.releases | where: "version.release.gm", "true" %}
 {% include rss.html xcodes=xcodes title="GM Xcode Releases" %}
