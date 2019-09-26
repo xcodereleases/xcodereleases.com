@@ -19,7 +19,7 @@
 
 {% capture displayName %}{{ xcode.name }} {{ xcode.version.number }} {{ betaLabel }}{% endcapture %}
 {% capture date %}{{ xcode.date.year }}-{{ xcode.date.month }}-{{ xcode.date.day }}{% endcapture %}
-{% assign xcodeid = "xcode-" | append: idQualifier | append: "-" | append: xcode.version.build | append: "-" | append: xcode.date %}
+{% assign xcodeid = "xcode-" | append: idQualifier | append: "-" | append: xcode.version.build | append: "-" | append: date %}
 
 {% assign months = ",Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec" | split: ',' %}
 
@@ -63,11 +63,12 @@
 {% endif %}
 {% endcapture %}
 
+{% capture pubDate %}{{ months[xcode.date.month] }} {{ xcode.date.day }}, {{ xcode.date.year }}{% endcapture %}
  <item>
   <title>{{ displayName }}</title>
   <link>https://xcodereleases.com</link>
   <guid>https://xcodereleases.com/versions/{{ xcodeid }}</guid>
-  <pubDate>{{ xcode.date.day }} {{ months[xcode.date.month] }} {{ xcode.date.year }}</pubDate>
+  <pubDate>{{ pubDate | date: "%a, %d %b %Y %T %Z" }}</pubDate>
   <description>{{ description | xml_escape }}</description>
  </item>
  
