@@ -1,5 +1,5 @@
 ---
 layout: null
 ---
-{% assign xcodes = site.data.releases %}
+{%- assign xcodes = site.data.releases -%}
 {{ xcodes | jsonify }}
