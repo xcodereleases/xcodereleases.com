@@ -27,7 +27,7 @@
 <p>{{ xcode.name }} {{ betaLabel }} was released on {{ xcode.date.day }} {{ months[xcode.date.month] }} {{ xcode.date.year }} and requires macOS {{ xcode.requires }}+.</p>
 {% if xcode.links.download.url %}
 	<p>It can be downloaded from <a href="{{ xcode.links.download.url }}">{{ xcode.links.download.url }}</a>.</p>
-{% endif }
+{% endif %}
 {% if xcode.links.notes.url %}
 	<p>Release notes are located at <a href="{{ xcode.links.notes.url }}">{{ xcode.links.notes.url }}</a>.</p>.
 {% endif %}
