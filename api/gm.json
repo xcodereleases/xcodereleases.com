@@ -1,0 +1,5 @@
+---
+layout: null
+---
+{% assign xcodes = site.data.releases | where: "version.release.dp", "true" %}
+{{ xcodes | jsonify }}
