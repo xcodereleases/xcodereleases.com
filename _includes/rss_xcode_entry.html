@@ -19,7 +19,7 @@
 {% endif %}
 
 {% capture displayName %}{{ xcode.name }} {{ xcode.version.number }} {{ betaLabel }}{% endcapture %}
-{% assign xcodeid = "xcode-" | append: idQualifier | append: "-" | append: xcode.version.build | append: "-" | append: xcode.release %}
+{% assign xcodeid = "xcode-" | append: idQualifier | append: "-" | append: xcode.version.build | append: "-" | append: xcode.requires %}
 
 
 {% assign months = ",Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec" | split: ',' %}
