@@ -9,10 +9,8 @@
  <link>https://xcodereleases.com</link>
  <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
  <ttl>60</ttl>
-
 {% for xcode in xcodes %}
   {% include rss_xcode_entry.html xcode=xcode %}
 {% endfor %}
-
 </channel>
 </rss>

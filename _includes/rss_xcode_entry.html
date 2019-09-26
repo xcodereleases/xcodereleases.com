@@ -24,11 +24,45 @@
 
 {% assign months = ",Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec" | split: ',' %}
 
+{% capture description %}
+<p>{{ xcode.name }} {{ betaLabel }} was release on {{ xcode.date.day }} {{ months[xcode.date.month] }} {{ xcode.date.year }} and requires macOS {{ xcode.requires }}+.</p>
+<p>It can be downloaded from <a href="{{ xcode.links.download.url }}">{{ xcode.links.download.url }}</a>.</p>
+{% if xcode.links.notes.url %}
+<p>Release notes are located at <a href="{{ xcode.links.notes.url }}">{{ xcode.links.notes.url }}</a>.</p>.
+{% endif %}
+<p>The SDKs it contains are:
+<ul>
+{% for sdk in xcode.sdks.iOS %}
+	<li>iOS {{ sdk.number }} (Build {{ sdk.build }})</li>
+{% endfor %}
+{% for sdk in xcode.sdks.macOS %}
+	<li>macOS {{ sdk.number }} (Build {{ sdk.build }})</li>
+{% endfor %}
+{% for sdk in xcode.sdks.tvOS %}
+	<li>tvOS {{ sdk.number }} (Build {{ sdk.build }})</li>
+{% endfor %}
+{% for sdk in xcode.sdks.watchOS %}
+	<li>watchOS {{ sdk.number }} (Build {{ sdk.build }})</li>
+{% endfor %}
+</ul>
+</p>
+<p> The compilers it contains are:
+<ul>
+{% for clang in xcode.compilers.clang %}
+	<li>clang {{ clang.number }} (Build {{ clang.build }})</li>
+{% endfor %}
+{% for swift in xcode.compilers.swift %}
+	<li>swift {{ swift.number }} (Build {{ swift.build }})</li>
+{% endfor %}
+</ul>
+</p>
+{% endcapture %}
+
  <item>
   <title>{{ displayName }}</title>
-  <!-- <link>http://www.example.com/blog/post/1</link> -->
-  <guid isPermaLink="false">{{ xcodeid }}</guid>
+  <link>https://xcodereleases.com</link>
+  <guid>https://xcodereleases.com/versions/{{ xcodeid }}</guid>
   <pubDate>{{ xcode.date.day }} {{ months[xcode.date.month] }} {{ xcode.date.year }}</pubDate>
-  <description>Here is some text containing an interesting description.</description>
+  <description>{{ description | xml_escape }}</description>
  </item>
  
