@@ -2,16 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
  <atom:link href="{{ page.url | absolute_url }}" rel="self" type="application/rss+xml" />
- <title>Xcode Releases - {{ title }}</title>
+ <title>Xcode Releases - {{ include.title }}</title>
  <description>An updating RSS feed of the most recent releases of Xcode</description>
  <link>https://xcodereleases.com</link>
  <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
  <ttl>60</ttl>
-{% assign xcodes = include.xcodes %}
-{% assign title = include.title %}
-
-{% for xcode in xcodes %}
-  {% include rss_xcode_entry.html xcode=xcode %}
-{% endfor %}
+{%- for xcode in include.xcodes -%}
+  {%- include rss_xcode_entry.html xcode=xcode -%}
+{%- endfor -%}
 </channel>
 </rss>
