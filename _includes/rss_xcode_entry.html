@@ -1,69 +1,74 @@
-{% assign xcode = include.xcode %}
+{%- assign xcode = include.xcode -%}
   
-{% assign betaLabel = "" %}
-{% assign idQualifier = "" %}
+{%- assign betaLabel = "" -%}
+{%- assign idQualifier = "" -%}
+{%- if xcode.version.release.gmSeed -%}
+  {%- assign betaLabel = "GM Seed " | append: xcode.version.release.gmSeed -%}
+  {%- assign idQualifier = "gm-seed-" | append: xcode.version.release.gmSeed -%}
+{%- elsif xcode.version.release.beta -%}
+  {%- assign betaLabel = "Beta " | append: xcode.version.release.beta -%}
+  {%- assign idQualifier = "beta-" | append: xcode.version.release.beta -%}
+{%- elsif xcode.version.release.dp -%}
+  {%- assign betaLabel = "Developer Preview " | append: xcode.version.release.dp -%}
+  {%- assign idQualifier = "dp-" | append: xcode.version.release.dp -%}
+{%- else -%}
+  {%- assign betaLabel = "GM" -%}
+  {%- assign idQualifier = "gm" -%}
+{%- endif -%}
 
-{% if xcode.version.release.gmSeed %}
-  {% assign betaLabel = "GM Seed " | append: xcode.version.release.gmSeed %}
-  {% assign idQualifier = "gm-seed-" | append: xcode.version.release.gmSeed %}
-{% elsif xcode.version.release.beta %}
-  {% assign betaLabel = "Beta " | append: xcode.version.release.beta %}
-  {% assign idQualifier = "beta-" | append: xcode.version.release.beta %}
-{% elsif xcode.version.release.dp %}
-  {% assign betaLabel = "Developer Preview " | append: xcode.version.release.dp %}
-  {% assign idQualifier = "dp-" | append: xcode.version.release.dp %}
-{% else %}
-  {% assign betaLabel = "GM" %}
-  {% assign idQualifier = "gm" %}
-{% endif %}
+{%- capture displayName -%}{{ xcode.name }} {{ xcode.version.number }} {{ betaLabel }}{%- endcapture -%}
+{%- capture date -%}{{ xcode.date.year }}-{{ xcode.date.month }}-{{ xcode.date.day }}{%- endcapture -%}
+{%- assign xcodeid = "xcode-" | append: idQualifier | append: "-" | append: xcode.version.build | append: "-" | append: date -%}
 
-{% capture displayName %}{{ xcode.name }} {{ xcode.version.number }} {{ betaLabel }}{% endcapture %}
-{% capture date %}{{ xcode.date.year }}-{{ xcode.date.month }}-{{ xcode.date.day }}{% endcapture %}
-{% assign xcodeid = "xcode-" | append: idQualifier | append: "-" | append: xcode.version.build | append: "-" | append: date %}
+{%- assign months = ",Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec" | split: ',' -%}
 
-{% assign months = ",Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec" | split: ',' %}
-
-{% capture description %}
-<p>{{ xcode.name }} {{ xcode.version.number }}{{ betaLabel }} was released on {{ xcode.date.day }} {{ months[xcode.date.month] }} {{ xcode.date.year }} and requires macOS {{ xcode.requires }}+.</p>
-{% if xcode.links.download.url %}
+{%- capture description -%}
+<p>{{ xcode.name }} {{ xcode.version.number }} {{ betaLabel }} was released on {{ xcode.date.day }} {{ months[xcode.date.month] }} {{ xcode.date.year }} and requires macOS {{ xcode.requires }}+.</p>
+{%- if xcode.links.download.url -%}
 	<p>It can be downloaded from <a href="{{ xcode.links.download.url }}">{{ xcode.links.download.url }}</a>.</p>
-{% endif %}
-{% if xcode.links.notes.url %}
+{%- endif -%}
+{%- if xcode.links.notes.url -%}
 	<p>Release notes are located at <a href="{{ xcode.links.notes.url }}">{{ xcode.links.notes.url }}</a>.</p>
-{% endif %}
-{% if xcode.sdks %}
+{%- endif -%}
+{%- if xcode.sdks -%}
 	<p>The SDKs it contains are:
 	<ul>
-	{% for sdk in xcode.sdks.iOS %}
+	{%- for sdk in xcode.sdks.iOS -%}
 		<li>iOS {{ sdk.number }} (Build {{ sdk.build }})</li>
-	{% endfor %}
-	{% for sdk in xcode.sdks.macOS %}
+	{%- endfor -%}
+	{%- for sdk in xcode.sdks.macOS -%}
 		<li>macOS {{ sdk.number }} (Build {{ sdk.build }})</li>
-	{% endfor %}
-	{% for sdk in xcode.sdks.tvOS %}
+	{%- endfor -%}
+	{%- for sdk in xcode.sdks.tvOS -%}
 		<li>tvOS {{ sdk.number }} (Build {{ sdk.build }})</li>
-	{% endfor %}
-	{% for sdk in xcode.sdks.watchOS %}
+	{%- endfor -%}
+	{%- for sdk in xcode.sdks.watchOS -%}
 		<li>watchOS {{ sdk.number }} (Build {{ sdk.build }})</li>
-	{% endfor %}
+	{%- endfor -%}
 	</ul>
 	</p>
-{% endif %}
-{% if xcode.compilers %}
+{%- endif -%}
+{%- if xcode.compilers -%}
 	<p> The compilers it contains are:
 	<ul>
-	{% for clang in xcode.compilers.clang %}
-		<li>clang {{ clang.number }} (Build {{ clang.build }})</li>
-	{% endfor %}
-	{% for swift in xcode.compilers.swift %}
-		<li>swift {{ swift.number }} (Build {{ swift.build }})</li>
-	{% endfor %}
+	{%- for compiler in xcode.compilers.clang -%}
+		<li>clang {{ compiler.number }} (Build {{ compiler.build }})</li>
+	{%- endfor -%}
+	{%- for compiler in xcode.compilers.swift -%}
+		<li>swift {{ compiler.number }} (Build {{ compiler.build }})</li>
+	{%- endfor -%}
+	{%- for compiler in xcode.compilers.llvm -%}
+		<li>LLVM-GCC {{ compiler.number }} (Build {{ compiler.build }})</li>
+	{%- endfor -%}
+	{%- for compiler in xcode.compilers.gcc -%}
+		<li>GCC {{ compiler.number }} (Build {{ compiler.build }})</li>
+	{%- endfor -%}
 	</ul>
 	</p>
-{% endif %}
-{% endcapture %}
+{%- endif -%}
+{%- endcapture -%}
 
-{% capture pubDate %}{{ months[xcode.date.month] }} {{ xcode.date.day }}, {{ xcode.date.year }}{% endcapture %}
+{%- capture pubDate -%}{{ months[xcode.date.month] }} {{ xcode.date.day }}, {{ xcode.date.year }}{%- endcapture -%}
  <item>
   <title>{{ displayName }}</title>
   <link>https://xcodereleases.com</link>
