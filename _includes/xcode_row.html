@@ -60,7 +60,7 @@
   </td>
   <td class="download">
   {% if release.links.download.url %}
-    <a href="https://developer.apple.com/services-account/download?path={{ release.links.download.url | relative_url }}" alt="Download {{ release.name }} {{ release.version.number }} {{ betaLabel }}">Download</a>
+    <a href="https://developer.apple.com/services-account/download?path={{ release.links.download.url | replace_first: "https://download.developer.apple.com", "" }}" alt="Download {{ release.name }} {{ release.version.number }} {{ betaLabel }}">Download</a>
   {% endif %}
   </td>
   <td class="release-notes">
