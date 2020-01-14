@@ -1,6 +1,7 @@
 ---
 title: Xcode Releases
 description: More than you ever wanted to know™
+layout: centered
 ---
 
 <script type="text/javascript">
