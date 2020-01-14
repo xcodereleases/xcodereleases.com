@@ -7,23 +7,21 @@ description: More than you ever wanted to know™
 {% include xcodereleases.js %}
 </script>
 
-<div style="text-align: center;">
-	This is not an official Apple website. [Please consider donating](https://paypal.me/XcodeReleases) to help maintain it.
+This is not an official Apple website. [Please consider donating](https://paypal.me/XcodeReleases) to help maintain it.
 
-	Looking for an API? The data for this site is available at <a href="{{ site.url }}/data.json">{{ site.url }}/data.json</a>.
+Looking for an API? The data for this site is available at <a href="{{ site.url }}/data.json">{{ site.url }}/data.json</a>.
 
-	<div id="search">
-	  <input type="search" id="filter-text" oninput="filter()" placeholder="Search"/>
-	  <br />
-	  <input type="radio" name="filter-release" id="filter-all" value="" checked  onchange="filter()" />
-	  <label for="filter-all">All</label>
-  
-	  <input type="radio" name="filter-release" id="filter-gm" value="gm" onchange="filter()" />
-	  <label for="filter-gm">GMs</label>
-  
-	  <input type="radio" name="filter-release" id="filter-beta" value="beta" onchange="filter()" />
-	  <label for="filter-beta">Betas</label>
-	</div>
+<div id="search">
+  <input type="search" id="filter-text" oninput="filter()" placeholder="Search"/>
+  <br />
+  <input type="radio" name="filter-release" id="filter-all" value="" checked  onchange="filter()" />
+  <label for="filter-all">All</label>
+
+  <input type="radio" name="filter-release" id="filter-gm" value="gm" onchange="filter()" />
+  <label for="filter-gm">GMs</label>
+
+  <input type="radio" name="filter-release" id="filter-beta" value="beta" onchange="filter()" />
+  <label for="filter-beta">Betas</label>
 </div>
 
 ---
