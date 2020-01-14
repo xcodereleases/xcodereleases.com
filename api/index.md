@@ -3,7 +3,9 @@ title: Xcode Releases API
 description: Programmatic access to more than you ever wanted to know™
 ---
 
-The data behind xcodereleases.com is available for you to integrate in to your own tools and products. The data is available in both RSS and JSON form.
+<div style="text-align: center;">
+The data behind xcodereleases.com is available for you to integrate in to your own tools and products. It is available in both RSS and JSON form.
+</div>
 
 ## RSS
 
