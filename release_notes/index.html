@@ -1,0 +1,296 @@
+<html>
+    <head>
+        <link href="https://developer.apple.com/documentation/__assets/application-e5bb1544.css" media="all" rel="stylesheet" type="text/css"/>
+        <title>Xcode Release Versions Diff</title>
+
+        <style>
+            h3 span {
+                font-size: 10pt;
+            }
+            h4 span {
+                font-size: 10pt;
+            }
+        </style>
+    </head>
+    <body style="margin: 40px;">
+        <h2>Xcode Releases</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+        <p>
+            version: <strong><span id="js_version"></span></strong>
+            <br/>
+            build: <strong><span id="js_build"></span></strong>
+        </p>
+        <br/>
+        <h5>Filter</h5>
+        <div id="filter">
+
+        </div>
+        <br/>
+        <br/>
+        <div class="topic-content column large-9 medium-9 small-12" id="topic-content">
+            <div id="render">
+
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    var v = $_GET('v');
+    var build = ""
+    var builds = []
+    var releaseData = []
+    var previousData = []
+
+    function $_GET(query,search) { 
+        search = search ? search : window.location.search; 
+        const urlParams = new URLSearchParams(search);
+        return urlParams.get(query)
+    } 
+
+    document.addEventListener("DOMContentLoaded", function() {
+        loadSiteData(v);
+    });
+
+    function loadSiteData(version) {
+        loadJson("data/" + version + "/index.json", function(data) {
+            //TODO: add check to make sure there are files to load
+            loadNextFile(0, data)
+        });
+    }
+
+    function loadNextFile(index, files) {
+        loadJson(files[index], function(data) {
+            releaseData.push(data)
+
+            if(index < files.length - 1) {
+                loadNextFile(index + 1, files)
+            } else {
+                parseReleaseData();
+            }
+        });
+    }
+
+    function parseReleaseData() {
+
+        releaseData.forEach( element => {
+            builds.push(element["build"])
+        })
+
+        var latest = releaseData[releaseData.length - 1]
+        build = latest["build"]
+
+        if (releaseData.length == 1) {
+            render(latest)
+        }
+
+        previousData = releaseData.slice(0, -1)
+
+        latest["topics"].forEach( topic => {
+            topic["sections"].forEach( section => {
+                section["items"].forEach( item => {
+                    checkItem(topic, section, item)
+                });
+            });
+        });
+
+        render(latest)
+    }
+
+    function checkItem(topic, section, item) {
+        previousData.forEach( previous => {
+            previous["topics"].forEach( previousTopic => {
+                if (closeEnough(topic["title"], previousTopic["title"])) {
+
+                    if (topic["build"] == undefined) {
+                        topic["build"] = previous["build"]
+                    }
+
+                    previousTopic["sections"].forEach( previousSection => {
+                        if (closeEnough(section["title"], previousSection["title"])) {
+
+                            if (section["build"] == undefined) {
+                                section["build"] = previous["build"]
+                            }
+                            
+                            previousSection["items"].forEach( previousItem => {
+                                if (closeEnough(item["title"], previousItem["title"])) {
+                                    if (item["build"] == undefined) {
+                                        item["build"] = previous["build"]
+                                    }
+                                }
+                            })
+                        }
+                    })
+                }
+            });
+        });
+    }
+
+    function closeEnough(a, b) {
+        return Cosinesimilarity(a, b) > 0.9
+    }
+
+    function renderFilter() {
+        var element = document.getElementById("filter");
+
+        var html = ""
+
+        builds.forEach( build => {
+            html += '<input type="checkbox" id="cb_' + build + '" name="' + build + '" value="' + build + '" checked>'
+            html += '<label for="' + build + '">&nbsp;&nbsp;' + build + '</label><br/>'
+        });
+
+        element.innerHTML = html
+
+        builds.forEach( build => {
+            var checkbox = document.getElementById('cb_'+build)
+
+            checkbox.addEventListener('change', (event) => {
+                highlightSelectedBuilds();
+            });
+        });
+    }
+
+    function highlightSelectedBuilds() {
+        builds.forEach( build => {
+            var nodes = document.getElementsByClassName("js_" + build);
+            var checkbox = document.getElementById('cb_'+build)
+            var opacity = checkbox.checked ? "1" : "0.25"
+            Array.from(nodes).forEach( node => {
+                node.style.opacity = opacity;
+            });
+        });
+    }
+
+    function renderInfo() {
+        document.getElementById("js_version").innerHTML = v;
+        document.getElementById("js_build").innerHTML = build;
+    }
+
+    function render(data) {
+        renderFilter()
+        renderInfo()
+
+        var element = document.getElementById("render");
+
+        var html = ""
+
+        data["topics"].forEach( topic => {
+            //html += "<h3 class='js_" + (topic["build"] ?? build) + "'>" + topic["title"] + "</h3><div><p></p></div>"
+            //html += "<h3 class='js_" + (topic["build"] ?? build) + "'>" + topic["title"] + " [" + (topic["build"] ?? build) + "]" + "</h3><div><p></p></div>"
+            html += "<h3 class='js_" + (topic["build"] || build) + "'>" + topic["title"] + " <span>[" + (topic["build"] || build) + "]" + "</span></h3><div><p></p></div>"
+            topic["sections"].forEach( section => {
+                //html += "<h4 class='js_" + (section["build"] ?? build) + "'>" + section["title"] + "</h4>"
+                //html += "<h4 class='js_" + (section["build"] ?? build) + "'>" + section["title"] + " [" + (section["build"] ?? build) + "]" + "</h4>"
+                html += "<h4 class='js_" + (section["build"] || build) + "'>" + section["title"] + " <span>[" + (section["build"] || build) + "]" + "</span></h4>"
+                html += "<ul>"
+                section["items"].forEach( item => {
+                    html += "<li class='js_" + (item["build"] || build) + "'>"
+                    var showBuildLabel = true
+                    item["details"].forEach( detail => {
+                        if (detail["style"] == 1) {
+                            html += "<p>"
+                            html += showBuildLabel ? "<strong>[" + (item["build"] || build) + "]: </strong>" : ""
+                            html += detail["dom"]
+                            html += "</p>" 
+                            showBuildLabel = false
+                        } else if (detail["style"] == 2) {
+                            html += '<figure><div class="formatted-content"><div class="code-listing"><pre class="code-source" data-language="swift"><code>'
+                            html += detail["dom"]
+                            html += '</code></pre></div></div></figure>'
+                        }   
+                    })
+                    html += "</li>"
+                })
+                html += "</ul>"
+            })
+        });
+
+        element.innerHTML = html
+    }
+
+    function loadJson(url, callback) {
+        var request = new XMLHttpRequest();
+        request.open('GET', url, true);
+
+        request.onload = function() {
+            if (this.status >= 200 && this.status < 400) {
+                var data = JSON.parse(this.response);
+                console.log(data);
+                callback(data);
+            } else {
+                // TODO: add error handling
+            }
+        };
+
+        request.onerror = function() {
+            // TODO: add error handling
+        };
+
+        request.send();
+    }
+
+
+    // -- String Comparabilty 
+    
+    // https://medium.com/@sumn2u/string-similarity-comparision-in-js-with-examples-4bae35f13968
+
+    function termFreqMap(str) {
+        var words = str.split(' ');
+        var termFreq = {};
+        words.forEach(function(w) {
+            termFreq[w] = (termFreq[w] || 0) + 1;
+        });
+        return termFreq;
+    }
+
+    function addKeysToDict(map, dict) {
+        for (var key in map) {
+            dict[key] = true;
+        }
+    }
+
+    function termFreqMapToVector(map, dict) {
+        var termFreqVector = [];
+        for (var term in dict) {
+            termFreqVector.push(map[term] || 0);
+        }
+        return termFreqVector;
+    }
+
+    function vecDotProduct(vecA, vecB) {
+        var product = 0;
+        for (var i = 0; i < vecA.length; i++) {
+            product += vecA[i] * vecB[i];
+        }
+        return product;
+    }
+
+    function vecMagnitude(vec) {
+        var sum = 0;
+        for (var i = 0; i < vec.length; i++) {
+            sum += vec[i] * vec[i];
+        }
+        return Math.sqrt(sum);
+    }
+
+    function cosineSimilarity(vecA, vecB) {
+        return vecDotProduct(vecA, vecB) / (vecMagnitude(vecA) * vecMagnitude(vecB));
+    }
+
+    Cosinesimilarity = function textCosineSimilarity(strA, strB) {
+        var termFreqA = termFreqMap(strA);
+        var termFreqB = termFreqMap(strB);
+
+        var dict = {};
+        addKeysToDict(termFreqA, dict);
+        addKeysToDict(termFreqB, dict);
+
+        var termFreqVecA = termFreqMapToVector(termFreqA, dict);
+        var termFreqVecB = termFreqMapToVector(termFreqB, dict);
+
+        return cosineSimilarity(termFreqVecA, termFreqVecB);
+    }
+
+</script>
