@@ -1,0 +1,972 @@
+{
+ "version": "11_4",
+ "build": "gm",
+ "topics": [
+  {
+   "title": "General",
+   "sections": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Xcode 11.4 supports building and distributing macOS apps as a universal purchase. To distribute your macOS app as a universal purchase, specify the same bundle identifier as your iOS app in the Xcode template assistant when creating a new project. If you have an existing project, edit its bundle identifier in the Project Editor.",
+       "html": "\u003cp\u003eXcode 11.4 supports building and distributing macOS apps as a universal purchase. To distribute your macOS app as a universal purchase, specify the same bundle identifier as your iOS app in the Xcode template assistant when creating a new project. If you have an existing project, edit its bundle identifier in the Project Editor.\u003c/p\u003e"
+      },
+      {
+       "text": "Universal purchase is enabled by default for new Mac Catalyst apps created in Xcode 11.4. When you create a new Mac Catalyst app, it will use the same bundle identifier as your iOS app.",
+       "html": "\u003cp\u003eUniversal purchase is enabled by default for new Mac Catalyst apps created in Xcode 11.4. When you create a new Mac Catalyst app, it will use the same bundle identifier as your iOS app.\u003c/p\u003e"
+      },
+      {
+       "text": "Automatic signing in Xcode 11.4 supports building Mac Catalyst apps with a custom bundle identifier. You can edit the bundle identifier of your app using the Signing \u0026 Capabilities tab in the Project Editor. If you choose to build your Mac Catalyst app with a custom bundle identifier that doesn’t match your iOS app, you won’t be able to distribute the app as a universal purchase.",
+       "html": "\u003cp\u003eAutomatic signing in Xcode 11.4 supports building Mac Catalyst apps with a custom bundle identifier. You can edit the bundle identifier of your app using the Signing \u0026amp; Capabilities tab in the Project Editor. If you choose to build your Mac Catalyst app with a custom bundle identifier that doesn’t match your iOS app, you won’t be able to distribute the app as a universal purchase.\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "When targeting devices running iOS 13.3.1, tvOS 13.3.1, watchOS 6.1, or later using a free Apple Developer account, app extensions incorrectly count against the limit of three apps installed simultaneously. When this happens, Xcode reports an error: “The maximum number of apps for free development profiles has been reached.” (59264389) (FB7568073)Workaround: Delete apps signed with your free account from your device and also remove any associated provisioning profiles from the device using Xcode’s Devices window. If your app contains more than two app extensions, remove them to remain under the three app limit.",
+       "html": "\u003cp\u003eWhen targeting devices running iOS 13.3.1, tvOS 13.3.1, watchOS 6.1, or later using a free Apple Developer account, app extensions incorrectly count against the limit of three apps installed simultaneously. When this happens, Xcode reports an error: “The maximum number of apps for free development profiles has been reached.” (59264389) (FB7568073)\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eWorkaround\u003c/strong\u003e: Delete apps signed with your free account from your device and also remove any associated provisioning profiles from the device using Xcode’s Devices window. If your app contains more than two app extensions, remove them to remain under the three app limit.\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "Creating an Objective-C category file by choosing File \u003e New \u003e File no longer creates a file that includes an import of the AppKit framework. (55977950) (FB7346800)",
+       "html": "\u003cp\u003eCreating an Objective-C category file by choosing File \u0026gt; New \u0026gt; File no longer creates a file that includes an import of the AppKit framework. (55977950) (FB7346800)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Apple Clang Compiler",
+   "sections": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Xcode 11.4 turns the -Watimport-in-framework-header warning on by default. Using @import in framework headers is discouraged, because doing so requires all importers to use modules. (59222634) (FB7566046)To temporarily silence this warning, use:#if __has_feature(modules)\n#if __has_warning(\"-Watimport-in-framework-header\")\n#pragma clang diagnostic ignored \"-Watimport-in-framework-header\"\n#endif\n@import NameOfFramework;\n#endif\n",
+       "html": "\u003cp\u003eXcode 11.4 turns the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003e-Watimport-in-framework-header\u003c/span\u003e\u003c/code\u003e warning on by default. Using \u003ccode class=\"code-voice\"\u003e\u003cspan\u003e@import\u003c/span\u003e\u003c/code\u003e in framework headers is discouraged, because doing so requires all importers to use modules. (59222634) (FB7566046)\u003c/p\u003e\u003cp\u003eTo temporarily silence this warning, use:\u003c/p\u003e\u003cfigure id=\"3545796\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003e#if __has_feature(modules)\n#if __has_warning(\u0026#34;-Watimport-in-framework-header\u0026#34;)\n#pragma clang diagnostic ignored \u0026#34;-Watimport-in-framework-header\u0026#34;\n#endif\n@import NameOfFramework;\n#endif\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Asset Catalogs",
+   "sections": [
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Assets localized in the asset catalog are now used at runtime, regardless of whether an associated .lproj directory exists. (49565973)",
+       "html": "\u003cp\u003eAssets localized in the asset catalog are now used at runtime, regardless of whether an associated \u003ccode class=\"code-voice\"\u003e\u003cspan\u003e.lproj\u003c/span\u003e\u003c/code\u003e directory exists. (49565973)\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "Fixed an issue where previews of symbol images in the asset catalog had flipped baselines. (57540017) (FB7473079)",
+       "html": "\u003cp\u003eFixed an issue where previews of symbol images in the asset catalog had flipped baselines. (57540017) (FB7473079)\u003c/p\u003e"
+      },
+      {
+       "text": "Asset Catalog Contents.json files ending in a newline will retain that newline when saved. (50630207) (FB6058998)",
+       "html": "\u003cp\u003eAsset Catalog \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eContents\u003cwbr/\u003e.json\u003c/span\u003e\u003c/code\u003e files ending in a newline will retain that newline when saved. (50630207) (FB6058998)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Build System",
+   "sections": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Build settings have a new evaluation operator, default, which you can use to specify the default value of a build setting if it evaluates to empty in the context of the evaluation. For example:$(SETTING:default=something)\nIf $(SETTING) is empty, this expression evaluates to ‘something’. The default value may itself be an expression that contains build setting evaluations. (57402718)",
+       "html": "\u003cp\u003eBuild settings have a new evaluation operator, \u003ccode class=\"code-voice\"\u003e\u003cspan\u003edefault\u003c/span\u003e\u003c/code\u003e, which you can use to specify the default value of a build setting if it evaluates to \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eempty\u003c/span\u003e\u003c/code\u003e in the context of the evaluation. For example:\u003c/p\u003e\u003cfigure id=\"3530485\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003e$(SETTING:default=something)\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003eIf \u003ccode class=\"code-voice\"\u003e\u003cspan\u003e$(SETTING)\u003c/span\u003e\u003c/code\u003e is empty, this expression evaluates to ‘something’. The default value may itself be an expression that contains build setting evaluations. (57402718)\u003c/p\u003e"
+      },
+      {
+       "text": "Building codeless kernel extensions with the new build system now requires you to set the GENERATE_KERNEL_MODULE_INFO_FILE build setting to NO. (57247534)",
+       "html": "\u003cp\u003eBuilding codeless kernel extensions with the new build system now requires you to set the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eGENERATE\u003cwbr/\u003e_KERNEL\u003cwbr/\u003e_MODULE\u003cwbr/\u003e_INFO\u003cwbr/\u003e_FILE\u003c/span\u003e\u003c/code\u003e build setting to \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eNO\u003c/span\u003e\u003c/code\u003e. (57247534)\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "Fixed a link failure that could occur when building for testing while using bitcode. (57857082)",
+       "html": "\u003cp\u003eFixed a link failure that could occur when building for testing while using bitcode. (57857082)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Debugging",
+   "sections": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Xcode 11.4 adds support to copy and paste breakpoints in the Breakpoint Navigator. (11723352)",
+       "html": "\u003cp\u003eXcode 11.4 adds support to copy and paste breakpoints in the Breakpoint Navigator. (11723352)\u003c/p\u003e"
+      },
+      {
+       "text": "The view debugger now presents layout guides (UILayoutGuide, NSLayoutGuide) and their referencing constraints. (20387325)",
+       "html": "\u003cp\u003eThe view debugger now presents layout guides (\u003ca class=\"symbol-name\" href=\"/documentation/uikit/uilayoutguide\"\u003e\u003ccode\u003e\u003cspan\u003eUILayout\u003cwbr/\u003eGuide\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e, \u003ca class=\"symbol-name\" href=\"/documentation/appkit/nslayoutguide\"\u003e\u003ccode\u003e\u003cspan\u003eNSLayout\u003cwbr/\u003eGuide\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e) and their referencing constraints. (20387325)\u003c/p\u003e"
+      },
+      {
+       "text": "View debugging supports showing layers using the Show Layers menu item in the Editor menu. (15775898)",
+       "html": "\u003cp\u003eView debugging supports showing layers using the Show Layers menu item in the Editor menu. (15775898)\u003c/p\u003e"
+      },
+      {
+       "text": "The exception reason now surfaces as an editor annotation. You can inspect the Exception object in Variables View and find the backtrace of the original uncaught exception, if any, in the Debug Navigator. (8045587)",
+       "html": "\u003cp\u003eThe exception reason now surfaces as an editor annotation. You can inspect the Exception object in Variables View and find the backtrace of the original uncaught exception, if any, in the Debug Navigator. (8045587)\u003c/p\u003e"
+      },
+      {
+       "text": "You can now use the Terminal for standard I/O, instead of Xcode’s Console. Make this choice using the Scheme Editor’s Options tab. (33552211)",
+       "html": "\u003cp\u003eYou can now use the Terminal for standard I/O, instead of Xcode’s Console. Make this choice using the Scheme Editor’s Options tab. (33552211)\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "The Build \u0026 Run action may fail to launch a watchOS app on series 2 and series 3 watch simulators when attempting to deploy soon after booting the simulator. (60281738)Workaround: Build and run again on the simulator after the simulated device finishes booting.",
+       "html": "\u003cp\u003eThe Build \u0026amp; Run action may fail to launch a watchOS app on series 2 and series 3 watch simulators when attempting to deploy soon after booting the simulator. (60281738)\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eWorkaround\u003c/strong\u003e: Build and run again on the simulator after the simulated device finishes booting.\u003c/p\u003e"
+      },
+      {
+       "text": "Xcode may not persist changes made to diagnostics in the Scheme Editor within the first few minutes of opening a project for the first time. For example, if you enable the Malloc Stack Logging checkbox soon after creating a new project from a template, the checkbox may be spontaneously unchecked before you build and run the target, thus preventing the diagnostics from being enabled. (59154142)Workaround: If you find that diagnostics you enabled, such as Malloc Stack Logging, aren’t working, please check the scheme editor because the relevant checkboxes may have spontaneously become unchecked. Re-enable the desired preference. Xcode will recover in a few minutes and save the selections you’ve made.",
+       "html": "\u003cp\u003eXcode may not persist changes made to diagnostics in the Scheme Editor within the first few minutes of opening a project for the first time. For example, if you enable the Malloc Stack Logging checkbox soon after creating a new project from a template, the checkbox may be spontaneously unchecked before you build and run the target, thus preventing the diagnostics from being enabled. (59154142)\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eWorkaround\u003c/strong\u003e: If you find that diagnostics you enabled, such as Malloc Stack Logging, aren’t working, please check the scheme editor because the relevant checkboxes may have spontaneously become unchecked. Re-enable the desired preference. Xcode will recover in a few minutes and save the selections you’ve made.\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "View outlines in the view debugger are now more visible. (44861893) (FB5361403)",
+       "html": "\u003cp\u003eView outlines in the view debugger are now more visible. (44861893) (FB5361403)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Devices",
+   "sections": [
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Xcode 11.4 doesn’t work with devices running iOS 13.4 beta 1 and beta 2. (60055806)",
+       "html": "\u003cp\u003eXcode 11.4 doesn’t work with devices running iOS 13.4 beta 1 and beta 2. (60055806)\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "Icons and names for devices running iOS 13.0 reflect the correct OS version in the Devices and Simulators window. (55044395)",
+       "html": "\u003cp\u003eIcons and names for devices running iOS 13.0 reflect the correct OS version in the Devices and Simulators window. (55044395)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Instruments",
+   "sections": [
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "State restoration in Instruments now depends on the scope selection. As a result, you may need to reconfigure and re-save custom templates in Instruments 11.4. (37746235)",
+       "html": "\u003cp\u003eState restoration in Instruments now depends on the scope selection. As a result, you may need to reconfigure and re-save custom templates in Instruments 11.4. (37746235)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where removing one run from Instruments removed all of them. (53451989)",
+       "html": "\u003cp\u003eFixed an issue where removing one run from Instruments removed all of them. (53451989)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue in the iOS 13.4 Simulator runtime where applications wouldn’t launch using the Allocations and Leaks templates. (56543962) (FB7403237)",
+       "html": "\u003cp\u003eFixed an issue in the iOS 13.4 Simulator runtime where applications wouldn’t launch using the Allocations and Leaks templates. (56543962) (FB7403237)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed a crash that occured when double-clicking a symbol in extended detail view. (58058064)",
+       "html": "\u003cp\u003eFixed a crash that occured when double-clicking a symbol in extended detail view. (58058064)\u003c/p\u003e"
+      },
+      {
+       "text": "Importing a file into an Instruments template now creates trace scopes according to the template specification. (58100654)",
+       "html": "\u003cp\u003eImporting a file into an Instruments template now creates trace scopes according to the template specification. (58100654)\u003c/p\u003e"
+      },
+      {
+       "text": "Instruments now properly tracks processes that exited during “All Processes” recordings. (59072482)",
+       "html": "\u003cp\u003eInstruments now properly tracks processes that exited during “All Processes” recordings. (59072482)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where the Allocations instrument wouldn’t record on watchOS devices. (59268958) (FB7568204)",
+       "html": "\u003cp\u003eFixed an issue where the Allocations instrument wouldn’t record on watchOS devices. (59268958) (FB7568204)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Interface Builder",
+   "sections": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Added Pointer Button property to UITapGestureRecognizer to control which mouse events trigger the gesture recognizer to succeed. (59330235)",
+       "html": "\u003cp\u003eAdded Pointer Button property to \u003ca class=\"symbol-name\" href=\"/documentation/uikit/uitapgesturerecognizer\"\u003e\u003ccode\u003e\u003cspan\u003eUITap\u003cwbr/\u003eGesture\u003cwbr/\u003eRecognizer\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e to control which mouse events trigger the gesture recognizer to succeed. (59330235)\u003c/p\u003e"
+      },
+      {
+       "text": "Added new Pointer Interaction property on UIButton. (59337826)",
+       "html": "\u003cp\u003eAdded new Pointer Interaction property on \u003ca class=\"symbol-name\" href=\"/documentation/uikit/uibutton\"\u003e\u003ccode\u003e\u003cspan\u003eUIButton\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e. (59337826)\u003c/p\u003e"
+      },
+      {
+       "text": "UIDatePicker has a new Style property, and will use a new compact style by default in Mac Catalyst apps on macOS 10.15.4. (56384950)",
+       "html": "\u003cp\u003e\u003ca class=\"symbol-name\" href=\"/documentation/uikit/uidatepicker\"\u003e\u003ccode\u003e\u003cspan\u003eUIDate\u003cwbr/\u003ePicker\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e has a new Style property, and will use a new compact style by default in Mac Catalyst apps on macOS 10.15.4. (56384950)\u003c/p\u003e"
+      },
+      {
+       "text": "Added dynamic system gray colors to inspector color pickers. (55403376) (FB7281404)",
+       "html": "\u003cp\u003eAdded dynamic system gray colors to inspector color pickers. (55403376) (FB7281404)\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "Fixed an issue that prevented the color picker panel from having any effect when a text field in the inspector was focused. (56067005) (FB7358220)",
+       "html": "\u003cp\u003eFixed an issue that prevented the color picker panel from having any effect when a text field in the inspector was focused. (56067005) (FB7358220)\u003c/p\u003e"
+      },
+      {
+       "text": "Added Scroll Types property to UIPanGestureRecognizer to control which mouse events trigger the gesture recognizer to succeed. (59330150)",
+       "html": "\u003cp\u003eAdded Scroll Types property to \u003ca class=\"symbol-name\" href=\"/documentation/uikit/uipangesturerecognizer\"\u003e\u003ccode\u003e\u003cspan\u003eUIPan\u003cwbr/\u003eGesture\u003cwbr/\u003eRecognizer\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e to control which mouse events trigger the gesture recognizer to succeed. (59330150)\u003c/p\u003e"
+      },
+      {
+       "text": "Resolved an issue where NSSwitch did not correctly update in the canvas when the control size was set to Small or Mini. (56520376)",
+       "html": "\u003cp\u003eResolved an issue where \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eNSSwitch\u003c/span\u003e\u003c/code\u003e did not correctly update in the canvas when the control size was set to Small or Mini. (56520376)\u003c/p\u003e"
+      },
+      {
+       "text": "Resolved an issue where Xcode could hang when working with UITableViewCell in a tvOS storyboard. (56353682)",
+       "html": "\u003cp\u003eResolved an issue where Xcode could hang when working with \u003ca class=\"symbol-name\" href=\"/documentation/uikit/uitableviewcell\"\u003e\u003ccode\u003e\u003cspan\u003eUITable\u003cwbr/\u003eView\u003cwbr/\u003eCell\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e in a tvOS storyboard. (56353682)\u003c/p\u003e"
+      },
+      {
+       "text": "Resolved a crash that could occur when switching the style of a UITableViewCell from basic to custom. (56079081)",
+       "html": "\u003cp\u003eResolved a crash that could occur when switching the style of a \u003ca class=\"symbol-name\" href=\"/documentation/uikit/uitableviewcell\"\u003e\u003ccode\u003e\u003cspan\u003eUITable\u003cwbr/\u003eView\u003cwbr/\u003eCell\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e from basic to custom. (56079081)\u003c/p\u003e"
+      },
+      {
+       "text": "Removed a large tooltip that obscured the list of constraints. (55938862) (FB7343268)",
+       "html": "\u003cp\u003eRemoved a large tooltip that obscured the list of constraints. (55938862) (FB7343268)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed a bug where NSMenuItem images no longer displayed on the canvas. (55838210) (FB7336326)",
+       "html": "\u003cp\u003eFixed a bug where \u003ca class=\"symbol-name\" href=\"/documentation/appkit/nsmenuitem\"\u003e\u003ccode\u003e\u003cspan\u003eNSMenu\u003cwbr/\u003eItem\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e images no longer displayed on the canvas. (55838210) (FB7336326)\u003c/p\u003e"
+      },
+      {
+       "text": "Resolved a crash when editing attributed string values of UILabel and UIButton controls. (55737956) (FB7326816)",
+       "html": "\u003cp\u003eResolved a crash when editing attributed string values of \u003ca class=\"symbol-name\" href=\"/documentation/uikit/uilabel\"\u003e\u003ccode\u003e\u003cspan\u003eUILabel\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e and \u003ca class=\"symbol-name\" href=\"/documentation/uikit/uibutton\"\u003e\u003ccode\u003e\u003cspan\u003eUIButton\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e controls. (55737956) (FB7326816)\u003c/p\u003e"
+      },
+      {
+       "text": "Resolved a hang when using AVPlayerViewController in tvOS storyboards. (55645930) (FB7318427)",
+       "html": "\u003cp\u003eResolved a hang when using \u003ca class=\"symbol-name\" href=\"/documentation/avkit/avplayerviewcontroller\"\u003e\u003ccode\u003e\u003cspan\u003eAVPlayer\u003cwbr/\u003eView\u003cwbr/\u003eController\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e in tvOS storyboards. (55645930) (FB7318427)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed a bug where using named colors in IBInspectable properties would use a fixed color at runtime, instead of the dynamic color from the asset catalog. (55248109) (FB7248211)",
+       "html": "\u003cp\u003eFixed a bug where using named colors in \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eIBInspectable\u003c/span\u003e\u003c/code\u003e properties would use a fixed color at runtime, instead of the dynamic color from the asset catalog. (55248109) (FB7248211)\u003c/p\u003e"
+      },
+      {
+       "text": "Resolved an Xcode crash that occurred when editing NSToolbar items in Mac documents. (55172989) (FB7212782)",
+       "html": "\u003cp\u003eResolved an Xcode crash that occurred when editing \u003ca class=\"symbol-name\" href=\"/documentation/appkit/nstoolbar\"\u003e\u003ccode\u003e\u003cspan\u003eNSToolbar\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e items in Mac documents. (55172989) (FB7212782)\u003c/p\u003e"
+      },
+      {
+       "text": "Improved the rendering of images in iOS, macOS, tvOS and watchOS documents. PDF images render their vector representations. The scale factor is better preserved when image filenames end with a scale (@2x). Use a more pleasant placeholder when an image is missing. (53887572)",
+       "html": "\u003cp\u003eImproved the rendering of images in iOS, macOS, tvOS and watchOS documents. PDF images render their vector representations. The scale factor is better preserved when image filenames end with a scale (\u003ccode class=\"code-voice\"\u003e\u003cspan\u003e@2x\u003c/span\u003e\u003c/code\u003e). Use a more pleasant placeholder when an image is missing. (53887572)\u003c/p\u003e"
+      },
+      {
+       "text": "Improved performance working with Mac XIBs and storyboards containing a large number of controls. (52603889) (FB6472772)",
+       "html": "\u003cp\u003eImproved performance working with Mac XIBs and storyboards containing a large number of controls. (52603889) (FB6472772)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed duplicate keyboard shortcuts used for inspector categories. (52388396) (FB6366331)",
+       "html": "\u003cp\u003eFixed duplicate keyboard shortcuts used for inspector categories. (52388396) (FB6366331)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where Interface Builder canvas and previews did not always display the correct image content for the selected languages when localizing images in the asset catalog. (48353744)",
+       "html": "\u003cp\u003eFixed an issue where Interface Builder canvas and previews did not always display the correct image content for the selected languages when localizing images in the asset catalog. (48353744)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed a compilation bug with the label on an NSTabViewItem not getting localized. (46290566)",
+       "html": "\u003cp\u003eFixed a compilation bug with the label on an \u003ca class=\"symbol-name\" href=\"/documentation/appkit/nstabviewitem\"\u003e\u003ccode\u003e\u003cspan\u003eNSTab\u003cwbr/\u003eView\u003cwbr/\u003eItem\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e not getting localized. (46290566)\u003c/p\u003e"
+      },
+      {
+       "text": "Removed WKWebView from the Apple TV object library because it isn’t supported on the platform. (45957591)",
+       "html": "\u003cp\u003eRemoved \u003ca class=\"symbol-name\" href=\"/documentation/webkit/wkwebview\"\u003e\u003ccode\u003e\u003cspan\u003eWKWeb\u003cwbr/\u003eView\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e from the Apple TV object library because it isn’t supported on the platform. (45957591)\u003c/p\u003e"
+      },
+      {
+       "text": "Resolved an issue where drag images of view controllers would sometimes render upside-down when both 1x and 2x displays were connected. (45464632) (FB5704168)",
+       "html": "\u003cp\u003eResolved an issue where drag images of view controllers would sometimes render upside-down when both 1x and 2x displays were connected. (45464632) (FB5704168)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where NSResponder.h would incorrectly show up in the Assistant Editor for XIB/Storyboard files. (37259359)",
+       "html": "\u003cp\u003eFixed an issue where \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eNSResponder\u003cwbr/\u003e.h\u003c/span\u003e\u003c/code\u003e would incorrectly show up in the Assistant Editor for XIB/Storyboard files. (37259359)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where some Xcode editors, often Interface Builder, would be misaligned from the Xcode window that contains them. (39655724)",
+       "html": "\u003cp\u003eFixed an issue where some Xcode editors, often Interface Builder, would be misaligned from the Xcode window that contains them. (39655724)\u003c/p\u003e"
+      },
+      {
+       "text": "Objects are automatically labeled based on connections, sometimes resulting in view controllers called “Delegate”. This behavior has been changed to only apply from parents to children. Additionally, accessibility connections (“link” and “title”) no longer affect automatic labeling. (22972580) (FB5806917)",
+       "html": "\u003cp\u003eObjects are automatically labeled based on connections, sometimes resulting in view controllers called “Delegate”. This behavior has been changed to only apply from parents to children. Additionally, accessibility connections (“link” and “title”) no longer affect automatic labeling. (22972580) (FB5806917)\u003c/p\u003e"
+      },
+      {
+       "text": "Resolved a crash when selecting a container view controller and opening the Preview editor. (23099319)",
+       "html": "\u003cp\u003eResolved a crash when selecting a container view controller and opening the Preview editor. (23099319)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where the inspector section for NumberFormatter Symbols had a light background in dark mode. (57393302) (FB7459536)",
+       "html": "\u003cp\u003eFixed an issue where the inspector section for \u003ca class=\"symbol-name\" href=\"/documentation/foundation/numberformatter\"\u003e\u003ccode\u003e\u003cspan\u003eNumber\u003cwbr/\u003eFormatter\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e Symbols had a light background in dark mode. (57393302) (FB7459536)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where several NSResponder actions were missing from the Connections Inspector. (56546759) (FB7403346)",
+       "html": "\u003cp\u003eFixed an issue where several \u003ca class=\"symbol-name\" href=\"/documentation/appkit/nsresponder\"\u003e\u003ccode\u003e\u003cspan\u003eNSResponder\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e actions were missing from the Connections Inspector. (56546759) (FB7403346)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed a crash that could occur when moving duplicate NSComboBox items in the Inspector. (55796760)",
+       "html": "\u003cp\u003eFixed a crash that could occur when moving duplicate \u003ca class=\"symbol-name\" href=\"/documentation/appkit/nscombobox\"\u003e\u003ccode\u003e\u003cspan\u003eNSCombo\u003cwbr/\u003eBox\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e items in the Inspector. (55796760)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where the Interface Style Simulated Metrics setting wouldn’t apply to objects being dragged. (55207867)",
+       "html": "\u003cp\u003eFixed an issue where the Interface Style Simulated Metrics setting wouldn’t apply to objects being dragged. (55207867)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where named Global Tint colors weren’t properly unarchived during Interface Builder document loading, resulting in incorrect Global Tint colors on subsequent document saves. (55158004) (FB7232333)",
+       "html": "\u003cp\u003eFixed an issue where named Global Tint colors weren’t properly unarchived during Interface Builder document loading, resulting in incorrect Global Tint colors on subsequent document saves. (55158004) (FB7232333)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where unrecognized system colors wouldn’t have their fallback colors preserved after loading and saving Interface Builder documents. (54623340)",
+       "html": "\u003cp\u003eFixed an issue where unrecognized system colors wouldn’t have their fallback colors preserved after loading and saving Interface Builder documents. (54623340)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed a bug that prevented entering a 0 constant in the constraint popup editors. (54076090)",
+       "html": "\u003cp\u003eFixed a bug that prevented entering a \u003ccode class=\"code-voice\"\u003e\u003cspan\u003e0\u003c/span\u003e\u003c/code\u003e constant in the constraint popup editors. (54076090)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where XIB template files didn’t have dynamic background colors. (53907727) (FB6918296)",
+       "html": "\u003cp\u003eFixed an issue where \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eXIB\u003c/span\u003e\u003c/code\u003e template files didn’t have dynamic background colors. (53907727) (FB6918296)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed a crash that occurred if an NSLevelIndicator Minimum inspector value was higher than its Maximum. (53302326) (FB6740368)",
+       "html": "\u003cp\u003eFixed a crash that occurred if an \u003ca class=\"symbol-name\" href=\"/documentation/appkit/nslevelindicator\"\u003e\u003ccode\u003e\u003cspan\u003eNSLevel\u003cwbr/\u003eIndicator\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e Minimum inspector value was higher than its Maximum. (53302326) (FB6740368)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where Interface Builder documents that contain UINavigationBar titles configured with named colors could be archived with duplicate-named color resources. (52162293) (FB6253352)",
+       "html": "\u003cp\u003eFixed an issue where Interface Builder documents that contain \u003ca class=\"symbol-name\" href=\"/documentation/uikit/uinavigationbar\"\u003e\u003ccode\u003e\u003cspan\u003eUINavigation\u003cwbr/\u003eBar\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e titles configured with named colors could be archived with duplicate-named color resources. (52162293) (FB6253352)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where Apple TV UITableViewCell safe area frames displayed incorrectly in XIB files. (51679086)",
+       "html": "\u003cp\u003eFixed an issue where Apple TV \u003ca class=\"symbol-name\" href=\"/documentation/uikit/uitableviewcell\"\u003e\u003ccode\u003e\u003cspan\u003eUITable\u003cwbr/\u003eView\u003cwbr/\u003eCell\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e safe area frames displayed incorrectly in \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eXIB\u003c/span\u003e\u003c/code\u003e files. (51679086)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where Xcode could crash after configuring text to be non-attributed. (46228389) (FB5673720)",
+       "html": "\u003cp\u003eFixed an issue where Xcode could crash after configuring text to be non-attributed. (46228389) (FB5673720)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where creating a Swift outlet with drag-to-source could result in a class-not-found error. (57883610) (FB7491401)",
+       "html": "\u003cp\u003eFixed an issue where creating a Swift outlet with drag-to-source could result in a class-not-found error. (57883610) (FB7491401)\u003c/p\u003e"
+      },
+      {
+       "text": "UIDatePicker compact style is available. (58963416)",
+       "html": "\u003cp\u003e\u003ca class=\"symbol-name\" href=\"/documentation/uikit/uidatepicker\"\u003e\u003ccode\u003e\u003cspan\u003eUIDate\u003cwbr/\u003ePicker\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e compact style is available. (58963416)\u003c/p\u003e"
+      },
+      {
+       "text": "Removed inspector support for configuring NSTableColumn header cell fonts to match the API. You can configure header cell fonts by subclassing NSTableHeaderCell and overriding the font property in code. (23664679) (FB5630174)",
+       "html": "\u003cp\u003eRemoved inspector support for configuring \u003ca class=\"symbol-name\" href=\"/documentation/appkit/nstablecolumn\"\u003e\u003ccode\u003e\u003cspan\u003eNSTable\u003cwbr/\u003eColumn\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e header cell fonts to match the API. You can configure header cell fonts by subclassing \u003ca class=\"symbol-name\" href=\"/documentation/appkit/nstableheadercell\"\u003e\u003ccode\u003e\u003cspan\u003eNSTable\u003cwbr/\u003eHeader\u003cwbr/\u003eCell\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e and overriding the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003efont\u003c/span\u003e\u003c/code\u003e property in code. (23664679) (FB5630174)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Metal",
+   "sections": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "The Metal Frame Debugger now supports iOS and tvOS simulators. (54273848)",
+       "html": "\u003cp\u003eThe Metal Frame Debugger now supports iOS and tvOS simulators. (54273848)\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "The SIMD-group functions (see section 6.8.2 of the Metal Shading Language Specification) compile for iOS. (59338106)",
+       "html": "\u003cp\u003eThe SIMD-group functions (see section 6.8.2 of the \u003ca href=\"https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf\"\u003eMetal Shading Language Specification\u003c/a\u003e) compile for iOS. (59338106)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Organizer",
+   "sections": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "The Crashes Organizer now shows crash logs for universal purchase macOS apps. (57607495)",
+       "html": "\u003cp\u003eThe Crashes Organizer now shows crash logs for universal purchase macOS apps. (57607495)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Playgrounds",
+   "sections": [
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "SwiftUI views aren’t rendered by Quick Look previews or inline result views. (59908350)",
+       "html": "\u003cp\u003eSwiftUI views aren’t rendered by Quick Look previews or inline result views. (59908350)\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "Inline results no longer obscure lines below them. (35682773) (FB5729414)",
+       "html": "\u003cp\u003eInline results no longer obscure lines below them. (35682773) (FB5729414)\u003c/p\u003e"
+      },
+      {
+       "text": "Automatic code suggestions are more reliable for Playgrounds embedded within projects. (59411425)",
+       "html": "\u003cp\u003eAutomatic code suggestions are more reliable for Playgrounds embedded within projects. (59411425)\u003c/p\u003e"
+      },
+      {
+       "text": "Single line doc comments no longer cause the following line to be rendered as documentation. (55861744)",
+       "html": "\u003cp\u003eSingle line doc comments no longer cause the following line to be rendered as documentation. (55861744)\u003c/p\u003e"
+      },
+      {
+       "text": "iOS live views now use the system background color by default. (54516552)",
+       "html": "\u003cp\u003eiOS live views now use the system background color by default. (54516552)\u003c/p\u003e"
+      },
+      {
+       "text": "Improved reliability of issue annotations in Playground source code. (43793952) (FB5423160)",
+       "html": "\u003cp\u003eImproved reliability of issue annotations in Playground source code. (43793952) (FB5423160)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Previews",
+   "sections": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Xcode Previews now saves the zoom and pin state of the canvas. (49168788)",
+       "html": "\u003cp\u003eXcode Previews now saves the zoom and pin state of the canvas. (49168788)\u003c/p\u003e"
+      },
+      {
+       "text": "You can now turn off the device bezels in Xcode Previews using the Editor \u003e Previews menu. (48676867)",
+       "html": "\u003cp\u003eYou can now turn off the device bezels in Xcode Previews using the Editor \u0026gt; Previews menu. (48676867)\u003c/p\u003e"
+      },
+      {
+       "text": "Xcode Previews now shows UI for quickly adding a new PreviewProvider when the open file contains no PreviewProvider. (45471721)",
+       "html": "\u003cp\u003eXcode Previews now shows UI for quickly adding a new \u003ca class=\"symbol-name\" href=\"/documentation/swiftui/previewprovider\"\u003e\u003ccode\u003e\u003cspan\u003ePreview\u003cwbr/\u003eProvider\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e when the open file contains no \u003ccode class=\"code-voice\"\u003e\u003cspan\u003ePreview\u003cwbr/\u003eProvider\u003c/span\u003e\u003c/code\u003e. (45471721)\u003c/p\u003e"
+      },
+      {
+       "text": "You can now copy, cut, paste, duplicate, and delete views directly within the Xcode Previews canvas. (56134191)",
+       "html": "\u003cp\u003eYou can now copy, cut, paste, duplicate, and delete views directly within the Xcode Previews canvas. (56134191)\u003c/p\u003e"
+      },
+      {
+       "text": "Selecting a SwiftUI preview in code now highlights the corresponding preview in the canvas, and vice versa. (56412209)",
+       "html": "\u003cp\u003eSelecting a SwiftUI preview in code now highlights the corresponding preview in the canvas, and vice versa. (56412209)\u003c/p\u003e"
+      },
+      {
+       "text": "Xcode Previews now supports previewing iPad applications brought to the Mac. (41416222)",
+       "html": "\u003cp\u003eXcode Previews now supports previewing iPad applications brought to the Mac. (41416222)\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "On-device debugging of SwiftUI Previews may not work for Series 2 and Series 3 watches because the preview is built for the wrong architecture. (59909746)Workaround: Use the Build \u0026 Run action with the watch selected as the destination. The application will be built for the correct architecture.",
+       "html": "\u003cp\u003eOn-device debugging of SwiftUI Previews may not work for Series 2 and Series 3 watches because the preview is built for the wrong architecture. (59909746)\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eWorkaround\u003c/strong\u003e: Use the Build \u0026amp; Run action with the watch selected as the destination. The application will be built for the correct architecture.\u003c/p\u003e"
+      },
+      {
+       "text": "Previews may fail for Mac Catalyst applications or sandboxed macOS applications when Xcode isn’t in the Applications folder. (57096274)Workaround: Move Xcode to the Applications folder",
+       "html": "\u003cp\u003ePreviews may fail for Mac Catalyst applications or sandboxed macOS applications when Xcode isn’t in the Applications folder. (57096274)\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eWorkaround\u003c/strong\u003e: Move Xcode to the Applications folder\u003c/p\u003e"
+      },
+      {
+       "text": "Using ForEach to set Preview properties may result in preview failure. (58985849)Workaround: Use Group to set Preview properties.",
+       "html": "\u003cp\u003eUsing \u003ca class=\"symbol-name\" href=\"/documentation/swiftui/foreach\"\u003e\u003ccode\u003e\u003cspan\u003eFor\u003cwbr/\u003eEach\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e to set Preview properties may result in preview failure. (58985849)\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eWorkaround\u003c/strong\u003e: Use \u003ca class=\"symbol-name\" href=\"/documentation/swiftui/group\"\u003e\u003ccode\u003e\u003cspan\u003eGroup\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e to set Preview properties.\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "The Xcode Previews canvas now surfaces better accessibility information for selectable views. (55538520)",
+       "html": "\u003cp\u003eThe Xcode Previews canvas now surfaces better accessibility information for selectable views. (55538520)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where the popover SwiftUI inspector could open empty. (58064269)",
+       "html": "\u003cp\u003eFixed an issue where the popover SwiftUI inspector could open empty. (58064269)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed a crash when working with certain user types in Xcode Previews. (56057560)",
+       "html": "\u003cp\u003eFixed a crash when working with certain user types in Xcode Previews. (56057560)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where SwiftUI previews display pixelated on 1x displays. (55227670)",
+       "html": "\u003cp\u003eFixed an issue where SwiftUI previews display pixelated on 1x displays. (55227670)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed a crash when using the Xcode Previews inspector. (54991451)",
+       "html": "\u003cp\u003eFixed a crash when using the Xcode Previews inspector. (54991451)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue where some Xcode Previews would spin forever when first updating. (55560302)",
+       "html": "\u003cp\u003eFixed an issue where some Xcode Previews would spin forever when first updating. (55560302)\u003c/p\u003e"
+      },
+      {
+       "text": "Xcode Previews now correctly builds previews in frameworks that depend on other frameworks in the project. (56956786) (FB7431181)",
+       "html": "\u003cp\u003eXcode Previews now correctly builds previews in frameworks that depend on other frameworks in the project. (56956786) (FB7431181)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed a crash in Xcode Previews that could occur when using the inspectors. (55933725)",
+       "html": "\u003cp\u003eFixed a crash in Xcode Previews that could occur when using the inspectors. (55933725)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Project Navigator",
+   "sections": [
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "When restoring a workspace, the Canvas and Assistant checkboxes are sometimes unexpectedly disabled in the Editor Options menu. (59962740)Workaround: Use the Canvas and Assistant items in the Editor menu, or their respective keyboard shortcuts, to toggle the visibility of these views.",
+       "html": "\u003cp\u003eWhen restoring a workspace, the Canvas and Assistant checkboxes are sometimes unexpectedly disabled in the Editor Options menu. (59962740)\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eWorkaround\u003c/strong\u003e: Use the Canvas and Assistant items in the Editor menu, or their respective keyboard shortcuts, to toggle the visibility of these views.\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Server",
+   "sections": [
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "An Xcode Server bot loses authentication when a user clicks the “Replace Repositories” button under the Repositories tab. (59066142)Workaround: Either don’t click “Replace Repositories”, or reauthenticate after doing so.",
+       "html": "\u003cp\u003eAn Xcode Server bot loses authentication when a user clicks the “Replace Repositories” button under the Repositories tab. (59066142)\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eWorkaround\u003c/strong\u003e: Either don’t click “Replace Repositories”, or reauthenticate after doing so.\u003c/p\u003e"
+      },
+      {
+       "text": "Users can no longer select which branch to use for integrations under the Repositories tab of an Xcode Server bot. (59068222, 58615215)",
+       "html": "\u003cp\u003eUsers can no longer select which branch to use for integrations under the Repositories tab of an Xcode Server bot. (59068222, 58615215)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Simulator",
+   "sections": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Simulator supports pointer capture for iPadOS. When pointer capture is enabled, any events for connected mice or trackpads are sent to the simulator instead of to macOS. (55401573)",
+       "html": "\u003cp\u003eSimulator supports pointer capture for iPadOS. When pointer capture is enabled, any events for connected mice or trackpads are sent to the simulator instead of to macOS. (55401573)\u003c/p\u003e"
+      },
+      {
+       "text": "Dragging and dropping an SSL certificate (CER or PEM file) will now install the certificate into the simulated device’s trusted root store. (56225826)",
+       "html": "\u003cp\u003eDragging and dropping an SSL certificate (CER or PEM file) will now install the certificate into the simulated device’s trusted root store. (56225826)\u003c/p\u003e"
+      },
+      {
+       "text": "simctl supports a keychain subcommand. This command can add certificates to the trusted root store or the keychain. It can also reset the keychain, deleting all saved items. For example, to install “my-selfsigned.cer” to the trusted root store:xcrun simctl keychain \u003cdevice\u003e add-root-cert my-selfsigned.cer\nAdding a certificate to the trusted root store causes TLS/SSL connections to trust the certificate. (56213319)",
+       "html": "\u003cp\u003e\u003ccode class=\"code-voice\"\u003e\u003cspan\u003esimctl\u003c/span\u003e\u003c/code\u003e supports a keychain subcommand. This command can add certificates to the trusted root store or the keychain. It can also reset the keychain, deleting all saved items. For example, to install “my-selfsigned.cer” to the trusted root store:\u003c/p\u003e\u003cfigure id=\"3530632\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003excrun simctl keychain \u0026lt;device\u0026gt; add-root-cert my-selfsigned.cer\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003eAdding a certificate to the trusted root store causes \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eTLS\u003c/span\u003e\u003c/code\u003e/\u003ccode class=\"code-voice\"\u003e\u003cspan\u003eSSL\u003c/span\u003e\u003c/code\u003e connections to trust the certificate. (56213319)\u003c/p\u003e"
+      },
+      {
+       "text": "simctl now supports modifying privacy permissions. You can modify privacy permissions to create known states for testing purposes. For example, to allow an example app to access the photo library without any prompts:xcrun simctl privacy \u003cdevice\u003e grant photos com.example.app\nTo reset all permissions to defaults, as if the app had never been installed before:xcrun simctl privacy \u003cdevice\u003e reset all com.example.app\nAlways test your application after resetting permissions to ensure you have the correct usage description keys in your Info.plist and you are properly requesting and handling different authorization states. See simctl help privacy for more information. (55155981)",
+       "html": "\u003cp\u003e\u003ccode class=\"code-voice\"\u003e\u003cspan\u003esimctl\u003c/span\u003e\u003c/code\u003e now supports modifying privacy permissions. You can modify privacy permissions to create known states for testing purposes. For example, to allow an example app to access the photo library without any prompts:\u003c/p\u003e\u003cfigure id=\"3530631\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003excrun simctl privacy \u0026lt;device\u0026gt; grant photos com.example.app\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003eTo reset all permissions to defaults, as if the app had never been installed before:\u003c/p\u003e\u003cfigure id=\"3530635\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003excrun simctl privacy \u0026lt;device\u0026gt; reset all com.example.app\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003eAlways test your application after resetting permissions to ensure you have the correct usage description keys in your \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eInfo\u003cwbr/\u003e.plist\u003c/span\u003e\u003c/code\u003e and you are properly requesting and handling different authorization states. See \u003ccode class=\"code-voice\"\u003e\u003cspan\u003esimctl help privacy\u003c/span\u003e\u003c/code\u003e for more information. (55155981)\u003c/p\u003e"
+      },
+      {
+       "text": "Simulator supports toggling appearance for iOS simulators (13.0 and later). From within the app select Debug \u003e Toggle Appearance. From the command line use the simctl ui subcommand, e.g. to set dark appearance (54556446) (FB7093020):xcrun simctl ui \u003cdevice\u003e appearance dark\n",
+       "html": "\u003cp\u003eSimulator supports toggling appearance for iOS simulators (13.0 and later). From within the app select Debug \u0026gt; Toggle Appearance. From the command line use the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003esimctl ui\u003c/span\u003e\u003c/code\u003e subcommand, e.g. to set dark appearance (54556446) (FB7093020):\u003c/p\u003e\u003cfigure id=\"3530633\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003excrun simctl ui \u0026lt;device\u0026gt; appearance dark\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e\u003c/p\u003e"
+      },
+      {
+       "text": "Simulator now has a menu item and keyboard shortcut to bring up the app switcher in iOS Simulators. (54252732) (FB7014782)",
+       "html": "\u003cp\u003eSimulator now has a menu item and keyboard shortcut to bring up the app switcher in iOS Simulators. (54252732) (FB7014782)\u003c/p\u003e"
+      },
+      {
+       "text": "simctl status_bar now allows changing the operator (carrier) name. (54162823) (FB6985308)",
+       "html": "\u003cp\u003e\u003ccode class=\"code-voice\"\u003e\u003cspan\u003esimctl status\u003cwbr/\u003e_bar\u003c/span\u003e\u003c/code\u003e now allows changing the operator (carrier) name. (54162823) (FB6985308)\u003c/p\u003e"
+      },
+      {
+       "text": "Simulator now has a menu item to trigger screenshots in iOS simulators. This saves a screenshot to the simulated device’s camera roll. The existing screenshot feature has been renamed “Save Screen” for clarity and continues to save the device’s framebuffer to your Mac’s desktop by default. Hold Option when saving the screen to change the default location. (52852628)",
+       "html": "\u003cp\u003eSimulator now has a menu item to trigger screenshots in iOS simulators. This saves a screenshot to the simulated device’s camera roll. The existing screenshot feature has been renamed “Save Screen” for clarity and continues to save the device’s framebuffer to your Mac’s desktop by default. Hold Option when saving the screen to change the default location. (52852628)\u003c/p\u003e"
+      },
+      {
+       "text": "tvOS simulators no longer capture the Touch Bar as if it were a Siri Remote paired with your Mac. (48547948)",
+       "html": "\u003cp\u003etvOS simulators no longer capture the Touch Bar as if it were a Siri Remote paired with your Mac. (48547948)\u003c/p\u003e"
+      },
+      {
+       "text": "Simulator supports simulating remote push notifications, including background content fetch notifications. In Simulator, drag and drop an APNs file onto the target simulator. The file must be a JSON file with a valid Apple Push Notification Service payload, including the “aps” key. It must also contain a top-level “Simulator Target Bundle” with a string value that matches the target application‘s bundle identifier.simctl also supports sending simulated push notifications. If the file contains “Simulator Target Bundle” the bundle identifier is not required, otherwise you must provide it as an argument (8164566):xcrun simctl push \u003cdevice\u003e com.example.my-app ExamplePush.apns\n",
+       "html": "\u003cp\u003eSimulator supports simulating remote push notifications, including background content fetch notifications. In Simulator, drag and drop an APNs file onto the target simulator. The file must be a JSON file with a valid Apple Push Notification Service payload, including the “aps” key. It must also contain a top-level “Simulator Target Bundle” with a string value that matches the target application‘s bundle identifier.\u003c/p\u003e\u003cp\u003e\u003ccode class=\"code-voice\"\u003e\u003cspan\u003esimctl\u003c/span\u003e\u003c/code\u003e also supports sending simulated push notifications. If the file contains “Simulator Target Bundle” the bundle identifier is not required, otherwise you must provide it as an argument (8164566):\u003c/p\u003e\u003cfigure id=\"3530634\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003excrun simctl push \u0026lt;device\u0026gt; com.example.my-app ExamplePush.apns\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e\u003c/p\u003e"
+      },
+      {
+       "text": "Simulator has a new UI that streamlines working with simulated devices. Simulated device windows have a standard title bar, with buttons for common tasks. App-level settings are now available in the Preferences window. (57715023, 57380865, 58013098)",
+       "html": "\u003cp\u003eSimulator has a new UI that streamlines working with simulated devices. Simulated device windows have a standard title bar, with buttons for common tasks. App-level settings are now available in the Preferences window. (57715023, 57380865, 58013098)\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Pointer capture isn't supported over a Screen Sharing session. If you enable pointer capture all input will be blocked and you will be unable to exit capturing mode. Capture mode monitors for HID events, so any system that injects CGEvents directly isn't usable with Simulator's capturing support. (59411574)Workaround: Disconnect and reconnect Screen Sharing. This will automatically cancel pointer capturing.",
+       "html": "\u003cp\u003ePointer capture isn\u0026#39;t supported over a Screen Sharing session. If you enable pointer capture all input will be blocked and you will be unable to exit capturing mode. Capture mode monitors for HID events, so any system that injects CGEvents directly isn\u0026#39;t usable with Simulator\u0026#39;s capturing support. (59411574)\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eWorkaround\u003c/strong\u003e: Disconnect and reconnect Screen Sharing. This will automatically cancel pointer capturing.\u003c/p\u003e"
+      },
+      {
+       "text": "Notification Service Extensions do not work in simulated push notifications. The mutable-content key is not honored. (55822721)",
+       "html": "\u003cp\u003eNotification Service Extensions do not work in simulated push notifications. The \u003ccode class=\"code-voice\"\u003e\u003cspan\u003emutable-content\u003c/span\u003e\u003c/code\u003e key is not honored. (55822721)\u003c/p\u003e"
+      },
+      {
+       "text": "Third-party “endpoint security” software may cause slow simulators, system freezes, or prevent debug processes from running in simulators reliably. This sometimes manifests as debugserver disconnections, or sends simulator applications a SIGKILL signal. (55853555)Workaround: Uninstall the third-party software.",
+       "html": "\u003cp\u003eThird-party “endpoint security” software may cause slow simulators, system freezes, or prevent debug processes from running in simulators reliably. This sometimes manifests as \u003ccode class=\"code-voice\"\u003e\u003cspan\u003edebugserver\u003c/span\u003e\u003c/code\u003e disconnections, or sends simulator applications a \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eSIGKILL\u003c/span\u003e\u003c/code\u003e signal. (55853555)\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eWorkaround\u003c/strong\u003e: Uninstall the third-party software.\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "CoreSimulator now cleans up temporary files generated by Interface Builder during the build process. (53568836)",
+       "html": "\u003cp\u003eCoreSimulator now cleans up temporary files generated by Interface Builder during the build process. (53568836)\u003c/p\u003e"
+      },
+      {
+       "text": "When multiple GPUs are installed, Simulator assigns each booted simulator to one of the available GPUs. (50608554)",
+       "html": "\u003cp\u003eWhen multiple GPUs are installed, Simulator assigns each booted simulator to one of the available GPUs. (50608554)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed an issue that could cause certain kinds of IOSurfaces in simulators to corrupt memory or be created with the wrong memory protection. (52899754)",
+       "html": "\u003cp\u003eFixed an issue that could cause certain kinds of IOSurfaces in simulators to corrupt memory or be created with the wrong memory protection. (52899754)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Siri Intents",
+   "sections": [
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Xcode 11.4 fails to generate source files from your intent definition files when using the Legacy Build System. (60591035)Workaround: First, add a Run Script phase before the Compile Sources phase of your target: xcrun intentbuilderc generate -input ${SRCROOT}/PATH/TO/Intents.intentdefinition -output ${SRCROOT}/Intents -classPrefix \"\" -language Swift -swiftVersion 5.0\nThen, add all of the generated files from the output path specified in the command above to all required targets in your project. You can find more information about arguments of intentbuilderc by running this command: xcrun intentbuilderc help\n",
+       "html": "\u003cp\u003eXcode 11.4 fails to generate source files from your intent definition files when using the Legacy Build System. (60591035)\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eWorkaround\u003c/strong\u003e: First, add a Run Script phase before the Compile Sources phase of your target: \u003c/p\u003e\u003cfigure id=\"3568580\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003excrun intentbuilderc generate -input ${SRCROOT}/PATH/TO/Intents.intentdefinition -output ${SRCROOT}/Intents -classPrefix \u0026#34;\u0026#34; -language Swift -swiftVersion 5.0\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003eThen, add all of the generated files from the output path specified in the command above to all required targets in your project. \u003c/p\u003e\u003cp\u003eYou can find more information about arguments of \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eintentbuilderc\u003c/span\u003e\u003c/code\u003e by running this command: \u003c/p\u003e\u003cfigure id=\"3568582\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003excrun intentbuilderc help\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Source Control",
+   "sections": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Improved stability of core source-control functionality, and reduced memory footprint related issues. (54765574)",
+       "html": "\u003cp\u003eImproved stability of core source-control functionality, and reduced memory footprint related issues. (54765574)\u003c/p\u003e"
+      },
+      {
+       "text": "Split functionality of “Fetch and Refresh Status” menu item into two separate menu items to separate fetching and refreshing status. (54326241)",
+       "html": "\u003cp\u003eSplit functionality of “Fetch and Refresh Status” menu item into two separate menu items to separate fetching and refreshing status. (54326241)\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "Fixed an issue that prevented adding a GitHub account. (59205637)",
+       "html": "\u003cp\u003eFixed an issue that prevented adding a GitHub account. (59205637)\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Deprecations",
+     "items": [
+      {
+       "text": "Personal access tokens are now the default method of authentication for GitHub.com Source Control accounts in Xcode. Newly added accounts will require a personal access token and you may need to update existing accounts with a personal access token after July 1, 2020.  For more information, see Deprecated APIs and authentication. (59388185)",
+       "html": "\u003cp\u003ePersonal access tokens are now the default method of authentication for GitHub.com Source Control accounts in Xcode. Newly added accounts will require a personal access token and you may need to update existing accounts with a personal access token after July 1, 2020.  For more information, see \u003ca href=\"https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api\"\u003eDeprecated APIs and authentication\u003c/a\u003e. (59388185)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Source Editor",
+   "sections": [
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "A rename refactor of a Swift or Objective-C object correctly renames the file that contains the object. (32408445)",
+       "html": "\u003cp\u003eA rename refactor of a Swift or Objective-C object correctly renames the file that contains the object. (32408445)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Swift Packages",
+   "sections": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Remote Swift packages with tools version 5.2 and above no longer resolve package dependencies that are only used in their test targets, improving performance and reducing the chance of dependency version conflicts. (56925017)",
+       "html": "\u003cp\u003eRemote Swift packages with tools version 5.2 and above no longer resolve package dependencies that are only used in their test targets, improving performance and reducing the chance of dependency version conflicts. (56925017)\u003c/p\u003e"
+      },
+      {
+       "text": "Swift Package Manager uses a new strategy to resolve package dependencies that significantly improves the quality of error messages and performance in complex package graphs. (45371461)",
+       "html": "\u003cp\u003eSwift Package Manager uses a new strategy to resolve package dependencies that significantly improves the quality of error messages and performance in complex package graphs. (45371461)\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "iOS, tvOS, or watchOS apps with a Swift Package that builds a dynamic library can be submitted to the App Store. (55564324) (FB7303066)",
+       "html": "\u003cp\u003eiOS, tvOS, or watchOS apps with a Swift Package that builds a dynamic library can be submitted to the App Store. (55564324) (FB7303066)\u003c/p\u003e"
+      },
+      {
+       "text": "You can now use Swift-only XCTest APIs (such as XCTUnwrap(_:_:file:line:)) when building a package using command-line SwiftPM. (51959291)",
+       "html": "\u003cp\u003eYou can now use Swift-only \u003ca href=\"/documentation/xctest\"\u003eXCTest\u003c/a\u003e APIs (such as \u003ca class=\"symbol-name\" href=\"/documentation/xctest/3380195-xctunwrap\"\u003e\u003ccode\u003e\u003cspan\u003eXCTUnwrap(_:\u003cwbr/\u003e_:\u003cwbr/\u003efile:\u003cwbr/\u003eline:)\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e) when building a package using command-line SwiftPM. (51959291)\u003c/p\u003e"
+      },
+      {
+       "text": "You can import libxml2, libxslt, and libexslt modules in both Swift package targets and regular Xcode targets, without any additional search paths. (52043828)",
+       "html": "\u003cp\u003eYou can import \u003ccode class=\"code-voice\"\u003e\u003cspan\u003elibxml2\u003c/span\u003e\u003c/code\u003e, \u003ccode class=\"code-voice\"\u003e\u003cspan\u003elibxslt\u003c/span\u003e\u003c/code\u003e, and \u003ccode class=\"code-voice\"\u003e\u003cspan\u003elibexslt\u003c/span\u003e\u003c/code\u003e modules in both Swift package targets and regular Xcode targets, without any additional search paths. (52043828)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Swift",
+   "sections": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Type checking is now more precise.  In many situations, this precision allows code completion to be 1.2 to 1.6 times faster for large files in Xcode 11.4, compared to Xcode 11.3.1.",
+       "html": "\u003cp\u003eType checking is now more precise.  In many situations, this precision allows code completion to be 1.2 to 1.6 times faster for large files in Xcode 11.4, compared to Xcode 11.3.1.\u003c/p\u003e"
+      },
+      {
+       "text": "Code completion of implicit members is now available for incomplete dictionary literals and incomplete ternary expressions. ",
+       "html": "\u003cp\u003eCode completion of implicit members is now available for incomplete dictionary literals and incomplete ternary expressions. \u003c/p\u003e"
+      },
+      {
+       "text": "Code completion results have improved type information. Results will display opaque result types (for example some View) when possible, and preserve typealiases. Results will no longer show unnecessary parent types. For example:import SwiftUI\nstruct MyModifier: ViewModifier {\n    body\n}\nWhen completing body inside MyModifier, Xcode 11.4 will offer body(content: Content) -\u003e some View.",
+       "html": "\u003cp\u003eCode completion results have improved type information. Results will display opaque result types (for example \u003ccode class=\"code-voice\"\u003e\u003cspan\u003esome View)\u003c/span\u003e\u003c/code\u003e when possible, and preserve typealiases. Results will no longer show unnecessary parent types. For example:\u003c/p\u003e\u003cfigure id=\"3563834\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003eimport SwiftUI\nstruct MyModifier: ViewModifier {\n    body\n}\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003eWhen completing \u003ccode class=\"code-voice\"\u003e\u003cspan\u003ebody\u003c/span\u003e\u003c/code\u003e inside \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eMy\u003cwbr/\u003eModifier\u003c/span\u003e\u003c/code\u003e,\u003ccode class=\"code-voice\"\u003e\u003cspan\u003e \u003c/span\u003e\u003c/code\u003eXcode 11.4 will offer \u003ccode class=\"code-voice\"\u003e\u003cspan\u003ebody(content: Content) -\u0026gt; some View\u003c/span\u003e\u003c/code\u003e.\u003c/p\u003e"
+      },
+      {
+       "text": "The compiler now supports local functions whose default arguments capture values from outer scopes. (SR-2189) (20796451)func outer(x: Int) -\u003e (Int, Int) {\n    func inner(y: Int = x) -\u003e Int {\n        return y\n    }\n    \n    return (inner(), inner(y: 0))\n}\n  ",
+       "html": "\u003cp\u003eThe compiler now supports local functions whose default arguments capture values from outer scopes. (\u003ca href=\"https://bugs.swift.org/browse/SR-2189\"\u003eSR-2189\u003c/a\u003e) (20796451)\u003c/p\u003e\u003cfigure id=\"3530699\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003efunc outer(x: Int) -\u0026gt; (Int, Int) {\n    func inner(y: Int = x) -\u0026gt; Int {\n        return y\n    }\n    \n    return (inner(), inner(y: 0))\n}\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e  \u003c/p\u003e"
+      },
+      {
+       "text": "The compiler will now emit a warning when attempting to pass a temporary pointer argument produced from an array, string, or inout argument to a parameter which is known to escape it. This includes the various initializers for the UnsafePointer/UnsafeBufferPointer family of types, as well as memberwise initializers. For example, the compiler will emit warnings compiling the following code:struct S {\n    var ptr: UnsafePointer\u003cInt8\u003e\n}\n\nfunc foo() {\n    var i: Int8 = 0\n    let ptr = UnsafePointer(\u0026i)\n    // warning: initialization of 'UnsafePointer\u003cInt8\u003e' results in a\n    // dangling pointer\n\n    let s1 = S(ptr: [1, 2, 3])\n    // warning: passing '[Int8]' to parameter, but argument 'ptr' should be a\n    // pointer that outlives the call to 'init(ptr:)'\n\n    let s2 = S(ptr: \"hello\")\n    // warning: passing 'String' to parameter, but argument 'ptr' should be a\n    // pointer that outlives the call to 'init(ptr:)'\n}\nAll 3 of the above examples are unsound because each argument produces a temporary pointer only valid for the duration of the call to which they are passed. Therefore the returned value in each case references a dangling pointer. (SR-2790) (31232450)",
+       "html": "\u003cp\u003eThe compiler will now emit a warning when attempting to pass a temporary pointer argument produced from an array, string, or \u003ccode class=\"code-voice\"\u003e\u003cspan\u003einout\u003c/span\u003e\u003c/code\u003e argument to a parameter which is known to escape it. This includes the various initializers for the \u003ca class=\"symbol-name\" href=\"/documentation/swift/unsafepointer\"\u003e\u003ccode\u003e\u003cspan\u003eUnsafe\u003cwbr/\u003ePointer\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e/\u003ca class=\"symbol-name\" href=\"/documentation/swift/unsafebufferpointer\"\u003e\u003ccode\u003e\u003cspan\u003eUnsafe\u003cwbr/\u003eBuffer\u003cwbr/\u003ePointer\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e family of types, as well as memberwise initializers. For example, the compiler will emit warnings compiling the following code:\u003c/p\u003e\u003cfigure id=\"3561460\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003estruct S {\n    var ptr: UnsafePointer\u0026lt;Int8\u0026gt;\n}\n\nfunc foo() {\n    var i: Int8 = 0\n    let ptr = UnsafePointer(\u0026amp;i)\n    // warning: initialization of \u0026#39;UnsafePointer\u0026lt;Int8\u0026gt;\u0026#39; results in a\n    // dangling pointer\n\n    let s1 = S(ptr: [1, 2, 3])\n    // warning: passing \u0026#39;[Int8]\u0026#39; to parameter, but argument \u0026#39;ptr\u0026#39; should be a\n    // pointer that outlives the call to \u0026#39;init(ptr:)\u0026#39;\n\n    let s2 = S(ptr: \u0026#34;hello\u0026#34;)\n    // warning: passing \u0026#39;String\u0026#39; to parameter, but argument \u0026#39;ptr\u0026#39; should be a\n    // pointer that outlives the call to \u0026#39;init(ptr:)\u0026#39;\n}\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003eAll 3 of the above examples are unsound because each argument produces a temporary pointer only valid for the duration of the call to which they are passed. Therefore the returned value in each case references a dangling pointer. (\u003ca href=\"https://bugs.swift.org/browse/SR-2790\"\u003eSR-2790\u003c/a\u003e) (31232450)\u003c/p\u003e"
+      },
+      {
+       "text": "You can call values of types that declare func callAsFunction methods like functions. The call syntax is shorthand for applying func callAsFunction methods:struct Adder {\n    var base: Int\n\n    func callAsFunction(_ x: Int) -\u003e Int {\n      return x + base\n    }\n}\n\nvar adder = Adder(base: 3)\nadder(10) // returns 13, same as adder.callAsFunction(10)\nYou must include func callAsFunction argument labels at call sites. You can add multiple func callAsFunction methods on a single type, and you can mark them as mutating. func callAsFunction works with throws and rethrows, and with trailing closures. (59014791)",
+       "html": "\u003cp\u003eYou can call values of types that declare \u003ccode class=\"code-voice\"\u003e\u003cspan\u003efunc call\u003cwbr/\u003eAs\u003cwbr/\u003eFunction\u003c/span\u003e\u003c/code\u003e methods like functions. The call syntax is shorthand for applying \u003ccode class=\"code-voice\"\u003e\u003cspan\u003efunc call\u003cwbr/\u003eAs\u003cwbr/\u003eFunction\u003c/span\u003e\u003c/code\u003e methods:\u003c/p\u003e\u003cfigure id=\"3530694\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003estruct Adder {\n    var base: Int\n\n    func callAsFunction(_ x: Int) -\u0026gt; Int {\n      return x + base\n    }\n}\n\nvar adder = Adder(base: 3)\nadder(10) // returns 13, same as adder.callAsFunction(10)\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003eYou must include \u003ccode class=\"code-voice\"\u003e\u003cspan\u003efunc call\u003cwbr/\u003eAs\u003cwbr/\u003eFunction\u003c/span\u003e\u003c/code\u003e argument labels at call sites. You can add multiple \u003ccode class=\"code-voice\"\u003e\u003cspan\u003efunc call\u003cwbr/\u003eAs\u003cwbr/\u003eFunction\u003c/span\u003e\u003c/code\u003e methods on a single type, and you can mark them as \u003ccode class=\"code-voice\"\u003e\u003cspan\u003emutating\u003c/span\u003e\u003c/code\u003e. \u003ccode class=\"code-voice\"\u003e\u003cspan\u003efunc call\u003cwbr/\u003eAs\u003cwbr/\u003eFunction\u003c/span\u003e\u003c/code\u003e works with \u003ccode class=\"code-voice\"\u003e\u003cspan\u003ethrows\u003c/span\u003e\u003c/code\u003e and \u003ccode class=\"code-voice\"\u003e\u003cspan\u003erethrows\u003c/span\u003e\u003c/code\u003e, and with trailing closures. (59014791)\u003c/p\u003e"
+      },
+      {
+       "text": "Subscripts can now declare default arguments. (59012048)struct Subscriptable {\n    subscript(x: Int, y: Int = 0) {\n      ...\n    }\n}\n\nlet s = Subscriptable()\nprint(s[0])\n",
+       "html": "\u003cp\u003eSubscripts can now declare default arguments. (59012048)\u003c/p\u003e\u003cfigure id=\"3530697\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003estruct Subscriptable {\n    subscript(x: Int, y: Int = 0) {\n      ...\n    }\n}\n\nlet s = Subscriptable()\nprint(s[0])\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e\u003c/p\u003e"
+      },
+      {
+       "text": "A class-constrained protocol extension, where the extended protocol does not impose a class constraint, now infers the constraint implicitly. (59011997)protocol Foo {}\nclass Bar: Foo {\n    var someProperty: Int = 0\n}\n\n// Even though 'Foo' does not impose a class constraint, it is automatically\n// inferred due to the Self: Bar constraint.\nextension Foo where Self: Bar {\n    var anotherProperty: Int {\n        get { return someProperty }\n        // As a result, the setter is now implicitly nonmutating, just like it would\n        // be if 'Foo' had a class constraint.\n        set { someProperty = newValue }\n    }\n}\n",
+       "html": "\u003cp\u003eA class-constrained protocol extension, where the extended protocol does not impose a class constraint, now infers the constraint implicitly. (59011997)\u003c/p\u003e\u003cfigure id=\"3530695\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003eprotocol Foo {}\nclass Bar: Foo {\n    var someProperty: Int = 0\n}\n\n// Even though \u0026#39;Foo\u0026#39; does not impose a class constraint, it is automatically\n// inferred due to the Self: Bar constraint.\nextension Foo where Self: Bar {\n    var anotherProperty: Int {\n        get { return someProperty }\n        // As a result, the setter is now implicitly nonmutating, just like it would\n        // be if \u0026#39;Foo\u0026#39; had a class constraint.\n        set { someProperty = newValue }\n    }\n}\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e\u003c/p\u003e"
+      },
+      {
+       "text": "Convenience initializer inheritance for subclasses defined outside the module that defines the base class now comes with additional restrictions. When these subclasses have a base class with non-public designated initializers, they no longer automatically inherit convenience initializers from their superclasses. To restore this automatic inheritance behavior, the base class must ensure that all of its designated initializers are public or open. (51249311)",
+       "html": "\u003cp\u003eConvenience initializer inheritance for subclasses defined outside the module that defines the base class now comes with additional restrictions. When these subclasses have a base class with non-public designated initializers, they no longer automatically inherit convenience initializers from their superclasses. To restore this automatic inheritance behavior, the base class must ensure that all of its designated initializers are \u003ccode class=\"code-voice\"\u003e\u003cspan\u003epublic\u003c/span\u003e\u003c/code\u003e or \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eopen\u003c/span\u003e\u003c/code\u003e. (51249311)\u003c/p\u003e"
+      },
+      {
+       "text": "Xcode and the corresponding Command Line Tools package include the SourceKit-LSP language server for Swift and C-based languages. The language server is in early development, and this is a great time to experiment with it. SourceKit-LSP can be used with third-party tools that support the Language Server Protocol (LSP), and it supports Swift Packages built from the command-line.  For information about using SourceKit-LSP see Getting Started with SourceKit-LSP. (48004600)",
+       "html": "\u003cp\u003eXcode and the corresponding Command Line Tools package include the SourceKit-LSP language server for Swift and C-based languages. The language server is in early development, and this is a great time to experiment with it. SourceKit-LSP can be used with third-party tools that support the Language Server Protocol (LSP), and it supports Swift Packages built from the command-line.  For information about using SourceKit-LSP see \u003ca href=\"https://github.com/apple/sourcekit-lsp/#getting-started\"\u003eGetting Started with SourceKit-LSP\u003c/a\u003e. (48004600)\u003c/p\u003e"
+      },
+      {
+       "text": "The Swift compiler uses a new strategy to produce diagnostics that drastically improves the quality and precision of error messages. Details about this new strategy can be found on the post New Diagnostic Architecture Overview on the Swift blog. (36854046)",
+       "html": "\u003cp\u003eThe Swift compiler uses a new strategy to produce diagnostics that drastically improves the quality and precision of error messages. Details about this new strategy can be found on the post \u003ca href=\"https://swift.org/blog/new-diagnostic-arch-overview/\"\u003eNew Diagnostic Architecture Overview\u003c/a\u003e on the Swift blog. (36854046)\u003c/p\u003e"
+      },
+      {
+       "text": "A method override can no longer have a generic signature with requirements not imposed by the base method. For example, the below code produces an error. (23626260) (FB5382462)protocol P {}\n      \nclass Base {\n    func foo\u003cT\u003e(arg: T) {}\n}\n      \nclass Derived: Base {\n    // generates an error because of the added requirement\n    override func foo\u003cT: P\u003e(arg: T) {}\n}\n",
+       "html": "\u003cp\u003eA method override can no longer have a generic signature with requirements not imposed by the base method. For example, the below code produces an error. (23626260) (FB5382462)\u003c/p\u003e\u003cfigure id=\"3530696\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003eprotocol P {}\n      \nclass Base {\n    func foo\u0026lt;T\u0026gt;(arg: T) {}\n}\n      \nclass Derived: Base {\n    // generates an error because of the added requirement\n    override func foo\u0026lt;T: P\u0026gt;(arg: T) {}\n}\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "If an Objective-C class is defined with the objc_runtime_name attribute and imported into Swift, Swift code may crash when trying to access the class. (60888835)Workaround: Instead of using objc_runtime_name, define the class with its runtime name as the class name, and use a typedef to establish the desired source-level name:// This may cause a crash.\n__attribute__((objc_runtime_name(\"Bar\")))\n@interface Foo: NSObject\n@end\n\n// Workaround\n@interface Bar: NSObject\n@end\ntypedef Bar Foo;\n",
+       "html": "\u003cp\u003eIf an Objective-C class is defined with the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eobjc\u003cwbr/\u003e_runtime\u003cwbr/\u003e_name\u003c/span\u003e\u003c/code\u003e attribute and imported into Swift, Swift code may crash when trying to access the class. (60888835)\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eWorkaround\u003c/strong\u003e: Instead of using \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eobjc\u003cwbr/\u003e_runtime\u003cwbr/\u003e_name\u003c/span\u003e\u003c/code\u003e, define the class with its runtime name as the class name, and use a \u003ccode class=\"code-voice\"\u003e\u003cspan\u003etypedef\u003c/span\u003e\u003c/code\u003e to establish the desired source-level name:\u003c/p\u003e\u003cfigure id=\"3568597\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003e// This may cause a crash.\n__attribute__((objc_runtime_name(\u0026#34;Bar\u0026#34;)))\n@interface Foo: NSObject\n@end\n\n// Workaround\n@interface Bar: NSObject\n@end\ntypedef Bar Foo;\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e\u003c/p\u003e"
+      },
+      {
+       "text": "Code that relies on the compiler automatically tupling a pattern may lead to a compiler error when upgrading to Xcode 11.4, even though the code compiled before. (58425942)For example, leaving out parentheses when switching on an Optional of a tuple type causes a compiler error:switch x { // error: switch must be exhaustive\n    case .some((let a, let b), let c): // warning: the enum case has a\n         // single tuple as an associated value, but there are several\n         // patterns here, implicitly tupling the patterns and trying\n         // to match that instead\n    ...\n}\nWorkaround: Add extra parentheses to explicitly tuple the pattern:switch x {\n    case .some(((let a, let b), let c)): // Notice the extra pair of parentheses.\n    ...\n}\n",
+       "html": "\u003cp\u003eCode that relies on the compiler automatically tupling a pattern may lead to a compiler error when upgrading to Xcode 11.4, even though the code compiled before. (58425942)\u003c/p\u003e\u003cp\u003eFor example, leaving out parentheses when switching on an Optional of a tuple type causes a compiler error:\u003c/p\u003e\u003cfigure id=\"3561488\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003eswitch x { // error: switch must be exhaustive\n    case .some((let a, let b), let c): // warning: the enum case has a\n         // single tuple as an associated value, but there are several\n         // patterns here, implicitly tupling the patterns and trying\n         // to match that instead\n    ...\n}\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e\u003cstrong\u003eWorkaround\u003c/strong\u003e:\u003cstrong\u003e \u003c/strong\u003eAdd extra parentheses to explicitly tuple the pattern:\u003c/p\u003e\u003cfigure id=\"3561499\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003eswitch x {\n    case .some(((let a, let b), let c)): // Notice the extra pair of parentheses.\n    ...\n}\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "The compiler now correctly strips argument labels from function references used with the as operator in a function call. As a result, you can now use the as operator to disambiguate a call to a function with argument labels: func foo(x: Int) {}\nfunc foo(x: UInt) {}\n      \n(foo as (Int) -\u003e Void)(5)  // Calls foo(x: Int)\n(foo as (UInt) -\u003e Void)(5) // Calls foo(x: UInt)\nPreviously, this was only possible for functions without argument labels. This change also means that you can no longer use a generic type alias to preserve the argument labels of a function reference through the as operator. The following is now rejected:typealias Magic\u003cT\u003e = T\nfunc foo(x: Int) {}\n(foo as Magic)(x: 5) // error: Extraneous argument label 'x:' in call\nYou must instead call the function value without argument labels. (59011892)(foo as Magic)(5)\n",
+       "html": "\u003cp\u003eThe compiler now correctly strips argument labels from function references used with the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eas\u003c/span\u003e\u003c/code\u003e operator in a function call. As a result, you can now use the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eas\u003c/span\u003e\u003c/code\u003e operator to disambiguate a call to a function with argument labels: \u003c/p\u003e\u003cfigure id=\"3561576\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003efunc foo(x: Int) {}\nfunc foo(x: UInt) {}\n      \n(foo as (Int) -\u0026gt; Void)(5)  // Calls foo(x: Int)\n(foo as (UInt) -\u0026gt; Void)(5) // Calls foo(x: UInt)\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003ePreviously, this was only possible for functions without argument labels. This change also means that you can no longer use a generic type alias to preserve the argument labels of a function reference through the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eas\u003c/span\u003e\u003c/code\u003e operator. The following is now rejected:\u003c/p\u003e\u003cfigure id=\"3561574\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003etypealias Magic\u0026lt;T\u0026gt; = T\nfunc foo(x: Int) {}\n(foo as Magic)(x: 5) // error: Extraneous argument label \u0026#39;x:\u0026#39; in call\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003eYou must instead call the function value without argument labels. (59011892)\u003c/p\u003e\u003cfigure id=\"3561575\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003e(foo as Magic)(5)\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Testing",
+   "sections": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "To enable test timeout behavior from xcodebuild, or to override the corresponding setting in the test plan, pass the -test-timeouts-enabled option. To configure the default execution time allowance for an individual test when timeouts are enabled, pass the -default-test-execution-time-allowance option. To enforce an absolute cap on the amount of time a test can run (if it requests additional time via the executionTimeAllowance API), pass the -maximum-test-execution-time-allowance option. Refer to the xcodebuild man page (man xcodebuild) for more information. (58413928)",
+       "html": "\u003cp\u003eTo enable test timeout behavior from \u003ccode class=\"code-voice\"\u003e\u003cspan\u003excodebuild\u003c/span\u003e\u003c/code\u003e, or to override the corresponding setting in the test plan, pass the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003e-test-timeouts-enabled\u003c/span\u003e\u003c/code\u003e option. To configure the default execution time allowance for an individual test when timeouts are enabled, pass the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003e-default-test-execution-time-allowance\u003c/span\u003e\u003c/code\u003e option. To enforce an absolute cap on the amount of time a test can run (if it requests additional time via the \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xctestcase/3526064-executiontimeallowance\"\u003e\u003ccode\u003e\u003cspan\u003eexecution\u003cwbr/\u003eTime\u003cwbr/\u003eAllowance\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e API), pass the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003e-maximum-test-execution-time-allowance\u003c/span\u003e\u003c/code\u003e option. Refer to the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003excodebuild\u003c/span\u003e\u003c/code\u003e man page (\u003ccode class=\"code-voice\"\u003e\u003cspan\u003eman xcodebuild\u003c/span\u003e\u003c/code\u003e) for more information. (58413928)\u003c/p\u003e"
+      },
+      {
+       "text": "You can enable test timeouts through the “Test Timeouts” option in the test plan. You can override this value from the command-line through the -test-timeouts-enabled option to xcodebuild. (58125818)",
+       "html": "\u003cp\u003eYou can enable test timeouts through the “Test Timeouts” option in the test plan. You can override this value from the command-line through the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003e-test-timeouts-enabled\u003c/span\u003e\u003c/code\u003e option to \u003ccode class=\"code-voice\"\u003e\u003cspan\u003excodebuild\u003c/span\u003e\u003c/code\u003e. (58125818)\u003c/p\u003e"
+      },
+      {
+       "text": "The XCTAssertEqualWithAccuracy and XCTAssertNotEqualWithAccuracy APIs now support all FloatingPoint types. (57523034)",
+       "html": "\u003cp\u003eThe \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xctassertequalwithaccuracy\"\u003e\u003ccode\u003e\u003cspan\u003eXCTAssert\u003cwbr/\u003eEqual\u003cwbr/\u003eWith\u003cwbr/\u003eAccuracy\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e and \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xctassertnotequalwithaccuracy\"\u003e\u003ccode\u003e\u003cspan\u003eXCTAssert\u003cwbr/\u003eNot\u003cwbr/\u003eEqual\u003cwbr/\u003eWith\u003cwbr/\u003eAccuracy\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e APIs now support all FloatingPoint types. (57523034)\u003c/p\u003e"
+      },
+      {
+       "text": "When building a scheme which has been converted to use test plans and whose active test plan has code coverage enabled, Xcode now includes code coverage instrumentation when building for the ‘Run’ action, in addition to the ‘Test’ action. This matches the behavior of building schemes which don’t use test plans and have code coverage enabled, and avoids unnecessary rebuilds when alternating between running and testing actions. (57367856)",
+       "html": "\u003cp\u003eWhen building a scheme which has been converted to use test plans and whose active test plan has code coverage enabled, Xcode now includes code coverage instrumentation when building for the ‘Run’ action, in addition to the ‘Test’ action. This matches the behavior of building schemes which don’t use test plans and have code coverage enabled, and avoids unnecessary rebuilds when alternating between running and testing actions. (57367856)\u003c/p\u003e"
+      },
+      {
+       "text": "Resetting the authorization status of a protected resource (e.g. Contacts, Bluetooth or Location) is now supported in UI testing contexts. XCUIApplication gains a new method, resetAuthorizationStatus(for:), that accepts an XCUIProtectedResource. This allows test authors to easily set the the authorization status of apps to their initial state, providing a convenient way to test first-launch and first-access flows of their resources. (56628656)",
+       "html": "\u003cp\u003eResetting the authorization status of a protected resource (e.g. Contacts, Bluetooth or Location) is now supported in UI testing contexts. \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xcuiapplication\"\u003e\u003ccode\u003e\u003cspan\u003eXCUIApplication\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e gains a new method, \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xcuiapplication/3526066-resetauthorizationstatus\"\u003e\u003ccode\u003e\u003cspan\u003ereset\u003cwbr/\u003eAuthorization\u003cwbr/\u003eStatus(for:)\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e, that accepts an \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xcuiprotectedresource\"\u003e\u003ccode\u003e\u003cspan\u003eXCUIProtected\u003cwbr/\u003eResource\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e. This allows test authors to easily set the the authorization status of apps to their initial state, providing a convenient way to test first-launch and first-access flows of their resources. (56628656)\u003c/p\u003e"
+      },
+      {
+       "text": "Xcode’s New File templates for XCTest in Swift now include the throws keyword for all test methods. Errors thrown by test methods are recorded as test failures. (56619497)",
+       "html": "\u003cp\u003eXcode’s New File templates for \u003ca href=\"/documentation/xctest\"\u003eXCTest\u003c/a\u003e in Swift now include the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003ethrows\u003c/span\u003e\u003c/code\u003e keyword for all test methods. Errors thrown by test methods are recorded as test failures. (56619497)\u003c/p\u003e"
+      },
+      {
+       "text": "If you enable parallel testing for a test target in the active scheme/test plan, and you pass the -parallelize-tests-among-destinations flag to xcodebuild along with multiple destination specifiers, Xcode distributes test classes within that target among the destinations to speed up test execution. (56585597)",
+       "html": "\u003cp\u003eIf you enable parallel testing for a test target in the active scheme/test plan, and you pass the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003e-parallelize-tests-among-destinations\u003c/span\u003e\u003c/code\u003e flag to \u003ccode class=\"code-voice\"\u003e\u003cspan\u003excodebuild\u003c/span\u003e\u003c/code\u003e along with multiple destination specifiers, Xcode distributes test classes within that target among the destinations to speed up test execution. (56585597)\u003c/p\u003e"
+      },
+      {
+       "text": "UI testing and recording on macOS support the Fn key modifier. (56178883)",
+       "html": "\u003cp\u003eUI testing and recording on macOS support the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eFn\u003c/span\u003e\u003c/code\u003e key modifier. (56178883)\u003c/p\u003e"
+      },
+      {
+       "text": "When you run xcodebuild build-for-testing for a scheme that uses test plans, its generated .xctestrun file now includes metadata about each test plan, including the name of the test plan and whether it’s the scheme’s default plan. (53997527)",
+       "html": "\u003cp\u003eWhen you run \u003ccode class=\"code-voice\"\u003e\u003cspan\u003excodebuild build-for-testing\u003c/span\u003e\u003c/code\u003e for a scheme that uses test plans, its generated \u003ccode class=\"code-voice\"\u003e\u003cspan\u003e.xctestrun\u003c/span\u003e\u003c/code\u003e file now includes metadata about each test plan, including the name of the test plan and whether it’s the scheme’s default plan. (53997527)\u003c/p\u003e"
+      },
+      {
+       "text": "Xcode introduced an “Enable Testing Search Paths” build setting to improve support for test support frameworks and libraries. This build setting is on by default for test bundle targets, as well as for targets which explicitly include XCTest.framework in their “Link Binary With Libraries” list. Source files in such targets can now import XCTest without setting any custom search paths. (51117167)",
+       "html": "\u003cp\u003eXcode introduced an “Enable Testing Search Paths” build setting to improve support for test support frameworks and libraries. This build setting is on by default for test bundle targets, as well as for targets which explicitly include \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eXCTest\u003cwbr/\u003e.framework\u003c/span\u003e\u003c/code\u003e in their “Link Binary With Libraries” list. Source files in such targets can now import \u003ca href=\"/documentation/xctest\"\u003eXCTest\u003c/a\u003e without setting any custom search paths. (51117167)\u003c/p\u003e"
+      },
+      {
+       "text": "XCTest has improved error handling and logging for the case where a custom XCTestObservation implementation throws an exception. (44291078)",
+       "html": "\u003cp\u003e\u003ca href=\"/documentation/xctest\"\u003eXCTest\u003c/a\u003e has improved error handling and logging for the case where a custom \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xctestobservation\"\u003e\u003ccode\u003e\u003cspan\u003eXCTest\u003cwbr/\u003eObservation\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e implementation throws an exception. (44291078)\u003c/p\u003e"
+      },
+      {
+       "text": "xcodebuild now validates the deployment target and architecture of built products when running xcodebuild test-without-building with the -xctestrun flag. Targets that aren’t compatible with the requested run destination are skipped. (43107996)",
+       "html": "\u003cp\u003e\u003ccode class=\"code-voice\"\u003e\u003cspan\u003excodebuild\u003c/span\u003e\u003c/code\u003e now validates the deployment target and architecture of built products when running \u003ccode class=\"code-voice\"\u003e\u003cspan\u003excodebuild test-without-building\u003c/span\u003e\u003c/code\u003e with the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003e-xctestrun\u003c/span\u003e\u003c/code\u003e flag. Targets that aren’t compatible with the requested run destination are skipped. (43107996)\u003c/p\u003e"
+      },
+      {
+       "text": "XCTest now includes throwing variants of the setUp() and tearDown() instance methods, allowing tests to throw errors in Swift during set up or tear down. Override the setUpWithError() or tearDownWithError() methods instead of setUp() or tearDown(), respectively. If an error is thrown by setUpWithError(), the test method is not executed, and if the error was due to calling an XCTSkip* API, the test is marked as skipped instead of failed. (42069831)",
+       "html": "\u003cp\u003e\u003ca href=\"/documentation/xctest\"\u003eXCTest\u003c/a\u003e now includes throwing variants of the \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xctest/1500341-setup\"\u003e\u003ccode\u003e\u003cspan\u003eset\u003cwbr/\u003eUp()\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e and \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xctest/1500463-teardown\"\u003e\u003ccode\u003e\u003cspan\u003etear\u003cwbr/\u003eDown()\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e instance methods, allowing tests to throw errors in Swift during set up or tear down. Override the \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xctest/3521150-setupwitherror\"\u003e\u003ccode\u003e\u003cspan\u003eset\u003cwbr/\u003eUp\u003cwbr/\u003eWith\u003cwbr/\u003eError()\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e or \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xctest/3521151-teardownwitherror\"\u003e\u003ccode\u003e\u003cspan\u003etear\u003cwbr/\u003eDown\u003cwbr/\u003eWith\u003cwbr/\u003eError()\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e methods instead of \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xctest/1500341-setup\"\u003e\u003ccode\u003e\u003cspan\u003eset\u003cwbr/\u003eUp()\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e or \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xctest/1500463-teardown\"\u003e\u003ccode\u003e\u003cspan\u003etear\u003cwbr/\u003eDown()\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e, respectively. If an error is thrown by \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xctest/3521150-setupwitherror\"\u003e\u003ccode\u003e\u003cspan\u003eset\u003cwbr/\u003eUp\u003cwbr/\u003eWith\u003cwbr/\u003eError()\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e, the test method is not executed, and if the error was due to calling an \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eXCTSkip*\u003c/span\u003e\u003c/code\u003e API, the test is marked as skipped instead of failed. (42069831)\u003c/p\u003e"
+      },
+      {
+       "text": "Xcode now validates the deployment target of test bundle targets, and skips running any tests that are incompatible with the selected run destination. Some targets may require a change to their minimum deployment target build setting to continue to run on older run destinations. (39775813)",
+       "html": "\u003cp\u003eXcode now validates the deployment target of test bundle targets, and skips running any tests that are incompatible with the selected run destination. Some targets may require a change to their minimum deployment target build setting to continue to run on older run destinations. (39775813)\u003c/p\u003e"
+      },
+      {
+       "text": "Errors thrown by Swift test methods now record the source location where the error was thrown. Xcode highlights these lines in the source editor and allows jumping to those locations from the Issue Navigator. (26370684)",
+       "html": "\u003cp\u003eErrors thrown by Swift test methods now record the source location where the error was thrown. Xcode highlights these lines in the source editor and allows jumping to those locations from the Issue Navigator. (26370684)\u003c/p\u003e"
+      },
+      {
+       "text": "Xcode now opens files in the source editor after they are created by clicking the ‘+’ button in the Test Navigator. (17088680)",
+       "html": "\u003cp\u003eXcode now opens files in the source editor after they are created by clicking the ‘+’ button in the Test Navigator. (17088680)\u003c/p\u003e"
+      },
+      {
+       "text": "XCTest now supports dynamically skipping tests based on runtime conditions, such as only executing some tests when running on certain device types or when a remote server is accessible. When a test is skipped, Xcode displays it differently in the Test Navigator and Test Report, and highlights the line of code where the skip occurred, along with an optional user description. Information about skipped tests is also included in the .xcresult for programmatic access.To skip a test, call one of the new XCTSkip* functions from within a test method or setUp(). For example:func test_canAuthenticate() throws {\n    try XCTSkipIf(AuthManager.canAccessServer == false, \"Can't access server\")\n\n    // Perform test…\n}\n\nThe XCTSkipUnless(_:_:file:line:) API is similar to XCTSkipIf(_:_:file:line:) but skips if the provided expression is false instead of true, and the XCTSkip API can be used to skip unconditionally. (13696693)",
+       "html": "\u003cp\u003e\u003ca href=\"/documentation/xctest\"\u003eXCTest\u003c/a\u003e now supports dynamically skipping tests based on runtime conditions, such as only executing some tests when running on certain device types or when a remote server is accessible. When a test is skipped, Xcode displays it differently in the Test Navigator and Test Report, and highlights the line of code where the skip occurred, along with an optional user description. Information about skipped tests is also included in the \u003ccode class=\"code-voice\"\u003e\u003cspan\u003e.xcresult\u003c/span\u003e\u003c/code\u003e for programmatic access.\u003c/p\u003e\u003cp\u003eTo skip a test, call one of the new \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eXCTSkip*\u003c/span\u003e\u003c/code\u003e functions from within a test method or \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xctest/1500341-setup\"\u003e\u003ccode\u003e\u003cspan\u003eset\u003cwbr/\u003eUp()\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e. For example:\u003c/p\u003e\u003cfigure id=\"3530733\"\u003e\u003cdiv class=\"formatted-content\"\u003e\u003cdiv class=\"code-listing\"\u003e\u003cpre class=\"code-source\" data-language=\"swift\"\u003e\u003ccode\u003efunc test_canAuthenticate() throws {\n    try XCTSkipIf(AuthManager.canAccessServer == false, \u0026#34;Can\u0026#39;t access server\u0026#34;)\n\n    // Perform test…\n}\n\n\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003eThe \u003ca class=\"symbol-name\" href=\"/documentation/xctest/3521326-xctskipunless\"\u003e\u003ccode\u003e\u003cspan\u003eXCTSkip\u003cwbr/\u003eUnless(_:\u003cwbr/\u003e_:\u003cwbr/\u003efile:\u003cwbr/\u003eline:)\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e API is similar to \u003ca class=\"symbol-name\" href=\"/documentation/xctest/3521325-xctskipif\"\u003e\u003ccode\u003e\u003cspan\u003eXCTSkip\u003cwbr/\u003eIf(_:\u003cwbr/\u003e_:\u003cwbr/\u003efile:\u003cwbr/\u003eline:)\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e but skips if the provided expression is false instead of true, and the \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xctskip\"\u003e\u003ccode\u003e\u003cspan\u003eXCTSkip\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e API can be used to skip unconditionally. (13696693)\u003c/p\u003e"
+      },
+      {
+       "text": "XCTest now allows individual tests to time out if they exceed a configurable duration of time. If timeouts are enabled, either via a test-plan option or via an xcodebuild command-line option, a test will be given a default allowance within which it must complete. Tests that exceed this length of time will fail, and a spindump of the test process will be attached to the test in the test report. If the test needs additional time to run, it can request that time via the executionTimeAllowance property on XCTestCase. For more information, refer to the documentation in XCTestCase.h. (12584283)",
+       "html": "\u003cp\u003e\u003ca href=\"/documentation/xctest\"\u003eXCTest\u003c/a\u003e now allows individual tests to time out if they exceed a configurable duration of time. If timeouts are enabled, either via a test-plan option or via an \u003ccode class=\"code-voice\"\u003e\u003cspan\u003excodebuild\u003c/span\u003e\u003c/code\u003e command-line option, a test will be given a default allowance within which it must complete. Tests that exceed this length of time will fail, and a spindump of the test process will be attached to the test in the test report. If the test needs additional time to run, it can request that time via the \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xctestcase/3526064-executiontimeallowance\"\u003e\u003ccode\u003e\u003cspan\u003eexecution\u003cwbr/\u003eTime\u003cwbr/\u003eAllowance\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e property on \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xctestcase\"\u003e\u003ccode\u003e\u003cspan\u003eXCTest\u003cwbr/\u003eCase\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e. For more information, refer to the documentation in \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eXCTest\u003cwbr/\u003eCase\u003cwbr/\u003e.h\u003c/span\u003e\u003c/code\u003e. (12584283)\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "XCTest now correctly handles large wait-timeout values passed to XCTWaiter “wait” APIs, such as DBL_MAX. (56503613)",
+       "html": "\u003cp\u003e\u003ca href=\"/documentation/xctest\"\u003eXCTest\u003c/a\u003e now correctly handles large wait-timeout values passed to \u003ca class=\"symbol-name\" href=\"/documentation/xctest/xctwaiter\"\u003e\u003ccode\u003e\u003cspan\u003eXCTWaiter\u003c/span\u003e\u003c/code\u003e\u003c/a\u003e “wait” APIs, such as \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eDBL\u003cwbr/\u003e_MAX\u003c/span\u003e\u003c/code\u003e. (56503613)\u003c/p\u003e"
+      },
+      {
+       "text": "Source editor test diamonds for tests in Swift packages now appear automatically upon opening the package in Xcode. (51105554)",
+       "html": "\u003cp\u003eSource editor test diamonds for tests in Swift packages now appear automatically upon opening the package in Xcode. (51105554)\u003c/p\u003e"
+      },
+      {
+       "text": "Previously, when running UI tests, the target under test was reinstalled before each test started. Starting in Xcode 11.4, the target under test is installed once per test session and device, speeding up UI tests considerably. (24776269)",
+       "html": "\u003cp\u003ePreviously, when running UI tests, the target under test was reinstalled before each test started. Starting in Xcode 11.4, the target under test is installed once per test session and device, speeding up UI tests considerably. (24776269)\u003c/p\u003e"
+      },
+      {
+       "text": "When hit testing a target, macOS hit testing accepts descendants with frames equivalent to the target as hit test matches. (59275386)",
+       "html": "\u003cp\u003eWhen hit testing a target, macOS hit testing accepts descendants with frames equivalent to the target as hit test matches. (59275386)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
