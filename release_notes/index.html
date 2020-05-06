@@ -114,7 +114,7 @@
                             }
                             
                             previousSection["items"].forEach( previousItem => {
-                                if (closeEnough(item["title"], previousItem["title"])) {
+                                if (closeEnough(item["text"], previousItem["text"])) {
                                     if (item["build"] == undefined) {
                                         item["build"] = previous["build"]
                                     }
@@ -187,20 +187,23 @@
                 html += "<ul>"
                 section["items"].forEach( item => {
                     html += "<li class='js_" + (item["build"] || build) + "'>"
-                    var showBuildLabel = true
-                    item["details"].forEach( detail => {
-                        if (detail["style"] == 1) {
-                            html += "<p>"
-                            html += showBuildLabel ? "<strong>[" + (item["build"] || build) + "]: </strong>" : ""
-                            html += detail["dom"]
-                            html += "</p>" 
-                            showBuildLabel = false
-                        } else if (detail["style"] == 2) {
-                            html += '<figure><div class="formatted-content"><div class="code-listing"><pre class="code-source" data-language="swift"><code>'
-                            html += detail["dom"]
-                            html += '</code></pre></div></div></figure>'
-                        }   
-                    })
+                    html += "<strong>[" + (item["build"] || build) + "]: </strong>"
+                    html += item["html"]
+                    html += "<p></p>"
+                    // var showBuildLabel = true
+                    // item["details"].forEach( detail => {
+                    //     if (detail["style"] == 1) {
+                    //         html += "<p>"
+                    //         html += showBuildLabel ? "<strong>[" + (item["build"] || build) + "]: </strong>" : ""
+                    //         html += detail["dom"]
+                    //         html += "</p>" 
+                    //         showBuildLabel = false
+                    //     } else if (detail["style"] == 2) {
+                    //         html += '<figure><div class="formatted-content"><div class="code-listing"><pre class="code-source" data-language="swift"><code>'
+                    //         html += detail["dom"]
+                    //         html += '</code></pre></div></div></figure>'
+                    //     }   
+                    // })
                     html += "</li>"
                 })
                 html += "</ul>"
