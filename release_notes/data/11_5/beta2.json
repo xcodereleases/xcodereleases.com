@@ -1,0 +1,162 @@
+{
+ "version": "11_5",
+ "build": "beta2",
+ "topics": [
+  {
+   "title": "Apple Clang Compiler",
+   "sections": [
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "Fixed an issue with incorrect code generation when targeting armv7 devices. (61901594)",
+       "html": "\u003cp\u003eFixed an issue with incorrect code generation when targeting armv7 devices. (61901594)\u003c/p\u003e"
+      },
+      {
+        "text": "New In Beta 2 - Lorem Ipsum Dolor Sit Amet",
+        "html": "\u003cp\u003eNew In Beta 2 - Lorem Ipsum Dolor Sit Amet\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+    "title": "Known Issues",
+    "items": [
+        {
+        "text": "Fixed an issue with a brown fox jumping over a fence",
+        "html": "\u003cp\u003eFixed an issue with a brown fox jumping over a fence\u003c/p\u003e"
+        },
+        {
+        "text": "New In Beta 2 - Lorem Ipsum Dolor Sit Amet",
+        "html": "\u003cp\u003eNew In Beta 2 - Lorem Ipsum Dolor Sit Amet\u003c/p\u003e"
+        }
+    ]
+    }
+   ]
+  },
+  {
+   "title": "Asset Catalog",
+   "sections": [
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "watchOS and tvOS apps with asset catalogs built with Xcode 11.4 or newer may experience slower image-loading performance on devices running on watchOS 6.1 or earlier, or when in dark mode on tvOS 13.3 or earlier. (62328605)Workaround: Add a symbol glyph to the app’s asset catalog.",
+       "html": "\u003cp\u003ewatchOS and tvOS apps with asset catalogs built with Xcode 11.4 or newer may experience slower image-loading performance on devices running on watchOS 6.1 or earlier, or when in dark mode on tvOS 13.3 or earlier. (62328605)\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eWorkaround\u003c/strong\u003e: Add a symbol glyph to the app’s asset catalog.\u003c/p\u003e"
+      }
+     ]
+    },
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "Restored image-loading performance for apps in dark mode on devices running iOS 13.3 or earlier. (61200701) (FB7648891)",
+       "html": "\u003cp\u003eRestored image-loading performance for apps in dark mode on devices running iOS 13.3 or earlier. (61200701) (FB7648891)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Debugging",
+   "sections": [
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "Symbol names are no longer printed in stack frames in the console by default, as this combination can result in deadlocks when running Thread Sanitizer on simulated devices. For schemes that don’t have the option to gather code coverage enabled, you can re-enable symbol names and source locations by adding a TSAN_OPTIONS environment variable with the value symbolize=1 in the scheme editor. (61840387)",
+       "html": "\u003cp\u003eSymbol names are no longer printed in stack frames in the console by default, as this combination can result in deadlocks when running Thread Sanitizer on simulated devices. For schemes that don’t have the option to gather code coverage enabled, you can re-enable symbol names and source locations by adding a \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eTSAN\u003cwbr/\u003e_OPTIONS\u003c/span\u003e\u003c/code\u003e environment variable with the value \u003ccode class=\"code-voice\"\u003e\u003cspan\u003esymbolize=1\u003c/span\u003e\u003c/code\u003e in the scheme editor. (61840387)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Interface Builder",
+   "sections": [
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "Fixed a crash that could occur with connect-to-source when control-dragging an object over a class with an @end keyword that shares a line with the previous item. (61957256)",
+       "html": "\u003cp\u003eFixed a crash that could occur with connect-to-source when control-dragging an object over a class with an \u003ccode class=\"code-voice\"\u003e\u003cspan\u003e@end\u003c/span\u003e\u003c/code\u003e keyword that shares a line with the previous item. (61957256)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Localization",
+   "sections": [
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "genstrings continues to look for additional instances of a localization token, such as “Text”, after finding it as part of an identifier. (61903372)",
+       "html": "\u003cp\u003e\u003ccode class=\"code-voice\"\u003e\u003cspan\u003egenstrings\u003c/span\u003e\u003c/code\u003e continues to look for additional instances of a localization token, such as “Text”, after finding it as part of an identifier. (61903372)\u003c/p\u003e"
+      },
+      {
+       "text": "When performing string extraction, genstrings only interprets SwiftUI constructs within Swift files. (60440513, 61903448)",
+       "html": "\u003cp\u003eWhen performing string extraction, \u003ccode class=\"code-voice\"\u003e\u003cspan\u003egenstrings\u003c/span\u003e\u003c/code\u003e only interprets SwiftUI constructs within Swift files. (60440513, 61903448)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Playgrounds",
+   "sections": [
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "Reveal in Project Navigator now shows the contents of playground books. (61902475)",
+       "html": "\u003cp\u003eReveal in Project Navigator now shows the contents of playground books. (61902475)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Signing and Distribution",
+   "sections": [
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "Fixed an issue that prevented automatic signing from making changes if the app IDs used a seed prefix and not a team ID prefix. (59672760) (FB7593038)",
+       "html": "\u003cp\u003eFixed an issue that prevented automatic signing from making changes if the app IDs used a seed prefix and not a team ID prefix. (59672760) (FB7593038)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Simulator",
+   "sections": [
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Invoking Siri may cause iOS to crash. (62333338)",
+       "html": "\u003cp\u003eInvoking Siri may cause iOS to crash. (62333338)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Swift",
+   "sections": [
+    {
+     "title": "Resolved Issues",
+     "items": [
+      {
+       "text": "Fixed a crash that occured when a property with an attached property wrapper was declared with the same name as another property in the same scope. (61902377)",
+       "html": "\u003cp\u003eFixed a crash that occured when a property with an attached property wrapper was declared with the same name as another property in the same scope. (61902377)\u003c/p\u003e"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
