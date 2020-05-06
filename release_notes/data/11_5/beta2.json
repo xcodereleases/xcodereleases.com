@@ -11,25 +11,8 @@
       {
        "text": "Fixed an issue with incorrect code generation when targeting armv7 devices. (61901594)",
        "html": "\u003cp\u003eFixed an issue with incorrect code generation when targeting armv7 devices. (61901594)\u003c/p\u003e"
-      },
-      {
-        "text": "New In Beta 2 - Lorem Ipsum Dolor Sit Amet",
-        "html": "\u003cp\u003eNew In Beta 2 - Lorem Ipsum Dolor Sit Amet\u003c/p\u003e"
       }
      ]
-    },
-    {
-    "title": "Known Issues",
-    "items": [
-        {
-        "text": "Fixed an issue with a brown fox jumping over a fence",
-        "html": "\u003cp\u003eFixed an issue with a brown fox jumping over a fence\u003c/p\u003e"
-        },
-        {
-        "text": "New In Beta 2 - Lorem Ipsum Dolor Sit Amet",
-        "html": "\u003cp\u003eNew In Beta 2 - Lorem Ipsum Dolor Sit Amet\u003c/p\u003e"
-        }
-    ]
     }
    ]
   },
@@ -40,8 +23,8 @@
      "title": "Known Issues",
      "items": [
       {
-       "text": "watchOS and tvOS apps with asset catalogs built with Xcode 11.4 or newer may experience slower image-loading performance on devices running on watchOS 6.1 or earlier, or when in dark mode on tvOS 13.3 or earlier. (62328605)Workaround: Add a symbol glyph to the app’s asset catalog.",
-       "html": "\u003cp\u003ewatchOS and tvOS apps with asset catalogs built with Xcode 11.4 or newer may experience slower image-loading performance on devices running on watchOS 6.1 or earlier, or when in dark mode on tvOS 13.3 or earlier. (62328605)\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eWorkaround\u003c/strong\u003e: Add a symbol glyph to the app’s asset catalog.\u003c/p\u003e"
+       "text": "watchOS and tvOS apps with asset catalogs built with Xcode 11.4 or later may experience slower image-loading performance on devices running on watchOS 6.1 or earlier, or when in Dark Mode on tvOS 13.3 or earlier. (62328605)Workaround: Add a symbol glyph to the app’s asset catalog.",
+       "html": "\u003cp\u003ewatchOS and tvOS apps with asset catalogs built with Xcode 11.4 or later may experience slower image-loading performance on devices running on watchOS 6.1 or earlier, or when in Dark Mode on tvOS 13.3 or earlier. (62328605)\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eWorkaround\u003c/strong\u003e: Add a symbol glyph to the app’s asset catalog.\u003c/p\u003e"
       }
      ]
     },
@@ -49,8 +32,8 @@
      "title": "Resolved Issues",
      "items": [
       {
-       "text": "Restored image-loading performance for apps in dark mode on devices running iOS 13.3 or earlier. (61200701) (FB7648891)",
-       "html": "\u003cp\u003eRestored image-loading performance for apps in dark mode on devices running iOS 13.3 or earlier. (61200701) (FB7648891)\u003c/p\u003e"
+       "text": "Restored image-loading performance for apps in Dark Mode on devices running iOS 13.3 or earlier. (61200701) (FB7648891)",
+       "html": "\u003cp\u003eRestored image-loading performance for apps in Dark Mode on devices running iOS 13.3 or earlier. (61200701) (FB7648891)\u003c/p\u003e"
       }
      ]
     }
@@ -63,8 +46,8 @@
      "title": "Resolved Issues",
      "items": [
       {
-       "text": "Symbol names are no longer printed in stack frames in the console by default, as this combination can result in deadlocks when running Thread Sanitizer on simulated devices. For schemes that don’t have the option to gather code coverage enabled, you can re-enable symbol names and source locations by adding a TSAN_OPTIONS environment variable with the value symbolize=1 in the scheme editor. (61840387)",
-       "html": "\u003cp\u003eSymbol names are no longer printed in stack frames in the console by default, as this combination can result in deadlocks when running Thread Sanitizer on simulated devices. For schemes that don’t have the option to gather code coverage enabled, you can re-enable symbol names and source locations by adding a \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eTSAN\u003cwbr/\u003e_OPTIONS\u003c/span\u003e\u003c/code\u003e environment variable with the value \u003ccode class=\"code-voice\"\u003e\u003cspan\u003esymbolize=1\u003c/span\u003e\u003c/code\u003e in the scheme editor. (61840387)\u003c/p\u003e"
+       "text": "Symbol names are no longer printed in stack frames in the console by default, as this combination can result in deadlocks when running Thread Sanitizer on simulated devices. Workaround: For schemes that don’t have the option to gather code coverage enabled, you can re-enable symbol names and source locations by adding a TSAN_OPTIONS environment variable with the value symbolize=1 in the scheme editor. (61840387)",
+       "html": "\u003cp\u003eSymbol names are no longer printed in stack frames in the console by default, as this combination can result in deadlocks when running Thread Sanitizer on simulated devices. \u003c/p\u003e\u003cp\u003e\u003cstrong\u003eWorkaround\u003c/strong\u003e: For schemes that don’t have the option to gather code coverage enabled, you can re-enable symbol names and source locations by adding a \u003ccode class=\"code-voice\"\u003e\u003cspan\u003eTSAN\u003cwbr/\u003e_OPTIONS\u003c/span\u003e\u003c/code\u003e environment variable with the value \u003ccode class=\"code-voice\"\u003e\u003cspan\u003esymbolize=1\u003c/span\u003e\u003c/code\u003e in the scheme editor. (61840387)\u003c/p\u003e"
       }
      ]
     }
@@ -77,8 +60,8 @@
      "title": "Resolved Issues",
      "items": [
       {
-       "text": "Fixed a crash that could occur with connect-to-source when control-dragging an object over a class with an @end keyword that shares a line with the previous item. (61957256)",
-       "html": "\u003cp\u003eFixed a crash that could occur with connect-to-source when control-dragging an object over a class with an \u003ccode class=\"code-voice\"\u003e\u003cspan\u003e@end\u003c/span\u003e\u003c/code\u003e keyword that shares a line with the previous item. (61957256)\u003c/p\u003e"
+       "text": "Fixed a crash that could occur with connect-to-source when Control-dragging an object over a class with an @end keyword that shares a line with the previous item. (61957256)",
+       "html": "\u003cp\u003eFixed a crash that could occur with connect-to-source when Control-dragging an object over a class with an \u003ccode class=\"code-voice\"\u003e\u003cspan\u003e@end\u003c/span\u003e\u003c/code\u003e keyword that shares a line with the previous item. (61957256)\u003c/p\u003e"
       }
      ]
     }
@@ -134,11 +117,15 @@
    "title": "Simulator",
    "sections": [
     {
-     "title": "Known Issues",
+     "title": "Resolved Issues",
      "items": [
       {
-       "text": "Invoking Siri may cause iOS to crash. (62333338)",
-       "html": "\u003cp\u003eInvoking Siri may cause iOS to crash. (62333338)\u003c/p\u003e"
+       "text": "Fixed an issue where Xcode would sometimes fail to run an app in a simulated device, with an error “Timed out waiting for Simulator.app to become ready”. (57050823)",
+       "html": "\u003cp\u003eFixed an issue where Xcode would sometimes fail to run an app in a simulated device, with an error “Timed out waiting for Simulator.app to become ready”. (57050823)\u003c/p\u003e"
+      },
+      {
+       "text": "Fixed a crash that could occur when invoking Siri in a simulated device. (62333338)",
+       "html": "\u003cp\u003eFixed a crash that could occur when invoking Siri in a simulated device. (62333338)\u003c/p\u003e"
       }
      ]
     }
@@ -151,8 +138,8 @@
      "title": "Resolved Issues",
      "items": [
       {
-       "text": "Fixed a crash that occured when a property with an attached property wrapper was declared with the same name as another property in the same scope. (61902377)",
-       "html": "\u003cp\u003eFixed a crash that occured when a property with an attached property wrapper was declared with the same name as another property in the same scope. (61902377)\u003c/p\u003e"
+       "text": "Fixed a crash that occured when declaring a property with an attached property wrapper that had the same name as another property in the same scope. (61902377)",
+       "html": "\u003cp\u003eFixed a crash that occured when declaring a property with an attached property wrapper that had the same name as another property in the same scope. (61902377)\u003c/p\u003e"
       }
      ]
     }
