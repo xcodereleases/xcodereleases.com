@@ -8,6 +8,8 @@ layout: centered
 {% include xcodereleases.js %}
 </script>
 
+All downloads are hosted by Apple. Links on this site take you directly to Apple's download pages.
+
 This is not an official Apple website. [Please consider donating](https://paypal.me/XcodeReleases) to help maintain it.
 
 Looking for an API? The data for this site is available at <a href="{{ site.url }}/data.json">{{ site.url }}/data.json</a>.
