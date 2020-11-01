@@ -10,6 +10,8 @@
 {% assign betaLabel = "" %}
 {% if release.version.release.gmSeed %}
   {% assign betaLabel = "GM Seed " | append: release.version.release.gmSeed %}
+{% elsif release.version.release.rc %}
+  {% assign betaLabel = "Release Candidate " | append: release.version.release.rc %}
 {% elsif release.version.release.beta %}
   {% assign betaLabel = "Beta " | append: release.version.release.beta %}
 {% elsif release.version.release.dp %}
