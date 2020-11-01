@@ -50,16 +50,48 @@
       <div class="sdks column">SDKs: 
         <ul>
           {% for sdk in release.sdks.macOS %}
-            <li>macOS {{ sdk.build }}</li>
+			{%- assign label = "" -%}
+			{%- if sdk.number and sdk.build -%}
+				{%- assign label = sdk.number | append: " (" | append: sdk.build | append: ")" -%}
+			{%- elsif sdk.number -%}
+				{%- assign label = sdk.number -%}
+			{%- elsif sdk.build -%}
+				{%- assign label = sdk.build -%}
+			{%- endif -%}
+            <li>macOS {{ label }}</li>
           {% endfor %}
           {% for sdk in release.sdks.iOS %}
-            <li>iOS {{ sdk.build }}</li>
+			{%- assign label = "" -%}
+			{%- if sdk.number and sdk.build -%}
+				{%- assign label = sdk.number | append: " (" | append: sdk.build | append: ")" -%}
+			{%- elsif sdk.number -%}
+				{%- assign label = sdk.number -%}
+			{%- elsif sdk.build -%}
+				{%- assign label = sdk.build -%}
+			{%- endif -%}
+            <li>iOS {{ label }}</li>
           {% endfor %}
           {% for sdk in release.sdks.watchOS %}
-            <li>watchOS {{ sdk.build }}</li>
+			{%- assign label = "" -%}
+			{%- if sdk.number and sdk.build -%}
+				{%- assign label = sdk.number | append: " (" | append: sdk.build | append: ")" -%}
+			{%- elsif sdk.number -%}
+				{%- assign label = sdk.number -%}
+			{%- elsif sdk.build -%}
+				{%- assign label = sdk.build -%}
+			{%- endif -%}
+            <li>watchOS {{ label }}</li>
           {% endfor %}
           {% for sdk in release.sdks.tvOS %}
-            <li>tvOS {{ sdk.build }}</li>
+			{%- assign label = "" -%}
+			{%- if sdk.number and sdk.build -%}
+				{%- assign label = sdk.number | append: " (" | append: sdk.build | append: ")" -%}
+			{%- elsif sdk.number -%}
+				{%- assign label = sdk.number -%}
+			{%- elsif sdk.build -%}
+				{%- assign label = sdk.build -%}
+			{%- endif -%}
+            <li>tvOS {{ label }}</li>
           {% endfor %}
         </ul>
       </div>

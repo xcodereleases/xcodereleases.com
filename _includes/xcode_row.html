@@ -28,7 +28,15 @@
     <ul>
     {% if release.sdks.macOS %}
       {% for sdk in release.sdks.macOS %}
-      <li>{{ sdk.build }}</li>
+      	{%- assign label = "" -%}
+      	{%- if sdk.number and sdk.build -%}
+      		{%- assign label = sdk.number | append: " (" | append: sdk.build | append: ")" -%}
+      	{%- elsif sdk.number -%}
+      		{%- assign label = sdk.number -%}
+      	{%- elsif sdk.build -%}
+      		{%- assign label = sdk.build -%}
+      	{%- endif -%}
+      <li>{{ label }}</li>
       {% endfor %}
     {% endif %}
     </ul>
@@ -37,7 +45,15 @@
     <ul>
     {% if release.sdks.iOS %}
       {% for sdk in release.sdks.iOS %}
-      <li>{{ sdk.build }}</li>
+      	{%- assign label = "" -%}
+      	{%- if sdk.number and sdk.build -%}
+      		{%- assign label = sdk.number | append: " (" | append: sdk.build | append: ")" -%}
+      	{%- elsif sdk.number -%}
+      		{%- assign label = sdk.number -%}
+      	{%- elsif sdk.build -%}
+      		{%- assign label = sdk.build -%}
+      	{%- endif -%}
+      <li>{{ label }}</li>
       {% endfor %}
     {% endif %}
     </ul>
@@ -46,7 +62,15 @@
     <ul>
     {% if release.sdks.watchOS %}
       {% for sdk in release.sdks.watchOS %}
-      <li>{{ sdk.build }}</li>
+      	{%- assign label = "" -%}
+      	{%- if sdk.number and sdk.build -%}
+      		{%- assign label = sdk.number | append: " (" | append: sdk.build | append: ")" -%}
+      	{%- elsif sdk.number -%}
+      		{%- assign label = sdk.number -%}
+      	{%- elsif sdk.build -%}
+      		{%- assign label = sdk.build -%}
+      	{%- endif -%}
+      <li>{{ label }}</li>
       {% endfor %}
     {% endif %}
     </ul>
@@ -55,7 +79,15 @@
     <ul>
     {% if release.sdks.tvOS %}
       {% for sdk in release.sdks.tvOS %}
-      <li>{{ sdk.build }}</li>
+      	{%- assign label = "" -%}
+      	{%- if sdk.number and sdk.build -%}
+      		{%- assign label = sdk.number | append: " (" | append: sdk.build | append: ")" -%}
+      	{%- elsif sdk.number -%}
+      		{%- assign label = sdk.number -%}
+      	{%- elsif sdk.build -%}
+      		{%- assign label = sdk.build -%}
+      	{%- endif -%}
+      <li>{{ label }}</li>
       {% endfor %}
     {% endif %}
     </ul>
