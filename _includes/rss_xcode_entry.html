@@ -5,7 +5,7 @@
 {%- if xcode.version.release.gmSeed -%}
   {%- assign betaLabel = "GM Seed " | append: xcode.version.release.gmSeed -%}
   {%- assign idQualifier = "gm-seed-" | append: xcode.version.release.gmSeed -%}
-{%- if xcode.version.release.rc -%}
+{%- elsif xcode.version.release.rc -%}
   {%- assign betaLabel = "Release Candidate " | append: xcode.version.release.rc -%}
   {%- assign idQualifier = "rc-" | append: xcode.version.release.rc -%}
 {%- elsif xcode.version.release.beta -%}
