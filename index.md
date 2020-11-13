@@ -20,8 +20,8 @@ Looking for an API? The data for this site is available at <a href="{{ site.url 
   <input type="radio" name="filter-release" id="filter-all" value="" checked  onchange="filter()" />
   <label for="filter-all">All</label>
 
-  <input type="radio" name="filter-release" id="filter-gm" value="gm" onchange="filter()" />
-  <label for="filter-gm">GMs</label>
+  <input type="radio" name="filter-release" id="filter-releases" value="release" onchange="filter()" />
+  <label for="filter-release">Releases</label>
 
   <input type="radio" name="filter-release" id="filter-beta" value="beta" onchange="filter()" />
   <label for="filter-beta">Betas</label>
