@@ -1,8 +1,8 @@
 {% assign release = include.release %}
 
 {% assign months = ",Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec" | split: ',' %}
-{% assign class = "gm" %}
-{% if release.version.release.gm == nil %}
+{% assign class = "release" %}
+{% if release.version.release.gm == nil and release.version.release.release == nil %}
   {% assign class = "beta" %}
 {% endif %}
   
