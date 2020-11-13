@@ -4,6 +4,91 @@
       "clang" : [
         {
           "number" : "12.0.0",
+          "build" : "1200.0.32.28",
+          "release" : {
+            "gm" : true
+          }
+        }
+      ],
+      "swift" : [
+        {
+          "number" : "5.3.2",
+          "build" : "1200.0.44.1",
+          "release" : {
+            "gm" : true
+          }
+        }
+      ]
+    },
+    "requires" : "10.15.4",
+    "date" : {
+      "year" : 2020,
+      "month" : 11,
+      "day" : 12
+    },
+    "links" : {
+      "notes" : {
+        "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-12_3-beta-release-notes"
+      },
+      "download" : {
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.3_beta/Xcode_12.3_beta.xip"
+      }
+    },
+    "version" : {
+      "number" : "12.3",
+      "build" : "12C5020f",
+      "release" : {
+        "beta" : 1
+      }
+    },
+    "sdks" : {
+      "macOS" : [
+        {
+          "number" : "11.1",
+          "build" : "20C5048g",
+          "release" : {
+            "gm" : true
+          }
+        }
+      ],
+      "tvOS" : [
+        {
+          "number" : "14.3",
+          "build" : "18K5545f",
+          "release" : {
+            "gm" : true
+          }
+        }
+      ],
+      "iOS" : [
+        {
+          "number" : "14.3",
+          "build" : "18C5044f",
+          "release" : {
+            "gm" : true
+          }
+        }
+      ],
+      "watchOS" : [
+        {
+          "number" : "7.2",
+          "build" : "18S5545f",
+          "release" : {
+            "gm" : true
+          }
+        }
+      ]
+    },
+    "name" : "Xcode",
+    "checksums" : {
+      "sha1" : "9fa1a107c0c5a19d5b41502a960d44e219ecc3cf"
+    }
+  },
+  {
+    "compilers" : {
+      "clang" : [
+        {
+          "number" : "12.0.0",
           "build" : "1200.0.32.27",
           "release" : {
             "gm" : true
