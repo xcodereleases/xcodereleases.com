@@ -12,11 +12,11 @@
 {% elsif release.version.release.release %}
   {% assign betaLabel = "Release" %}
 {% elsif release.version.release.rc %}
-  {% assign betaLabel = "Release Candidate " | append: release.version.release.rc %}
+  {% assign betaLabel = "RC " | append: release.version.release.rc %}
 {% elsif release.version.release.beta %}
   {% assign betaLabel = "Beta " | append: release.version.release.beta %}
 {% elsif release.version.release.dp %}
-  {% assign betaLabel = "Developer Preview " | append: release.version.release.dp %}
+  {% assign betaLabel = "DP " | append: release.version.release.dp %}
 {% else %}
   {% assign betaLabel = "GM" %}
 {% endif %}

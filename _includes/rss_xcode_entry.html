@@ -9,13 +9,13 @@
   {%- assign betaLabel = "Release" -%}
   {%- assign idQualifier = "release" -%}
 {%- elsif xcode.version.release.rc -%}
-  {%- assign betaLabel = "Release Candidate " | append: xcode.version.release.rc -%}
+  {%- assign betaLabel = "RC " | append: xcode.version.release.rc -%}
   {%- assign idQualifier = "rc-" | append: xcode.version.release.rc -%}
 {%- elsif xcode.version.release.beta -%}
   {%- assign betaLabel = "Beta " | append: xcode.version.release.beta -%}
   {%- assign idQualifier = "beta-" | append: xcode.version.release.beta -%}
 {%- elsif xcode.version.release.dp -%}
-  {%- assign betaLabel = "Developer Preview " | append: xcode.version.release.dp -%}
+  {%- assign betaLabel = "DP " | append: xcode.version.release.dp -%}
   {%- assign idQualifier = "dp-" | append: xcode.version.release.dp -%}
 {%- else -%}
   {%- assign betaLabel = "GM" -%}
