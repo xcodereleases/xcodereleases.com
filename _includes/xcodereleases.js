@@ -31,7 +31,7 @@ function matches(node, term) {
 function filter() {
   var filterField = document.getElementById("filter-text");
   var searchTerms = extractTerms(filterField.value);
-  
+
   var releaseTypeButtons = document.getElementsByName("filter-release");
   var releaseClass = null;
   var releaseButtonCount = releaseTypeButtons.length;
@@ -40,9 +40,9 @@ function filter() {
        releaseClass = releaseTypeButtons[i].value;
     }
   }
-  
+
   if (releaseClass.length == 0) { releaseClass = null; }
-  
+
   var xcodeRows = document.getElementsByClassName("xcode");
   var rowCount = xcodeRows.length;
   for (var i = 0; i < rowCount; i++) {
@@ -50,23 +50,23 @@ function filter() {
     if (releaseClass != null && xcodeRows[i].classList.contains(releaseClass) == false) {
       show = false;
     }
-    
+
     if (searchTerms.length > 0 && show == true) {
       for (var termIndex = 0; termIndex < searchTerms.length && show == true; termIndex++) {
         show = matches(xcodeRows[i], searchTerms[termIndex]);
       }
     }
-    
+
     xcodeRows[i].style.display = show ? "table-row" : "none";
   }
 }
 
 function toggleDetails(rowID) {
   var detailsID = "details-" + rowID;
-  
+
   var details = document.getElementById(detailsID);
   if (details === null) { return; }
-  
+
   if (details.style.display === "block") {
     details.style.display = "none";
   } else {

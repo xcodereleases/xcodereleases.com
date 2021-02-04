@@ -40,6 +40,7 @@ Looking for an API? The data for this site is available at <a href="{{ site.url 
     <th>iOS SDKs</th>
     <th>watchOS SDKs</th>
     <th>tvOS SDKs</th>
+    <th>Download Size</th>
     <th><a name="ret-fn1"></a>Download<a href="#fn1">¹</a></th>
     <th>Release Notes<a href="#fn1">¹</a></th>
   </tr>
