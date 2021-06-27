@@ -5,7 +5,7 @@
 {% if release.version.release.gm == nil and release.version.release.release == nil %}
   {% assign class = "beta" %}
 {% endif %}
-  
+
 {% assign betaLabel = "" %}
 {% if release.version.release.gmSeed %}
   {% assign betaLabel = "GM Seed " | append: release.version.release.gmSeed %}
@@ -93,6 +93,11 @@
       {% endfor %}
     {% endif %}
     </ul>
+  </td>
+  <td class="">
+  {% if release.links.download.sizeMB %}
+    {% include mbToGB.html mb=release.links.download.sizeMB  %}
+  {% endif %}
   </td>
   <td class="download">
   {% if release.links.download.url %}

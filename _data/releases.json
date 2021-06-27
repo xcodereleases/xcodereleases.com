@@ -626,7 +626,8 @@
         "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-12_5-beta-release-notes/"
       },
       "download" : {
-        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.5_beta/Xcode_12.5_beta.xip"
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.5_beta/Xcode_12.5_beta.xip",
+        "sizeMB" : 11322.42
       }
     },
     "version" : {
@@ -711,7 +712,8 @@
         "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-12_4-release-notes"
       },
       "download" : {
-        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.4/Xcode_12.4.xip"
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.4/Xcode_12.4.xip",
+        "sizeMB" : 11115.58
       }
     },
     "version" : {
@@ -796,7 +798,8 @@
         "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-12_4-rc-release-notes/"
       },
       "download" : {
-        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.4_Release_Candidate/Xcode_12.4_Release_Candidate.xip"
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.4_Release_Candidate/Xcode_12.4_Release_Candidate.xip",
+        "sizeMB" : 11115.58
       }
     },
     "version" : {
@@ -881,7 +884,8 @@
         "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-12_3-release-notes/"
       },
       "download" : {
-        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.3/Xcode_12.3.xip"
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.3/Xcode_12.3.xip",
+        "sizeMB" : 11093.43
       }
     },
     "version" : {
@@ -966,7 +970,8 @@
         "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-12_3-release-notes/"
       },
       "download" : {
-        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.3_Release_Candidate/Xcode_12.3_Release_Candidate.xip"
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.3_Release_Candidate/Xcode_12.3_Release_Candidate.xip",
+        "sizeMB" : 11093.43
       }
     },
     "version" : {
@@ -1051,7 +1056,8 @@
         "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-12_3-beta-release-notes"
       },
       "download" : {
-        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.3_beta/Xcode_12.3_beta.xip"
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.3_beta/Xcode_12.3_beta.xip",
+        "sizeMB" : 11036.16
       }
     },
     "version" : {
@@ -1136,7 +1142,8 @@
         "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-12_2-release-notes"
       },
       "download" : {
-        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.2/Xcode_12.2.xip"
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.2/Xcode_12.2.xip",
+        "sizeMB" : 10900.28
       }
     },
     "version" : {
@@ -1221,7 +1228,8 @@
         "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-12_2-release-notes"
       },
       "download" : {
-        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.2_Release_Candidate/Xcode_12.2_Release_Candidate.xip"
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.2_Release_Candidate/Xcode_12.2_Release_Candidate.xip",
+        "sizeMB" : 10899.18
       }
     },
     "version" : {
@@ -1306,7 +1314,8 @@
         "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-12_1_1-release-notes/"
       },
       "download" : {
-        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.1.1_Release_Candidate/Xcode_12.1.1_Release_Candidate.xip"
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.1.1_Release_Candidate/Xcode_12.1.1_Release_Candidate.xip",
+        "sizeMB" : 10926.23
       }
     },
     "version" : {
@@ -1391,7 +1400,8 @@
         "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-12_1-release-notes/"
       },
       "download" : {
-        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.1/Xcode_12.1.xip"
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.1/Xcode_12.1.xip",
+        "sizeMB" : 10784.53
       }
     },
     "version" : {
@@ -1561,7 +1571,8 @@
         "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-12_2-beta-release-notes/"
       },
       "download" : {
-        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.2_beta_3/Xcode_12.2_beta_3.xip"
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.2_beta_3/Xcode_12.2_beta_3.xip",
+        "sizeMB" : 10885.17
       }
     },
     "version" : {
@@ -1646,7 +1657,8 @@
         "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-12_2-beta-release-notes/"
       },
       "download" : {
-        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.2_beta_2/Xcode_12.2_beta_2.xip"
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.2_beta_2/Xcode_12.2_beta_2.xip",
+        "sizeMB" : 10732.43
       }
     },
     "version" : {
@@ -1731,7 +1743,8 @@
         "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-12_0_1-release-notes"
       },
       "download" : {
-        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.0.1/Xcode_12.0.1.xip"
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.0.1/Xcode_12.0.1.xip",
+        "sizeMB" : 10691.3
       }
     },
     "version" : {
@@ -1816,7 +1829,8 @@
         "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-12-release-notes/"
       },
       "download" : {
-        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12/Xcode_12.xip"
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12/Xcode_12.xip",
+        "sizeMB" : 10690.36
       }
     },
     "version" : {
@@ -1901,7 +1915,8 @@
         "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-12_2-beta-release-notes"
       },
       "download" : {
-        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.2_beta/Xcode_12.2_beta.xip"
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_12.2_beta/Xcode_12.2_beta.xip",
+        "sizeMB" : 10667.24
       }
     },
     "version" : {
