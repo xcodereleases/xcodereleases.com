@@ -4,9 +4,94 @@
       "clang" : [
         {
           "number" : "13.0.0",
-          "build":"1300.0.27.3",
-          "release" : { 
-            "gm" : true
+          "build" : "1300.0.29.3",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "swift" : [
+        {
+          "number" : "5.5",
+          "build" : "1300.0.29.102",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "requires" : "11.3",
+    "date" : {
+      "year" : 2021,
+      "month" : 8,
+      "day" : 10
+    },
+    "links" : {
+      "notes" : {
+        "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-13-beta-release-notes"
+      },
+      "download" : {
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_13_beta_5/Xcode_13_beta_5.xip"
+      }
+    },
+    "version" : {
+      "number" : "13.0",
+      "build" : "13A5212g",
+      "release" : {
+        "beta" : 5
+      }
+    },
+    "sdks" : {
+      "macOS" : [
+        {
+          "number" : "12.0",
+          "build" : "21A5304f",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "tvOS" : [
+        {
+          "number" : "15.0",
+          "build" : "19J5325f",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "iOS" : [
+        {
+          "number" : "15.0",
+          "build" : "19A5318g",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "watchOS" : [
+        {
+          "number" : "8.0",
+          "build" : "19R5323f",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "name" : "Xcode",
+    "checksums" : {
+      "sha1" : "1d01ddcfa634c5ef2d858c1b3284e42cd9c928b7"
+    }
+  },
+  {
+    "compilers" : {
+      "clang" : [
+        {
+          "number" : "13.0.0",
+          "build" : "1300.0.27.3",
+          "release" : {
+            "release" : true
           }
         }
       ],
@@ -15,7 +100,7 @@
           "number" : "5.5",
           "build" : "1300.0.27.6",
           "release" : {
-            "gm" : true
+            "release" : true
           }
         }
       ]
@@ -36,7 +121,7 @@
     },
     "version" : {
       "number" : "13.0",
-      "build":"13A5201i",
+      "build" : "13A5201i",
       "release" : {
         "beta" : 4
       }
@@ -47,7 +132,7 @@
           "number" : "12.0",
           "build" : "21A5294d",
           "release" : {
-           "gm" : true
+            "release" : true
           }
         }
       ],
@@ -56,7 +141,7 @@
           "number" : "15.0",
           "build" : "19J5314d",
           "release" : {
-            "gm" : true
+            "release" : true
           }
         }
       ],
@@ -65,7 +150,7 @@
           "number" : "15.0",
           "build" : "19A5307d",
           "release" : {
-            "gm" : true
+            "release" : true
           }
         }
       ],
@@ -74,7 +159,7 @@
           "number" : "8.0",
           "build" : "19R5312d",
           "release" : {
-            "gm" : true
+            "release" : true
           }
         }
       ]
