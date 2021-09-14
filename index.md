@@ -51,5 +51,5 @@ Looking for an API? The data for this site is available at <a href="{{ site.url 
 ---
 
 <ul>
-  <li><a name="fn1"></a>¹ - If the direct download link doesn't work, you can find most downloads on <a href="https://developer.apple.com/download/more">developer.apple.com/download/more</a>.<br />Alternatively, make sure you're logged in to developer.apple.com, and then reload xcodereleases.com. <a href="#ret-fn1">[↑]</a></li>
+  <li><a name="fn1"></a>¹ - If the direct download link doesn't work, you can find most downloads on <a href="https://developer.apple.com/download/all/?q=Xcode">developer.apple.com/download/all/?q=Xcode</a>.<br />Alternatively, make sure you're logged in to developer.apple.com, and then reload xcodereleases.com. <a href="#ret-fn1">[↑]</a></li>
 </ul>
