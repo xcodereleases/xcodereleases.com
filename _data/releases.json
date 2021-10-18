@@ -12,6 +12,91 @@
       ],
       "swift" : [
         {
+          "number" : "5.5.1",
+          "build" : "1300.0.31.4",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "requires" : "11.3",
+    "date" : {
+      "year" : 2021,
+      "month" : 10,
+      "day" : 18
+    },
+    "links" : {
+      "notes" : {
+        "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-13_1-release-notes"
+      },
+      "download" : {
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_13.1_Release_Candidate/Xcode_13.1_Release_Candidate.xip"
+      }
+    },
+    "version" : {
+      "number" : "13.1",
+      "build" : "13A1030d",
+      "release" : {
+        "rc" : 1
+      }
+    },
+    "sdks" : {
+      "macOS" : [
+        {
+          "number" : "12.0",
+          "build" : "21A344",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "tvOS" : [
+        {
+          "number" : "15.0",
+          "build" : "19J344",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "iOS" : [
+        {
+          "number" : "15.0",
+          "build" : "19A339",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "watchOS" : [
+        {
+          "number" : "8.0.1",
+          "build" : "19R351",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "name" : "Xcode",
+    "checksums" : {
+      "sha1" : "b55777d005c7774e4756f29d875d241db1769d90"
+    }
+  },
+  {
+    "compilers" : {
+      "clang" : [
+        {
+          "number" : "13.0.0",
+          "build" : "1300.0.29.3",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "swift" : [
+        {
           "number" : "5.5",
           "build" : "1300.0.31.1",
           "release" : {
