@@ -1,0 +1,5 @@
+{% if releases %}
+  {% for release in releases %}
+    <li>{% include release_name.html release=release name=name %}</li>
+  {% endfor %}
+{% endif %}

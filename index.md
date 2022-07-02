@@ -36,10 +36,8 @@ Looking for an API? The data for this site is available at <a href="{{ site.url 
     <th>Build</th>
     <th>Released</th>
     <th>Requires</th>
-    <th>macOS SDKs</th>
-    <th>iOS SDKs</th>
-    <th>watchOS SDKs</th>
-    <th>tvOS SDKs</th>
+    <th>Swift</th>
+    <th>SDKs</th>
     <th><a name="ret-fn1"></a>Download<a href="#fn1">¹</a></th>
     <th>Release Notes<a href="#fn1">¹</a></th>
   </tr>

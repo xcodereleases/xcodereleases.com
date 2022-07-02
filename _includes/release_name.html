@@ -1,0 +1,9 @@
+{%- assign label = name -%}
+{%- if release.number and release.build -%}
+	{%- assign label = release.number | append: " (" | append: release.build | append: ")" -%}
+{%- elsif release.number -%}
+	{%- assign label = release.number -%}
+{%- elsif release.build -%}
+	{%- assign label = release.build -%}
+{%- endif -%}
+{{ label }}

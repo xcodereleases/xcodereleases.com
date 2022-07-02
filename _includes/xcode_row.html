@@ -26,72 +26,17 @@
   <td class="build">{{ release.version.build }}</td>
   <td class="date">{{ release.date.day }} {{ months[release.date.month] }} {{ release.date.year }}</td>
   <td class="requires">macOS {{ release.requires }}+</td>
-  <td class="sdk macOS">
+  <td class="swift">
     <ul>
-    {% if release.sdks.macOS %}
-      {% for sdk in release.sdks.macOS %}
-      	{%- assign label = "" -%}
-      	{%- if sdk.number and sdk.build -%}
-      		{%- assign label = sdk.number | append: " (" | append: sdk.build | append: ")" -%}
-      	{%- elsif sdk.number -%}
-      		{%- assign label = sdk.number -%}
-      	{%- elsif sdk.build -%}
-      		{%- assign label = sdk.build -%}
-      	{%- endif -%}
-      <li>{{ label }}</li>
-      {% endfor %}
-    {% endif %}
+    {% include release_bullets.html releases=release.compilers.swift name=Swift %}
     </ul>
   </td>
-  <td class="sdk iOS">
+  <td class="sdk">
     <ul>
-    {% if release.sdks.iOS %}
-      {% for sdk in release.sdks.iOS %}
-      	{%- assign label = "" -%}
-      	{%- if sdk.number and sdk.build -%}
-      		{%- assign label = sdk.number | append: " (" | append: sdk.build | append: ")" -%}
-      	{%- elsif sdk.number -%}
-      		{%- assign label = sdk.number -%}
-      	{%- elsif sdk.build -%}
-      		{%- assign label = sdk.build -%}
-      	{%- endif -%}
-      <li>{{ label }}</li>
-      {% endfor %}
-    {% endif %}
-    </ul>
-  </td>
-  <td class="sdk watchOS">
-    <ul>
-    {% if release.sdks.watchOS %}
-      {% for sdk in release.sdks.watchOS %}
-      	{%- assign label = "" -%}
-      	{%- if sdk.number and sdk.build -%}
-      		{%- assign label = sdk.number | append: " (" | append: sdk.build | append: ")" -%}
-      	{%- elsif sdk.number -%}
-      		{%- assign label = sdk.number -%}
-      	{%- elsif sdk.build -%}
-      		{%- assign label = sdk.build -%}
-      	{%- endif -%}
-      <li>{{ label }}</li>
-      {% endfor %}
-    {% endif %}
-    </ul>
-  </td>
-  <td class="sdk tvOS">
-    <ul>
-    {% if release.sdks.tvOS %}
-      {% for sdk in release.sdks.tvOS %}
-      	{%- assign label = "" -%}
-      	{%- if sdk.number and sdk.build -%}
-      		{%- assign label = sdk.number | append: " (" | append: sdk.build | append: ")" -%}
-      	{%- elsif sdk.number -%}
-      		{%- assign label = sdk.number -%}
-      	{%- elsif sdk.build -%}
-      		{%- assign label = sdk.build -%}
-      	{%- endif -%}
-      <li>{{ label }}</li>
-      {% endfor %}
-    {% endif %}
+    {% include release_bullets.html releases=release.sdks.macOS name=macOS %}
+    {% include release_bullets.html releases=release.sdks.iOS name=iOS %}
+    {% include release_bullets.html releases=release.sdks.watchOS name=watchOS %}
+    {% include release_bullets.html releases=release.sdks.tvOS name=tvOS %}
     </ul>
   </td>
   <td class="download">
