@@ -1,5 +1,6 @@
-{% if releases %}
-  {% for release in releases %}
-    <li>{% include release_name.html release=release name=name %}</li>
-  {% endfor %}
-{% endif %}
+{%- assign label = include.label -%}
+{%- if include.releases -%}
+  {%- for release in include.releases -%}
+    <li>{% include release_name.html release=release label=label %}</li>
+  {%- endfor -%}
+{%- endif -%}

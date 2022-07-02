@@ -28,15 +28,15 @@
   <td class="requires">macOS {{ release.requires }}+</td>
   <td class="swift">
     <ul>
-    {% include release_bullets.html releases=release.compilers.swift name=Swift %}
+    {% include release_bullets.html releases=release.compilers.swift label="Swift" %}
     </ul>
   </td>
   <td class="sdk">
     <ul>
-    {% include release_bullets.html releases=release.sdks.macOS name=macOS %}
-    {% include release_bullets.html releases=release.sdks.iOS name=iOS %}
-    {% include release_bullets.html releases=release.sdks.watchOS name=watchOS %}
-    {% include release_bullets.html releases=release.sdks.tvOS name=tvOS %}
+    {% include release_bullets.html releases=release.sdks.macOS label="macOS" %}
+    {% include release_bullets.html releases=release.sdks.iOS label="iOS" %}
+    {% include release_bullets.html releases=release.sdks.watchOS label="watchOS" %}
+    {% include release_bullets.html releases=release.sdks.tvOS label="tvOS" %}
     </ul>
   </td>
   <td class="download">
