@@ -1,12 +1,12 @@
-{%- assign label = include.label -%}
+{%- assign thisLabel = "" -%}
 {%- assign release = include.release -%}
 {%- if release.number and release.build -%}
-	{%- assign label = label | append: " " | append: release.number | append: " (" | append: release.build | append: ")" -%}
+	{%- assign thisLabel = include.label | append: " " | append: release.number | append: " (" | append: release.build | append: ")" -%}
 {%- elsif release.number -%}
-	{%- assign label = label | append: " " | append: release.number -%}
+	{%- assign thisLabel = include.label | append: " " | append: release.number -%}
 {%- elsif release.build -%}
-	{%- assign label = label | append: " " | append: release.build -%}
+	{%- assign thisLabel = include.label | append: " " | append: release.build -%}
 {%- else -%}
-	{%- assign label = "" -%}
+	{%- assign thisLabel = "" -%}
 {%- endif -%}
-{{ label }}
+{{ thisLabel }}
