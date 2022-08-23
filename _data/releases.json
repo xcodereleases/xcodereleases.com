@@ -97,8 +97,8 @@
       ],
       "swift" : [
         {
-          "number" : "5.7.0.123.8",
-          "build" : "5.7",
+          "number" : "5.7",
+          "build" : "5.7.0.123.8",
           "release" : {
             "release" : true
           }
