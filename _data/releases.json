@@ -38,7 +38,7 @@
       "number" : "14.0.1",
       "build" : "14A400",
       "release" : {
-        "rc" : 1
+        "release" : true
       }
     },
     "sdks" : {
