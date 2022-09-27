@@ -4,6 +4,91 @@
       "clang" : [
         {
           "number" : "14.0.0",
+          "build" : "1400.0.29.201",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "swift" : [
+        {
+          "number" : "5.7.1",
+          "build" : "5.7.1.134.3",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "requires" : "12.5",
+    "date" : {
+      "year" : 2022,
+      "month" : 9,
+      "day" : 27
+    },
+    "links" : {
+      "notes" : {
+        "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-14_1-release-notes"
+      },
+      "download" : {
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_14.1_beta_3/Xcode_14.1_beta_3.xip"
+      }
+    },
+    "version" : {
+      "number" : "14.1",
+      "build" : "14B5033e",
+      "release" : {
+        "beta" : 3
+      }
+    },
+    "sdks" : {
+      "macOS" : [
+        {
+          "number" : "13.0",
+          "build" : "22A5358d",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "tvOS" : [
+        {
+          "number" : "16.1",
+          "build" : "20K5052c",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "iOS" : [
+        {
+          "number" : "16.1",
+          "build" : "20B5056e",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "watchOS" : [
+        {
+          "number" : "9.1",
+          "build" : "20S5055d",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "name" : "Xcode",
+    "checksums" : {
+      "sha1" : "601a051a503c2c7a25265e311384d6342164a0a2"
+    }
+  },
+  {
+    "compilers" : {
+      "clang" : [
+        {
+          "number" : "14.0.0",
           "build" : "1400.0.29.102",
           "release" : {
             "release" : true
