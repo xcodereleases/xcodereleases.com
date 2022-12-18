@@ -12,9 +12,7 @@ All downloads are hosted by Apple. Links on this site take you directly to Apple
 
 This is not an official Apple website. [Please consider donating](https://paypal.me/XcodeReleases) to help maintain it.
 
-Looking for an API? The data for this site is available at <a href="{{ site.url }}/data.json">{{ site.url }}/data.json</a>.
-
-You can also subscribe to a rudimentary RSS feed at <a href="{{ site.url }}/api/all.rss">{{ site.url }}/api/all.rss</a>.
+Check out our [JSON API]({{ site.url }}/data.json), [RSS feed]({{ site.url }}/api/all.rss), and [Mastodon account](https://techhub.social/@xcodereleases).
 
 <div id="search">
   <input type="search" id="filter-text" oninput="filter()" placeholder="Search"/>
