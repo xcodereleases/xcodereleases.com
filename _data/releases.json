@@ -4,6 +4,100 @@
       "clang" : [
         {
           "number" : "15.0.0",
+          "build" : "1500.0.29.1",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "swift" : [
+        {
+          "number" : "5.9",
+          "build" : "5.9.0.114.10",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "requires" : "13.4",
+    "date" : {
+      "year" : 2023,
+      "month" : 6,
+      "day" : 21
+    },
+    "links" : {
+      "notes" : {
+        "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-15-release-notes"
+      },
+      "download" : {
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_15_beta_2/Xcode_15_beta_2.xip"
+      }
+    },
+    "version" : {
+      "number" : "15.0",
+      "build" : "15A5161b",
+      "release" : {
+        "beta" : 2
+      }
+    },
+    "sdks" : {
+      "macOS" : [
+        {
+          "number" : "14.0",
+          "build" : "23A5276e",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "tvOS" : [
+        {
+          "number" : "17.0",
+          "build" : "21J5293e",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "visionOS" : [
+        {
+          "number" : "1.0",
+          "build" : "21N5165f",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "iOS" : [
+        {
+          "number" : "17.0",
+          "build" : "21A5268f",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "watchOS" : [
+        {
+          "number" : "10.0",
+          "build" : "21R5295e",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "name" : "Xcode",
+    "checksums" : {
+      "sha1" : "eb041f673cc57a192f27fa92b44314c72456877d"
+    }
+  },
+  {
+    "compilers" : {
+      "clang" : [
+        {
+          "number" : "15.0.0",
           "build" : "1500.0.28.1.1",
           "release" : {
             "release" : true
