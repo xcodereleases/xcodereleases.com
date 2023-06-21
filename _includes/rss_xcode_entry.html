@@ -83,6 +83,17 @@
 		{%- endif -%}
 		<li>watchOS {{ label }}</li>
 	{%- endfor -%}
+	{%- for sdk in xcode.sdks.visionOS -%}
+		{%- assign label = "" -%}
+		{%- if sdk.number and sdk.build -%}
+			{%- assign label = sdk.number | append: " (Build " | append: sdk.build | append: ")" -%}
+		{%- elsif sdk.number -%}
+			{%- assign label = sdk.number -%}
+		{%- elsif sdk.build -%}
+			{%- assign label = sdk.build -%}
+		{%- endif -%}
+		<li>visionOS {{ label }}</li>
+	{%- endfor -%}
 	</ul>
 	</p>
 {%- endif -%}

@@ -95,6 +95,17 @@
 			{%- endif -%}
             <li>tvOS {{ label }}</li>
           {% endfor %}
+          {% for sdk in release.sdks.visionOS %}
+			{%- assign label = "" -%}
+			{%- if sdk.number and sdk.build -%}
+				{%- assign label = sdk.number | append: " (" | append: sdk.build | append: ")" -%}
+			{%- elsif sdk.number -%}
+				{%- assign label = sdk.number -%}
+			{%- elsif sdk.build -%}
+				{%- assign label = sdk.build -%}
+			{%- endif -%}
+            <li>visionOS {{ label }}</li>
+          {% endfor %}
         </ul>
       </div>
       <div class="compilers column">Compilers: 
