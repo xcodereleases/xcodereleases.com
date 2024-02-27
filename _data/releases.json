@@ -89,7 +89,7 @@
       "build" : "15E5202a",
       "number" : "15.3",
       "release" : {
-        "beta" : 3
+        "rc" : 1
       }
     }
   },
