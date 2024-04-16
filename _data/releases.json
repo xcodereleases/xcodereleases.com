@@ -1,6 +1,100 @@
 [
   {
     "checksums" : {
+      "sha1" : "cbde3cae8a8ef10e99b2c75f64dda42a5085b7e4"
+    },
+    "compilers" : {
+      "clang" : [
+        {
+          "build" : "1500.3.9.4",
+          "number" : "15.0.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "swift" : [
+        {
+          "build" : "5.10.0.13",
+          "number" : "5.10",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "date" : {
+      "day" : 16,
+      "month" : 4,
+      "year" : 2024
+    },
+    "links" : {
+      "download" : {
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_15.4_beta/Xcode_15.4_beta.xip"
+      },
+      "notes" : {
+        "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-15_4-release-notes"
+      }
+    },
+    "name" : "Xcode",
+    "requires" : "14.0",
+    "sdks" : {
+      "iOS" : [
+        {
+          "build" : "21F5058d",
+          "number" : "17.5",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "macOS" : [
+        {
+          "build" : "23F5059d",
+          "number" : "14.5",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "tvOS" : [
+        {
+          "build" : "21L5553d",
+          "number" : "17.5",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "visionOS" : [
+        {
+          "build" : "21O5565d",
+          "number" : "1.2",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "watchOS" : [
+        {
+          "build" : "21T5555c",
+          "number" : "10.5",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "version" : {
+      "build" : "15F5021i",
+      "number" : "15.4",
+      "release" : {
+        "beta" : 1
+      }
+    }
+  },
+  {
+    "checksums" : {
       "sha1" : "f5fc8f91c15ae9d64dcce913a9f012282b062c2c"
     },
     "compilers" : {
