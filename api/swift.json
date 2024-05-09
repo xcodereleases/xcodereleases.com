@@ -1,0 +1,45 @@
+---
+layout: null
+---
+[
+{%- assign months = ",Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec" | split: ',' -%}
+{%- assign swiftVersion = 0 -%}
+{%- assign needsComma = false -%}
+{%- assign releases = site.data.releases | sort: "_versionOrder" -%}
+{%- for release in releases -%}
+    {%- if release.version.release.gm != true and release.version.release.release != true -%}
+    	{%- continue -%}
+    {%- endif -%}
+	{%- if release._swiftOrder > swiftVersion -%}
+		{%- if needsComma == true -%}
+,
+		{%- endif -%}
+{
+  "xcode":"{{ release.version.number }}",
+  "swift":"{{ release.compilers.swift[0].number }}",
+  "date":"{{ release.date.day }} {{ months[release.date.month] }} {{ release.date.year | modulo: 100 }}",
+  "released":true
+}
+		{%- assign swiftVersion = release._swiftOrder -%}
+		{%- assign needsComma = true -%}
+	{%- endif -%}
+{%- endfor -%}
+{%- assign newestReleases = releases | reverse -%}
+{%- for release in newestReleases -%}
+    {%- if release.version.release.gm or release.version.release.release -%}	
+        {%- continue -%}
+    {%- endif -%}
+    {%- if release._swiftOrder > swiftVersion -%}
+		{%- if needsComma == true -%}
+,
+		{%- endif -%}
+{
+  "xcode":"{{ release.version.number }}",
+  "swift":"{{ release.compilers.swift[0].number }}",
+  "date":"{{ release.date.day }} {{ months[release.date.month] }} {{ release.date.year | modulo: 100 }}",
+  "released":false
+}
+    {%- endif -%}
+    {%- break -%}
+{%- endfor -%}
+]
