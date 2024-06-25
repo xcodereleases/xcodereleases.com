@@ -1,5 +1,102 @@
 [
   {
+    "_dateOrder" : 20240625,
+    "_swiftOrder" : 6000000,
+    "_versionOrder" : 16000000002,
+    "checksums" : {
+      "sha1" : "35acecd39dd330039110b96b40c5e60ec70db4c2"
+    },
+    "compilers" : {
+      "clang" : [
+        {
+          "build" : "1600.0.21.4",
+          "number" : "16.0.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "swift" : [
+        {
+          "build" : "6.0.0.4.52",
+          "number" : "6.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "date" : {
+      "day" : 25,
+      "month" : 6,
+      "year" : 2024
+    },
+    "links" : {
+      "download" : {
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_16_beta_2/Xcode_16_beta_2.xip"
+      },
+      "notes" : {
+        "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes"
+      }
+    },
+    "name" : "Xcode",
+    "requires" : "14.5",
+    "sdks" : {
+      "iOS" : [
+        {
+          "build" : "22A5297f",
+          "number" : "18.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "macOS" : [
+        {
+          "build" : "24A5279g",
+          "number" : "15.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "tvOS" : [
+        {
+          "build" : "22J5305d",
+          "number" : "18.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "visionOS" : [
+        {
+          "build" : "22N5267d",
+          "number" : "2.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "watchOS" : [
+        {
+          "build" : "22R5299c",
+          "number" : "11.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "version" : {
+      "build" : "16A5171r",
+      "number" : "16.0",
+      "release" : {
+        "beta" : 2
+      }
+    }
+  },
+  {
     "_dateOrder" : 20240610,
     "_swiftOrder" : 6000000,
     "_versionOrder" : 16000000001,
