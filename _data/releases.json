@@ -1,5 +1,102 @@
 [
   {
+    "_dateOrder" : 20241205,
+    "_swiftOrder" : 6000003,
+    "_versionOrder" : 16002000901,
+    "checksums" : {
+      "sha1" : "fae483d3092d181c900560a4def6ead39691c472"
+    },
+    "compilers" : {
+      "clang" : [
+        {
+          "build" : "1600.0.26.6",
+          "number" : "16.0.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "swift" : [
+        {
+          "build" : "6.0.3.1.9",
+          "number" : "6.0.3",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "date" : {
+      "day" : 5,
+      "month" : 12,
+      "year" : 2024
+    },
+    "links" : {
+      "download" : {
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_16.2_Release_Candidate/Xcode_16.2_Release_Candidate.xip"
+      },
+      "notes" : {
+        "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-16_2-release-notes"
+      }
+    },
+    "name" : "Xcode",
+    "requires" : "14.5",
+    "sdks" : {
+      "iOS" : [
+        {
+          "build" : "22C146",
+          "number" : "18.2",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "macOS" : [
+        {
+          "build" : "24C94",
+          "number" : "15.2",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "tvOS" : [
+        {
+          "build" : "22K152",
+          "number" : "18.2",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "visionOS" : [
+        {
+          "build" : "22N799",
+          "number" : "2.2",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "watchOS" : [
+        {
+          "build" : "22S97",
+          "number" : "11.2",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "version" : {
+      "build" : "16C5031c",
+      "number" : "16.2",
+      "release" : {
+        "rc" : 1
+      }
+    }
+  },
+  {
     "_dateOrder" : 20241120,
     "_swiftOrder" : 6000003,
     "_versionOrder" : 16002000003,
