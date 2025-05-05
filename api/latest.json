@@ -1,0 +1,14 @@
+---
+layout: null
+---
+{%- assign releaseTypes = "release,rc,beta" | split: "," -%}
+{%- assign xcodes = "" | split: "," -%}
+{%- for release in site.data.releases -%}
+    {%- for releaseType in releaseTypes -%}
+        {%- if release.version.release contains releaseType -%}
+            {%- assign xcodes = xcodes | push: release -%}
+            {%- assign releaseTypes = releaseTypes | where_exp: "rt", "rt != releaseType" -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endfor -%}
+{{ xcodes | jsonify }}
