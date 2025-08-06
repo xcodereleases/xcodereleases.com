@@ -33,6 +33,10 @@
     },
     "links" : {
       "download" : {
+        "architectures" : [
+          "arm64",
+          "x86_64"
+        ],
         "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_26_beta_5/Xcode_26_beta_5_Universal.xip"
       },
       "notes" : {
@@ -130,6 +134,9 @@
     },
     "links" : {
       "download" : {
+        "architectures" : [
+          "arm64"
+        ],
         "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_26_beta_5/Xcode_26_beta_5_Apple_silicon.xip"
       },
       "notes" : {
@@ -227,6 +234,10 @@
     },
     "links" : {
       "download" : {
+        "architectures" : [
+          "arm64",
+          "x86_64"
+        ],
         "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_26_beta_4/Xcode_26_beta_4.xip"
       },
       "notes" : {
@@ -324,6 +335,10 @@
     },
     "links" : {
       "download" : {
+        "architectures" : [
+          "arm64",
+          "x86_64"
+        ],
         "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_26_beta_3/Xcode_26_beta_3.xip"
       },
       "notes" : {
@@ -421,6 +436,10 @@
     },
     "links" : {
       "download" : {
+        "architectures" : [
+          "arm64",
+          "x86_64"
+        ],
         "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_26_beta_2/Xcode_26_beta_2.xip"
       },
       "notes" : {
@@ -518,6 +537,10 @@
     },
     "links" : {
       "download" : {
+        "architectures" : [
+          "arm64",
+          "x86_64"
+        ],
         "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_26_beta/Xcode_26_beta.xip"
       },
       "notes" : {
