@@ -18,7 +18,7 @@
       ],
       "swift" : [
         {
-          "build" : "6.2.0.16.4",
+          "build" : "6.2.0.16.14",
           "number" : "6.2",
           "release" : {
             "release" : true
@@ -119,7 +119,7 @@
       ],
       "swift" : [
         {
-          "build" : "6.2.0.16.4",
+          "build" : "6.2.0.16.14",
           "number" : "6.2",
           "release" : {
             "release" : true
