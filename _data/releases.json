@@ -1,5 +1,206 @@
 [
   {
+    "_dateOrder" : 20250818,
+    "_swiftOrder" : 6002000,
+    "_versionOrder" : 26000000006,
+    "checksums" : {
+      "sha1" : "9bdd6dc1a5654fdbd4c432d1e2bd40266f0621bc"
+    },
+    "compilers" : {
+      "clang" : [
+        {
+          "build" : "1700.3.19.1",
+          "number" : "17.0.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "swift" : [
+        {
+          "build" : "6.2.0.19.9",
+          "number" : "6.2",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "date" : {
+      "day" : 18,
+      "month" : 8,
+      "year" : 2025
+    },
+    "links" : {
+      "download" : {
+        "architectures" : [
+          "arm64",
+          "x86_64"
+        ],
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_26_beta_6/Xcode_26_beta_6_Universal.xip"
+      },
+      "notes" : {
+        "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes"
+      }
+    },
+    "name" : "Xcode",
+    "requires" : "15.5",
+    "sdks" : {
+      "iOS" : [
+        {
+          "build" : "23A5324a",
+          "number" : "26.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "macOS" : [
+        {
+          "build" : "25A5344a",
+          "number" : "26.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "tvOS" : [
+        {
+          "build" : "23J5344a",
+          "number" : "26.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "visionOS" : [
+        {
+          "build" : "23M5327a",
+          "number" : "26.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "watchOS" : [
+        {
+          "build" : "23R5344a",
+          "number" : "26.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "version" : {
+      "build" : "17A5295f",
+      "number" : "26.0",
+      "release" : {
+        "beta" : 6
+      }
+    }
+  },
+  {
+    "_dateOrder" : 20250818,
+    "_swiftOrder" : 6002000,
+    "_versionOrder" : 26000000006,
+    "checksums" : {
+      "sha1" : "302bd70d864c102796084abde3ba628fff2e01d3"
+    },
+    "compilers" : {
+      "clang" : [
+        {
+          "build" : "1700.3.19.1",
+          "number" : "17.0.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "swift" : [
+        {
+          "build" : "6.2.0.19.9",
+          "number" : "6.2",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "date" : {
+      "day" : 18,
+      "month" : 8,
+      "year" : 2025
+    },
+    "links" : {
+      "download" : {
+        "architectures" : [
+          "arm64"
+        ],
+        "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_26_beta_6/Xcode_26_beta_6_Apple_silicon.xip"
+      },
+      "notes" : {
+        "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes"
+      }
+    },
+    "name" : "Xcode (Apple Silicon)",
+    "requires" : "15.5",
+    "sdks" : {
+      "iOS" : [
+        {
+          "build" : "23A5324a",
+          "number" : "26.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "macOS" : [
+        {
+          "build" : "25A5344a",
+          "number" : "26.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "tvOS" : [
+        {
+          "build" : "23J5344a",
+          "number" : "26.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "visionOS" : [
+        {
+          "build" : "23M5327a",
+          "number" : "26.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ],
+      "watchOS" : [
+        {
+          "build" : "23R5344a",
+          "number" : "26.0",
+          "release" : {
+            "release" : true
+          }
+        }
+      ]
+    },
+    "version" : {
+      "build" : "17A5305f",
+      "number" : "26.0",
+      "release" : {
+        "beta" : 6
+      }
+    }
+  },
+  {
     "_dateOrder" : 20250805,
     "_swiftOrder" : 6002000,
     "_versionOrder" : 26000000005,
