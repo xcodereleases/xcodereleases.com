@@ -21,7 +21,7 @@ Stay up-to-date via our [JSON API]({{ site.url }}/data.json), [RSS feed]({{ site
   <label for="filter-all">All</label>
 
   <input type="radio" name="filter-release" id="filter-releases" value="release" onchange="filter()" />
-  <label for="filter-release">Releases</label>
+  <label for="filter-releases">Releases</label>
 
   <input type="radio" name="filter-release" id="filter-beta" value="beta" onchange="filter()" />
   <label for="filter-beta">Betas</label>
