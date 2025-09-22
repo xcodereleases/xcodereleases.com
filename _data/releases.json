@@ -40,7 +40,7 @@
         "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_26.0.1/Xcode_26.0.1_Universal.xip"
       },
       "notes" : {
-        "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes"
+        "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-26_0_1-release-notes"
       }
     },
     "name" : "Xcode",
@@ -140,7 +140,7 @@
         "url" : "https://download.developer.apple.com/Developer_Tools/Xcode_26.0.1/Xcode_26.0.1_Apple_silicon.xip"
       },
       "notes" : {
-        "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes"
+        "url" : "https://developer.apple.com/documentation/xcode-release-notes/xcode-26_0_1-release-notes"
       }
     },
     "name" : "Xcode (Apple Silicon)",
